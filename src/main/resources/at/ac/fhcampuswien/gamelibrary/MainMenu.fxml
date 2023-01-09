@@ -39,7 +39,7 @@
                </cursor></Button>
          </children>
       </Pane>
-      <Pane layoutX="436.0" layoutY="300.0" prefHeight="152.0" prefWidth="158.0" style="-fx-border-color: WHITE; -fx-border-width: 5;">
+    ++  <Pane layoutX="436.0" layoutY="300.0" prefHeight="152.0" prefWidth="158.0" style="-fx-border-color: WHITE; -fx-border-width: 5;">
          <children>
             <ImageView disable="true" fitHeight="144.0" fitWidth="150.0" layoutX="-12.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
                <image>
