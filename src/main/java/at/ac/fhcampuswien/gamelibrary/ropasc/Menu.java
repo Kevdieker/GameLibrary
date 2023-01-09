@@ -21,6 +21,7 @@ public class Menu {
         scene = new Scene (root);
         stage.setScene(scene);
         stage.show();
+
     }
 
     public void switchToNormalPlayer(ActionEvent e) throws IOException {

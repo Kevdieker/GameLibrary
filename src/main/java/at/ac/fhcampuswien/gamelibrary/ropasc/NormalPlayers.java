@@ -52,6 +52,7 @@ public class NormalPlayers {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+
     }
 
     /*@FXML
