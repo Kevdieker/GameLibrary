@@ -100,7 +100,7 @@ public class NormalPlayers {
         }
         scoreplayer2();
     }
-    private void scoreplayer1 () {
+    private void scoreplayer1() {
         if (player1Choice.equals(player2Choice)) {
             result.setText("It's a tie");
         }
