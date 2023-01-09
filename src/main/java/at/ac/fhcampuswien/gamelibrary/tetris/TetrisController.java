@@ -5,7 +5,6 @@ package at.ac.fhcampuswien.gamelibrary.tetris;
 import javafx.scene.shape.Rectangle;
 
 public class TetrisController {
-    private static TetrisController TetrisMain;
     // Getting the numbers and the MESH from Tetris
     public static final int MOVE = TetrisMain.MOVE;
     public static final int SIZE = TetrisMain.SIZE;
