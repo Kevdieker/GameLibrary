@@ -1,4 +1,4 @@
-package at.ac.fhcampuswien.gamelibrary.Tetris;
+package at.ac.fhcampuswien.gamelibrary.tetris;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
