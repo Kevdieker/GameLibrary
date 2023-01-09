@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.ac.fhcampuswien.gamelibrary.ropasc.ExtendedAI">
+   <children>
+      <Button layoutX="14.0" layoutY="460.0" mnemonicParsing="false" onAction="#switchToMenu" text="Back" />
+      <Label layoutX="424.0" layoutY="35.0" prefHeight="34.0" prefWidth="117.0" text="AI-Player">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="203.0" layoutY="35.0" prefHeight="34.0" prefWidth="73.0" text="Player">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label fx:id="playerScore" layoutX="290.0" layoutY="35.0" prefHeight="34.0" prefWidth="18.0" text="0">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="338.0" layoutY="35.0" prefHeight="34.0" prefWidth="9.0" text="-">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label fx:id="aiScore" layoutX="377.0" layoutY="35.0" prefHeight="34.0" prefWidth="18.0" text="0">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Button fx:id="rockBtn" layoutX="100.0" layoutY="287.0" mnemonicParsing="false" onAction="#playerTurn" opacity="0.0" prefHeight="85.0" prefWidth="85.0" text="Rock">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="paperBtn" layoutX="240.0" layoutY="287.0" mnemonicParsing="false" onAction="#playerTurn" opacity="0.0" prefHeight="85.0" prefWidth="85.0" text="Paper">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="scissorsBtn" layoutX="370.0" layoutY="287.0" mnemonicParsing="false" onAction="#playerTurn" opacity="0.0" prefHeight="85.0" prefWidth="85.0" text="Scissors">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="fireBtn" layoutX="240.0" layoutY="380.0" mnemonicParsing="false" onAction="#playerTurn" opacity="0.0" prefHeight="85.0" prefWidth="85.0" text="Fire">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="airBtn" layoutX="371.0" layoutY="381.0" mnemonicParsing="false" onAction="#playerTurn" opacity="0.0" prefHeight="85.0" prefWidth="85.0" text="Air">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="waterBtn" layoutX="512.0" layoutY="379.0" mnemonicParsing="false" onAction="#playerTurn" opacity="0.0" prefHeight="85.0" prefWidth="85.0" text="Water">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="spockBtn" layoutX="512.0" layoutY="287.0" mnemonicParsing="false" onAction="#playerTurn" opacity="0.0" prefHeight="85.0" prefWidth="85.0" text="Spock">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="lizardBtn" layoutX="100.0" layoutY="380.0" mnemonicParsing="false" onAction="#playerTurn" opacity="0.0" prefHeight="85.0" prefWidth="85.0" text="Lizard">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+      <Label fx:id="player" alignment="CENTER" layoutX="98.0" layoutY="147.0" prefHeight="82.0" prefWidth="128.0">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label fx:id="ai" alignment="CENTER" layoutX="424.0" layoutY="147.0" prefHeight="82.0" prefWidth="128.0">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label fx:id="result" alignment="CENTER" layoutX="258.0" layoutY="171.0" prefHeight="34.0" prefWidth="128.0">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <ImageView disable="true" fitHeight="85.0" fitWidth="85.0" layoutX="100.0" layoutY="287.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@rock.png" />
+         </image>
+      </ImageView>
+      <ImageView disable="true" fitHeight="85.0" fitWidth="85.0" layoutX="241.0" layoutY="287.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@paper.png" />
+         </image>
+      </ImageView>
+      <ImageView disable="true" fitHeight="85.0" fitWidth="85.0" layoutX="370.0" layoutY="287.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@scissors.png" />
+         </image>
+      </ImageView>
+      <ImageView disable="true" fitHeight="85.0" fitWidth="85.0" layoutX="510.0" layoutY="287.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@spock.png" />
+         </image>
+      </ImageView>
+      <ImageView disable="true" fitHeight="85.0" fitWidth="85.0" layoutX="100.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@lizard.png" />
+         </image>
+      </ImageView>
+      <ImageView disable="true" fitHeight="85.0" fitWidth="85.0" layoutX="240.0" layoutY="380.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@fire.png" />
+         </image>
+      </ImageView>
+      <ImageView disable="true" fitHeight="85.0" fitWidth="85.0" layoutX="371.0" layoutY="380.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@air.png" />
+         </image>
+      </ImageView>
+      <ImageView disable="true" fitHeight="85.0" fitWidth="85.0" layoutX="512.0" layoutY="380.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@water.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
