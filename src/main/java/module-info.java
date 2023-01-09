@@ -4,8 +4,8 @@ module at.ac.fhcampuswien.gamelibrary {
 
     requires org.controlsfx.controls;
 
-    opens at.ac.fhcampuswien.gamelibrary to javafx.fxml;
     exports at.ac.fhcampuswien.gamelibrary;
+    opens at.ac.fhcampuswien.gamelibrary to javafx.fxml;
 
     exports at.ac.fhcampuswien.gamelibrary.tetris;
     opens at.ac.fhcampuswien.gamelibrary.tetris to javafx.fxml;
