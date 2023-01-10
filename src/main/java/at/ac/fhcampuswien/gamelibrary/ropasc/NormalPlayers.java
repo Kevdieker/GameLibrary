@@ -44,25 +44,14 @@ public class NormalPlayers {
     @FXML
     private Button scissorBtn2;
 
-
-
     public void switchToMenu(ActionEvent e) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("menu.fxml")));
         stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
     }
 
-    /*@FXML
-    public void initialize() {
-        result.setText("It's Player 1's turn");
-        scissorBtn2.setDisable(true);
-        rockBtn2.setDisable(true);
-        paperBtn2.setDisable(true);
-    }
-    */
     @FXML
     private void player1Turn(ActionEvent event) {
         switch (((Button) event.getSource()).getId()) {
@@ -79,12 +68,12 @@ public class NormalPlayers {
                 player1.setText("Scissors");
                 break;
         }
-        scoreplayer1();
+        checkIfWon();
     }
 
     @FXML
-    private void player2Turn(ActionEvent event) {
-        switch (((Button) event.getSource()).getId()) {
+    private void player2Turn(ActionEvent ev) {
+        switch (((Button) ev.getSource()).getId()) {
             case "paperBtn2":
                 player2Choice = Paper;
                 player2.setText("Paper");
@@ -98,40 +87,47 @@ public class NormalPlayers {
                 player2.setText("Scissors");
                 break;
         }
-        scoreplayer2();
+        checkIfWon();
     }
-    private void scoreplayer1() {
+
+    public void player1Win(){
+        result.setText("Player 1 wins!");
+        player1Score.setText(String.valueOf(Integer.parseInt(player1Score.getText()) +1));
+    }
+
+    public void player2Win(){
+        result.setText("Player 2 wins!");
+        player2Score.setText(String.valueOf(Integer.parseInt(player2Score.getText()) +1));
+    }
+
+    private void checkIfWon() {
         if (player1Choice.equals(player2Choice)) {
             result.setText("It's a tie");
         }
         if (player1Choice.equals(Paper)) {
             if (player2Choice.equals(Rock)) {
-                result.setText("Player 1 wins");
-                player1Score.setText(String.valueOf(Integer.parseInt(player1Score.getText()) +1));
+                player1Win();
             } else if (player2Choice.equals(Scissors)) {
-                result.setText("Player 2 wins");
-                player2Score.setText(String.valueOf(Integer.parseInt(player2Score.getText()) +1));
+                player2Win();
             }
         } else if (player1Choice.equals(Rock)) {
             if (player2Choice.equals(Paper)) {
-                result.setText("Player 2 wins");
-                player2Score.setText(String.valueOf(Integer.parseInt(player2Score.getText()) +1));
+                player2Win();
             } else if (player2Choice.equals(Scissors)) {
-                result.setText("Player 1 wins");
-                player1Score.setText(String.valueOf(Integer.parseInt(player1Score.getText()) +1));
+                player1Win();
             }
         } else if (player1Choice.equals(Scissors)) {
             if (player2Choice.equals(Rock)) {
-                result.setText("Player 2 wins");
-                player2Score.setText(String.valueOf(Integer.parseInt(player2Score.getText()) +1));
+                player2Win();
             } else if (player2Choice.equals(Paper)) {
-                result.setText("Player 1 wins");
-                player1Score.setText(String.valueOf(Integer.parseInt(player1Score.getText()) +1));
+                player1Win();
             }
         }
     }
+}
 
-    private void scoreplayer2() {
+    /*
+    private void scoreplayer2 () {
         if (player2Choice.equals(player1Choice)) {
             result.setText("It's a tie");
         }
@@ -161,7 +157,7 @@ public class NormalPlayers {
             }
         }
     }
-}
+     */
 
 
 

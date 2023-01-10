@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 
 import java.util.Objects;
 
-public class HelloApplication extends Application {
+public class RockPaperScissorsMain extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("menu.fxml")));
@@ -16,7 +16,6 @@ public class HelloApplication extends Application {
         stage.setTitle("Rock, Paper & Scissors");
         stage.setScene(scene);
         stage.show();
-
     }
 
     public static void main(String[] args) {

@@ -15,7 +15,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
-public class NormalAI {
+public class NormalAI
+{
     private Stage stage;
     private Scene scene;
     private Parent root;

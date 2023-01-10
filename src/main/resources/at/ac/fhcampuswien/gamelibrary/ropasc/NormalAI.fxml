@@ -74,3 +74,4 @@
       <ImageView fx:id="AI" fitHeight="119.0" fitWidth="130.0" layoutX="476.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
+
