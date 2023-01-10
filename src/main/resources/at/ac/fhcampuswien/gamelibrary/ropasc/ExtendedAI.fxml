@@ -5,32 +5,34 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="500.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.ac.fhcampuswien.gamelibrary.ropasc.ExtendedAI">
    <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#000045" height="512.0" layoutX="-4.0" layoutY="-4.0" stroke="BLACK" strokeType="INSIDE" width="746.0" />
       <Button layoutX="14.0" layoutY="460.0" mnemonicParsing="false" onAction="#switchToMenu" text="Back" />
-      <Label layoutX="424.0" layoutY="35.0" prefHeight="34.0" prefWidth="117.0" text="AI-Player">
+      <Label layoutX="424.0" layoutY="35.0" prefHeight="34.0" prefWidth="117.0" text="AI-Player" textFill="WHITE">
          <font>
             <Font name="System Bold" size="23.0" />
          </font>
       </Label>
-      <Label layoutX="203.0" layoutY="35.0" prefHeight="34.0" prefWidth="73.0" text="Player">
+      <Label layoutX="203.0" layoutY="35.0" prefHeight="34.0" prefWidth="73.0" text="Player" textFill="WHITE">
          <font>
             <Font name="System Bold" size="23.0" />
          </font>
       </Label>
-      <Label fx:id="playerScore" layoutX="290.0" layoutY="35.0" prefHeight="34.0" prefWidth="18.0" text="0">
+      <Label fx:id="playerScore" layoutX="290.0" layoutY="35.0" prefHeight="34.0" prefWidth="18.0" text="0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="23.0" />
          </font>
       </Label>
-      <Label layoutX="338.0" layoutY="35.0" prefHeight="34.0" prefWidth="9.0" text="-">
+      <Label layoutX="338.0" layoutY="35.0" prefHeight="34.0" prefWidth="9.0" text="-" textFill="WHITE">
          <font>
             <Font name="System Bold" size="23.0" />
          </font>
       </Label>
-      <Label fx:id="aiScore" layoutX="377.0" layoutY="35.0" prefHeight="34.0" prefWidth="18.0" text="0">
+      <Label fx:id="aiScore" layoutX="377.0" layoutY="35.0" prefHeight="34.0" prefWidth="18.0" text="0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="23.0" />
          </font>
@@ -75,17 +77,17 @@
             <Font name="System Bold" size="17.0" />
          </font>
       </Button>
-      <Label fx:id="player" alignment="CENTER" layoutX="98.0" layoutY="147.0" prefHeight="82.0" prefWidth="128.0">
+      <Label fx:id="player" alignment="CENTER" layoutX="98.0" layoutY="147.0" prefHeight="82.0" prefWidth="128.0" textFill="WHITE">
          <font>
             <Font size="21.0" />
          </font>
       </Label>
-      <Label fx:id="ai" alignment="CENTER" layoutX="424.0" layoutY="147.0" prefHeight="82.0" prefWidth="128.0">
+      <Label fx:id="ai" alignment="CENTER" layoutX="424.0" layoutY="147.0" prefHeight="82.0" prefWidth="128.0" textFill="WHITE">
          <font>
             <Font size="21.0" />
          </font>
       </Label>
-      <Label fx:id="result" alignment="CENTER" layoutX="258.0" layoutY="171.0" prefHeight="34.0" prefWidth="128.0">
+      <Label fx:id="result" alignment="CENTER" layoutX="258.0" layoutY="171.0" prefHeight="34.0" prefWidth="128.0" textFill="WHITE">
          <font>
             <Font size="21.0" />
          </font>
@@ -132,4 +134,3 @@
       </ImageView>
    </children>
 </AnchorPane>
-

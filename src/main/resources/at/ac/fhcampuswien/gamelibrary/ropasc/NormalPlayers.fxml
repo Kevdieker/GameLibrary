@@ -5,31 +5,33 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="500.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.ac.fhcampuswien.gamelibrary.ropasc.NormalPlayers">
    <children>
-      <Label layoutX="202.0" layoutY="42.0" text="Player 1">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#000045" height="508.0" layoutX="-3.0" layoutY="-3.0" stroke="BLACK" strokeType="INSIDE" width="761.0" />
+      <Label layoutX="202.0" layoutY="42.0" text="Player 1" textFill="WHITE">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="player1Score" layoutX="309.0" layoutY="42.0" text="0">
+      <Label fx:id="player1Score" layoutX="309.0" layoutY="42.0" text="0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="player2Score" layoutX="405.0" layoutY="42.0" text="0">
+      <Label fx:id="player2Score" layoutX="405.0" layoutY="42.0" text="0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="448.0" layoutY="42.0" text="Player 2">
+      <Label layoutX="448.0" layoutY="42.0" text="Player 2" textFill="WHITE">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="357.0" layoutY="42.0" text="-">
+      <Label layoutX="357.0" layoutY="42.0" text="-" textFill="WHITE">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>
@@ -53,7 +55,7 @@
             <Image url="@scissors.png" />
          </image>
       </ImageView>
-      <Label fx:id="result" alignment="CENTER" layoutX="261.0" layoutY="212.0" prefHeight="35.0" prefWidth="207.0">
+      <Label fx:id="result" alignment="CENTER" layoutX="261.0" layoutY="212.0" prefHeight="35.0" prefWidth="207.0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -76,12 +78,12 @@
       <Button fx:id="rockBtn2" layoutX="587.0" layoutY="93.0" mnemonicParsing="false" onAction="#player2Turn" opacity="0.0" prefHeight="100.0" prefWidth="100.0" text="Rock" />
       <Button fx:id="paperBtn2" layoutX="587.0" layoutY="212.0" mnemonicParsing="false" onAction="#player2Turn" opacity="0.0" prefHeight="100.0" prefWidth="100.0" text="Paper" />
       <Button fx:id="scissorBtn2" layoutX="578.0" layoutY="328.0" mnemonicParsing="false" onAction="#player2Turn" opacity="0.0" prefHeight="100.0" prefWidth="100.0" text="Scissors" />
-      <Label fx:id="player1" alignment="CENTER" layoutX="130.0" layoutY="189.0" prefHeight="119.0" prefWidth="130.0">
+      <Label fx:id="player1" alignment="CENTER" layoutX="130.0" layoutY="189.0" prefHeight="119.0" prefWidth="130.0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="player2" alignment="CENTER" layoutX="457.0" layoutY="190.0" prefHeight="119.0" prefWidth="130.0">
+      <Label fx:id="player2" alignment="CENTER" layoutX="457.0" layoutY="190.0" prefHeight="119.0" prefWidth="130.0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
