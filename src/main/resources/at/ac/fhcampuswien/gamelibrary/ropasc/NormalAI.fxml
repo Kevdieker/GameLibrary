@@ -8,71 +8,74 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.ac.fhcampuswien.gamelibrary.ropasc.NormalAI">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.ac.fhcampuswien.gamelibrary.ropasc.NormalAI">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#000045" height="506.0" layoutX="-2.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="737.0" />
-      <Button fx:id="RockBtn" layoutX="71.0" layoutY="332.0" mnemonicParsing="false" onAction="#playerTurn" opacity="0.0" prefHeight="100.0" prefWidth="100.0" text="Rock">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#000045" height="584.0" layoutX="-2.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="1033.0" />
+      <Button fx:id="RockBtn" layoutX="188.0" layoutY="359.0" mnemonicParsing="false" onAction="#playerTurn" opacity="0.0" prefHeight="110.0" prefWidth="110.0" text="Rock">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button fx:id="PaperBtn" layoutX="315.0" layoutY="332.0" mnemonicParsing="false" onAction="#playerTurn" opacity="0.0" prefHeight="100.0" prefWidth="100.0" text="Paper">
+      <Button fx:id="PaperBtn" layoutX="452.0" layoutY="359.0" mnemonicParsing="false" onAction="#playerTurn" opacity="0.0" prefHeight="110.0" prefWidth="110.0" text="Paper">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button fx:id="ScissorsBtn" layoutX="541.0" layoutY="332.0" mnemonicParsing="false" onAction="#playerTurn" opacity="0.0" prefHeight="100.0" prefWidth="100.0" text="Scissors">
+      <Button fx:id="ScissorsBtn" layoutX="727.0" layoutY="359.0" mnemonicParsing="false" onAction="#playerTurn" opacity="0.0" prefHeight="110.0" prefWidth="110.0" text="Scissors">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Label layoutX="188.0" layoutY="32.0" text="Player" textFill="WHITE">
+      <Label layoutX="320.0" layoutY="32.0" text="Player" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="19.0" />
+            <Font name="System Bold" size="23.0" />
          </font>
       </Label>
-      <Label layoutX="427.0" layoutY="32.0" text="AI-Player" textFill="WHITE">
+      <Label layoutX="627.0" layoutY="32.0" text="AI-Player" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="19.0" />
+            <Font name="System Bold" size="23.0" />
          </font>
       </Label>
-      <Label layoutX="346.0" layoutY="32.0" text="-" textFill="WHITE">
+      <Label layoutX="507.0" layoutY="33.0" text="-" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="19.0" />
+            <Font name="System Bold" size="22.0" />
          </font>
       </Label>
-      <Label fx:id="PlayerScore" layoutX="287.0" layoutY="32.0" text="0" textFill="WHITE">
+      <Label fx:id="PlayerScore" layoutX="442.0" layoutY="32.0" text="0" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="19.0" />
+            <Font name="System Bold" size="23.0" />
          </font>
       </Label>
-      <Label fx:id="AIScore" layoutX="389.0" layoutY="32.0" text="0" textFill="WHITE">
+      <Label fx:id="AIScore" layoutX="564.0" layoutY="32.0" text="0" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="19.0" />
+            <Font name="System Bold" size="23.0" />
          </font>
       </Label>
-      <Label fx:id="result" layoutX="293.0" layoutY="206.0" prefHeight="37.0" prefWidth="121.0" textFill="WHITE">
+      <Label fx:id="result" alignment="TOP_CENTER" layoutX="421.0" layoutY="186.0" prefHeight="38.0" prefWidth="181.0" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="17.0" />
+            <Font name="System Bold" size="26.0" />
          </font>
       </Label>
-      <Button layoutX="14.0" layoutY="460.0" mnemonicParsing="false" onAction="#switchToMenu" text="Back" />
-      <ImageView disable="true" fitHeight="100.0" fitWidth="100.0" layoutX="71.0" layoutY="332.0" pickOnBounds="true" preserveRatio="true">
+      <Button layoutX="20.0" layoutY="530.0" mnemonicParsing="false" onAction="#switchToMenu" text="Back">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <ImageView disable="true" fitHeight="110.0" fitWidth="110.0" layoutX="188.0" layoutY="359.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@rock.png" />
          </image>
       </ImageView>
-      <ImageView disable="true" fitHeight="100.0" fitWidth="100.0" layoutX="315.0" layoutY="332.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView disable="true" fitHeight="110.0" fitWidth="110.0" layoutX="457.0" layoutY="359.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@paper.png" />
          </image>
       </ImageView>
-      <ImageView disable="true" fitHeight="100.0" fitWidth="100.0" layoutX="541.0" layoutY="332.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView disable="true" fitHeight="110.0" fitWidth="110.0" layoutX="727.0" layoutY="359.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@scissors.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="player" fitHeight="119.0" fitWidth="130.0" layoutX="123.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="AI" fitHeight="119.0" fitWidth="130.0" layoutX="476.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="player" fitHeight="119.0" fitWidth="130.0" layoutX="228.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="AI" fitHeight="119.0" fitWidth="130.0" layoutX="662.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
