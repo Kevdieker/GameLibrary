@@ -32,6 +32,7 @@ public class PongMain extends Application {
         stage.show();
 
 
+
     }
 
     public static void main(String[] args) {
