@@ -5,19 +5,19 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-
+import static at.ac.fhcampuswien.gamelibrary.pong.PongConstants.PADDLE_SPEED;
 public class PongPaddle extends Rectangle {
 
     private int id;
     private double yVelocity;
-    private int speed = 5;
+    private double speed = PADDLE_SPEED;
 
     PongPaddle(double x, double y, double w, double h, int id) {
         super(x,y,w,h);
         this.id = id;
     }
 
-    private void setYDirection(int yDirection) {
+    private void setYDirection(double yDirection) {
         yVelocity = yDirection;
     }
 
