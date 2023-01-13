@@ -6,9 +6,9 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.ac.fhcampuswien.gamelibrary.ropasc.Menu">
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.ac.fhcampuswien.gamelibrary.ropasc.Menu">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#000045" height="515.0" layoutX="-13.0" layoutY="-10.0" stroke="BLACK" strokeType="INSIDE" width="765.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#000045" height="800.0" stroke="BLACK" strokeType="INSIDE" width="1200.0" />
       <Button layoutX="159.0" layoutY="188.0" mnemonicParsing="false" onAction="#switchToNormalAI" text="AI-Player">
          <font>
             <Font size="15.0" />
