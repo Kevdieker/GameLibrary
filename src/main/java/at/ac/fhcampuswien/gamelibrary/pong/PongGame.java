@@ -20,7 +20,7 @@ public class PongGame {
     PongPaddle pongPaddle1;
     PongPaddle pongPaddle2;
     PongBall pongBall;
-    public boolean gameStarted;
+    public boolean gameStarted = false;
 
     @FXML
     Canvas canvas;
@@ -35,8 +35,6 @@ public class PongGame {
         newBall();
         score = new PongScore(WIDTH, HEIGHT);
 
-        //canvas.setOnMouseMoved(e -> playerOneYPos = e.getY());
-
         canvas.setFocusTraversable(true);
         canvas.setOnKeyPressed(new ALPressed());
         canvas.setOnKeyReleased(new ALReleased());
@@ -45,8 +43,6 @@ public class PongGame {
         Timeline tl = new Timeline(new KeyFrame(Duration.millis(10), e -> run(gc)));
         tl.setCycleCount(Timeline.INDEFINITE);
         tl.play();
-
-
 
         exitButton.setOnAction((ActionEvent event) -> {
             Platform.exit();
@@ -57,33 +53,46 @@ public class PongGame {
         pongBall = new PongBall((WIDTH / 2) - (BALL_R / 2), ((HEIGHT / 2) - (BALL_R / 2)), BALL_R, BALL_R);
     }
 
-    public void newPaddles( ) {
-        pongPaddle1 = new PongPaddle(50, HEIGHT / 2, PADDLE_WIDTH, PADDLE_HEIGHT, 1);
-        pongPaddle2 = new PongPaddle(WIDTH - PADDLE_WIDTH - 50, HEIGHT / 2, PADDLE_WIDTH, PADDLE_HEIGHT, 2);
+    public void newPaddles() {
+        pongPaddle1 = new PongPaddle(25, HEIGHT / 2 - PADDLE_HEIGHT / 2, PADDLE_WIDTH, PADDLE_HEIGHT, 1);
+        pongPaddle2 = new PongPaddle(WIDTH - PADDLE_WIDTH - 25, HEIGHT / 2 - PADDLE_HEIGHT / 2, PADDLE_WIDTH, PADDLE_HEIGHT, 2);
     }
 
     public void draw(GraphicsContext gc) {
+        drawLayout(gc);
         pongBall.draw(gc);
         pongPaddle1.draw(gc);
         pongPaddle2.draw(gc);
+    }
+
+    public void drawLayout(GraphicsContext gc) {
+        gc.setFill(Color.BLACK);
+        gc.fillRect(0, 0, WIDTH, HEIGHT);
         score.draw(gc);
-
-        gc.setLineWidth(1);
-        gc.setStroke(Color.YELLOW);
-        gc.setTextAlign(TextAlignment.CENTER);
-        gc.strokeText("Click to Start", WIDTH / 2, HEIGHT / 2);
-
         gc.setStroke(Color.WHITE);
         gc.setLineWidth(5);
-        gc.strokeLine(WIDTH/2,0,WIDTH/2,HEIGHT);
+
+        for (int i = 0; i <= 15; i++) {
+            gc.strokeLine(WIDTH / 2, i * (HEIGHT / 16) + 5, WIDTH / 2, i * (HEIGHT / 16) + HEIGHT / 32);
+        }
 
 
     }
 
-    private void processInput() {
-        pongPaddle1.move();
-        pongPaddle2.move();
-        pongBall.move();
+    private void processInput(GraphicsContext gc) {
+        if(gameStarted) {
+            pongPaddle1.move();
+            pongPaddle2.move();
+            pongBall.move();
+        }else {
+            gc.setLineWidth(2);
+            gc.setStroke(Color.BLUEVIOLET);
+            gc.setTextAlign(TextAlignment.CENTER);
+            gc.strokeText("Press Any Button to Start", WIDTH / 2, HEIGHT / 2);
+
+
+            canvas.addEventFilter(KeyEvent.ANY, keyEvent -> {gameStarted = true;});
+        }
     }
 
     public void update_state(GraphicsContext gc) {
@@ -101,11 +110,11 @@ public class PongGame {
             pongBall.xVelocity = Math.abs(pongBall.xVelocity);
 
             if (pongBall.xVelocity <= BALL_SPEED_CAP && pongBall.yVelocity <= BALL_SPEED_CAP && pongBall.yVelocity >= -BALL_SPEED_CAP) {
-                pongBall.xVelocity++; // difficulty
+                pongBall.xVelocity += BALL_SPEED_INCREASE; // difficulty
 
                 if (pongBall.yVelocity > 0)
-                    pongBall.yVelocity++;
-                else pongBall.yVelocity--;
+                    pongBall.yVelocity += BALL_SPEED_INCREASE;
+                else pongBall.yVelocity -= BALL_SPEED_INCREASE;
             }
 
             pongBall.setXDirection(pongBall.xVelocity);
@@ -116,11 +125,11 @@ public class PongGame {
             pongBall.xVelocity = Math.abs(pongBall.xVelocity);
 
             if (pongBall.xVelocity <= BALL_SPEED_CAP && pongBall.yVelocity <= BALL_SPEED_CAP && pongBall.yVelocity >= -BALL_SPEED_CAP) {
-                pongBall.xVelocity++; // difficulty
+                pongBall.xVelocity += BALL_SPEED_INCREASE; // difficulty
 
                 if (pongBall.yVelocity > 0)
-                    pongBall.yVelocity++;
-                else pongBall.yVelocity--;
+                    pongBall.yVelocity += BALL_SPEED_INCREASE;
+                else pongBall.yVelocity -= BALL_SPEED_INCREASE;
             }
 
             pongBall.setXDirection(-pongBall.xVelocity);
@@ -154,15 +163,14 @@ public class PongGame {
         }
     }
     public void render(GraphicsContext gc) {
-        gc.setFill(Color.BLACK);
-        gc.fillRect(0, 0, WIDTH, HEIGHT);
+
     }
 
     private void run(GraphicsContext gc) {
-        processInput();
-        update_state(gc);
-        render(gc);
         draw(gc);
+        processInput(gc);
+        update_state(gc);
+
     }
 
     public class ALPressed implements EventHandler<KeyEvent> {

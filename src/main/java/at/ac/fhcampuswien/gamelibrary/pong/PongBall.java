@@ -5,6 +5,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 import java.util.Random;
+import static at.ac.fhcampuswien.gamelibrary.pong.PongConstants.BALL_SPEED;
 
 public class PongBall extends Rectangle {
 
@@ -12,7 +13,7 @@ public class PongBall extends Rectangle {
     double xVelocity;
     double yVelocity;
 
-    double initialSpeed = 3;
+    double speed = BALL_SPEED;
 
     PongBall(double x, double y, double w, double h) {
         super(x,y,w,h);
@@ -24,14 +25,14 @@ public class PongBall extends Rectangle {
         if (XDirection == 0)
             XDirection--;
 
-        setXDirection(XDirection * initialSpeed);
+        setXDirection(XDirection * speed);
 
         int YDirection = random.nextInt(2);
 
         if (YDirection == 0)
             YDirection--;
 
-        setYDirection(YDirection * initialSpeed);
+        setYDirection(YDirection * speed);
     }
     public void setXDirection(double XDirection) {
         xVelocity = XDirection;

@@ -21,7 +21,7 @@ public class PongScore extends Rectangle {
     public void draw(GraphicsContext gc){
 
         gc.setFill(Color.WHITE);
-        gc.setFont(new Font( "Consolas",60));
+        gc.setFont(new Font( "Consolas",50));
         gc.setTextAlign(TextAlignment.CENTER);
         gc.setTextBaseline(VPos.CENTER);
         gc.fillText(player1 / 10 +String.valueOf(player1%10), (GAME_WIDTH/2)-75,50);
