@@ -25,11 +25,10 @@ public class PongMain extends Application {
         controller.createGrid();
 
         stage.setResizable(false);
-        stage.setX(0);
-        stage.setY(0);
+        stage.centerOnScreen();
         stage.setScene(scene);
         stage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
-        stage.setFullScreen(true);
+        stage.setFullScreen(false);
         stage.show();
 
 

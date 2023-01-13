@@ -10,8 +10,7 @@ public class PongPaddle extends Rectangle {
 
     private int id;
     private double yVelocity;
-
-    private int speed = 8;
+    private int speed = 5;
 
     PongPaddle(double x, double y, double w, double h, int id) {
         super(x,y,w,h);

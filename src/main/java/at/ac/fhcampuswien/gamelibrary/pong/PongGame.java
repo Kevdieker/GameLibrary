@@ -58,8 +58,8 @@ public class PongGame {
     }
 
     public void newPaddles( ) {
-        pongPaddle1 = new PongPaddle(100, HEIGHT / 2, PADDLE_WIDTH, PADDLE_HEIGHT, 1);
-        pongPaddle2 = new PongPaddle(WIDTH - PADDLE_WIDTH - 100, HEIGHT / 2, PADDLE_WIDTH, PADDLE_HEIGHT, 2);
+        pongPaddle1 = new PongPaddle(50, HEIGHT / 2, PADDLE_WIDTH, PADDLE_HEIGHT, 1);
+        pongPaddle2 = new PongPaddle(WIDTH - PADDLE_WIDTH - 50, HEIGHT / 2, PADDLE_WIDTH, PADDLE_HEIGHT, 2);
     }
 
     public void draw(GraphicsContext gc) {
@@ -74,7 +74,7 @@ public class PongGame {
         gc.strokeText("Click to Start", WIDTH / 2, HEIGHT / 2);
 
         gc.setStroke(Color.WHITE);
-        gc.setLineWidth(10);
+        gc.setLineWidth(5);
         gc.strokeLine(WIDTH/2,0,WIDTH/2,HEIGHT);
 
 

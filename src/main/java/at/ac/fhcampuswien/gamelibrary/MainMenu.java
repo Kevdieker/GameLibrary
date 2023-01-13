@@ -21,7 +21,7 @@ public class MainMenu extends Application {
         stage.setResizable(false);
         stage.setX(0);
         stage.setY(0);
-        stage.setFullScreen(true);
+        stage.setFullScreen(false);
         stage.setScene(scene);
         stage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
         stage.show();
