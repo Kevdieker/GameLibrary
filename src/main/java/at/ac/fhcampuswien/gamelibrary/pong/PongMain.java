@@ -29,7 +29,6 @@ public class PongMain extends Application {
         stage.setY(0);
         stage.setScene(scene);
         stage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
-        stage.setFullScreen(true);
         stage.show();
 
 
