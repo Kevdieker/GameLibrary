@@ -18,7 +18,6 @@ import java.util.Objects;
 public class NormalAI {
     private Stage stage;
     private Scene scene;
-    private Parent root;
 
     private static final String Rock = "rock";
     private static final String Paper = "paper";
@@ -40,7 +39,6 @@ public class NormalAI {
     private Button ScissorsBtn;
     @FXML
     private Label result;
-
     private Image image;
 
     public void switchToMenu(ActionEvent e) throws IOException {
