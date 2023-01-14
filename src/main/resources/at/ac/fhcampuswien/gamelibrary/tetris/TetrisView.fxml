@@ -7,8 +7,8 @@
 
 <AnchorPane prefHeight="576.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.ac.fhcampuswien.gamelibrary.tetris.TetrisGame">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="535.0" layoutX="382.0" layoutY="20.0" stroke="BLACK" strokeType="INSIDE" width="260.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3ae1a7" height="535.0" layoutX="382.0" layoutY="20.0" stroke="BLACK" strokeType="INSIDE" width="260.0" />
       <Pane fx:id="group" layoutX="387.0" layoutY="25.0" prefHeight="525.0" prefWidth="250.0" style="-fx-background-color: WHITE;" />
-      <Button layoutX="68.0" layoutY="59.0" mnemonicParsing="false" onAction="#switchToMainMenu" prefHeight="92.0" prefWidth="160.0" text="Back" />
+      <Button layoutX="43.0" layoutY="33.0" mnemonicParsing="false" onAction="#switchToMainMenu" prefHeight="60.0" prefWidth="60.0" text="Back" />
    </children>
 </AnchorPane>
