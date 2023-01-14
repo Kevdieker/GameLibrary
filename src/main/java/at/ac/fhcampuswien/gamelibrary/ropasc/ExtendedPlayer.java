@@ -121,6 +121,7 @@ public class ExtendedPlayer {
         checkIfWon();
     }
 
+
     @FXML
     private void player2Turn(ActionEvent ev) {
         switch (((Button) ev.getSource()).getId()) {

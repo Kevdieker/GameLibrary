@@ -101,6 +101,7 @@ public class NormalPlayers {
         checkIfWon();
     }
 
+
     public void player1Win() {
         result.setText("Player 1 wins!");
         player1Score.setText(String.valueOf(Integer.parseInt(player1Score.getText()) + 1));
