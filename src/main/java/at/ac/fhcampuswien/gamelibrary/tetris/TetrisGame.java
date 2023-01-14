@@ -94,10 +94,10 @@ public class TetrisGame {
                             group.getChildren().add(over);
                             game = false;
                         }
-                        // Exit
+                       /* // Exit
                         if (top == 15) {
                             System.exit(0);
-                        }
+                        }*/
 
                         if (game) {
                             MoveDown(object);

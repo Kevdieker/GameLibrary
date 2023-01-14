@@ -1,11 +1,13 @@
 package at.ac.fhcampuswien.gamelibrary.memory;
 
+import at.ac.fhcampuswien.gamelibrary.MainSceneSwitch;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -128,5 +130,8 @@ public class MemoryController implements Initializable {
 
         Collections.shuffle(numbers);
 
+    }
+    public void switchToMainMenu(ActionEvent e) throws IOException {
+        new MainSceneSwitch().switchToMainMenu(e);
     }
 }

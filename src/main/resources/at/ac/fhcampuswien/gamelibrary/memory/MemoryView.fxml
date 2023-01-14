@@ -6,10 +6,9 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.ac.fhcampuswien.gamelibrary.memory.MemoryController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.ac.fhcampuswien.gamelibrary.memory.MemoryController">
    <children>
-      <GridPane layoutX="56.0" layoutY="86.0" prefHeight="400.0" prefWidth="400.0">
+      <GridPane layoutX="312.0" layoutY="88.0" prefHeight="400.0" prefWidth="400.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -41,6 +40,7 @@
             <Button fx:id="btn0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#buttonClicked" />
          </children>
       </GridPane>
-      <Button layoutX="155.0" layoutY="32.0" mnemonicParsing="false" onAction="#restart" prefHeight="25.0" prefWidth="204.0" text="Restart" />
+      <Button layoutX="410.0" layoutY="40.0" mnemonicParsing="false" onAction="#restart" prefHeight="25.0" prefWidth="204.0" text="Restart" />
+      <Button layoutX="99.0" layoutY="40.0" mnemonicParsing="false" onAction="#switchToMainMenu" prefHeight="60.0" prefWidth="60.0" text="Back" />
    </children>
 </AnchorPane>
