@@ -69,35 +69,35 @@ public class ExtendedAI {
         switch (((Button) event.getSource()).getId()) {
             case "paperBtn":
                 playerChoice = Paper;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\paper.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/paper.png");
                 break;
             case "rockBtn":
                 playerChoice = Rock;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\rock.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/rock.png");
                 break;
             case "scissorsBtn":
                 playerChoice = Scissors;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\scissors.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/scissors.png");
                 break;
             case "spockBtn":
                 playerChoice = Spock;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\spock.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/spock.png");
                 break;
             case "lizardBtn":
                 playerChoice = Lizard;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\lizard.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/lizard.png");
                 break;
             case "fireBtn":
                 playerChoice = Fire;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\fire.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/fire.png");
                 break;
             case "airBtn":
                 playerChoice = Air;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\air.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/air.png");
                 break;
             case "waterBtn":
                 playerChoice = Water;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\water.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/water.png");
                 break;
         }
         player.setImage(image);
@@ -110,35 +110,35 @@ public class ExtendedAI {
         switch (r) {
             case 0:
                 computerChoice = Paper;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\paper.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/paper.png");
                 break;
             case 1:
                 computerChoice = Rock;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\rock.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/rock.png");
                 break;
             case 2:
                 computerChoice = Scissors;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\scissors.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/scissors.png");
                 break;
             case 3:
                 computerChoice = Spock;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\spock.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/spock.png");
                 break;
             case 4:
                 computerChoice = Lizard;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\lizard.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/lizard.png");
                 break;
             case 5:
                 computerChoice = Fire;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\fire.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/fire.png");
                 break;
             case 6:
                 computerChoice = Air;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\air.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/air.png");
                 break;
             case 7:
                 computerChoice = Water;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\water.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/water.png");
                 break;
         }
         ai.setImage(image);

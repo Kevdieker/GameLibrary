@@ -86,35 +86,35 @@ public class ExtendedPlayer {
         switch (((Button) event.getSource()).getId()) {
             case "paper1Btn":
                 player1Choice = Paper;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\paper.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/paper.png");
                 break;
             case "rock1Btn":
                 player1Choice = Rock;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\rock.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/rock.png");
                 break;
             case "scissor1Btn":
                 player1Choice = Scissors;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\scissors.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/scissors.png");
                 break;
             case "spock1Btn":
                 player1Choice = Spock;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\spock.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/spock.png");
                 break;
             case "lizard1Btn":
                 player1Choice = Lizard;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\lizard.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/lizard.png");
                 break;
             case "fire1Btn":
                 player1Choice = Fire;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\fire.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/fire.png");
                 break;
             case "air1Btn":
                 player1Choice = Air;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\air.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/air.png");
                 break;
             case "water1Btn":
                 player1Choice = Water;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\water.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/water.png");
                 break;
         }
         player1.setImage(image);
@@ -126,35 +126,35 @@ public class ExtendedPlayer {
         switch (((Button) ev.getSource()).getId()) {
             case "paper2Btn":
                 player2Choice = Paper;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\paper.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/paper.png");
                 break;
             case "rock2Btn":
                 player2Choice = Rock;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\rock.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/rock.png");
                 break;
             case "scissor2Btn":
                 player2Choice = Scissors;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\scissors.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/scissors.png");
                 break;
             case "spock2Btn":
                 player2Choice = Spock;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\spock.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/spock.png");
                 break;
             case "lizard2Btn":
                 player2Choice = Lizard;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\lizard.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/lizard.png");
                 break;
             case "fire2Btn":
                 player2Choice = Fire;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\fire.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/fire.png");
                 break;
             case "air2Btn":
                 player2Choice = Air;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\air.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/air.png");
                 break;
             case "water2Btn":
                 player2Choice = Water;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\water.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/water.png");
                 break;
         }
         player2.setImage(image);

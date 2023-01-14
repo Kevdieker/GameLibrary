@@ -54,15 +54,15 @@ public class NormalAI {
         String playerChoice = null;
         switch (((Button) event.getSource()).getId()) {
             case "PaperBtn":
-                image = new Image("C:\\Users\\User\\IdeaProjects\\RockPaperScissors\\src\\main\\resources\\com\\example\\rockpaperscissors\\paper.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/paper.png");
                 playerChoice = Paper;
                 break;
             case "RockBtn":
-                image = new Image("C:\\Users\\User\\IdeaProjects\\RockPaperScissors\\src\\main\\resources\\com\\example\\rockpaperscissors\\rock.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/rock.png");
                 playerChoice = Rock;
                 break;
             case "ScissorsBtn":
-                image = new Image("C:\\Users\\User\\IdeaProjects\\RockPaperScissors\\src\\main\\resources\\com\\example\\rockpaperscissors\\scissors.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/scissors.png");
                 playerChoice = Scissors;
                 break;
         }
@@ -75,15 +75,15 @@ public class NormalAI {
         int r = (int) (Math.random() * 3);
         switch (r) {
             case 0:
-                image = new Image("C:\\Users\\User\\IdeaProjects\\RockPaperScissors\\src\\main\\resources\\com\\example\\rockpaperscissors\\paper.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/paper.png");
                 computerChoice = Paper;
                 break;
             case 1:
-                image = new Image("C:\\Users\\User\\IdeaProjects\\RockPaperScissors\\src\\main\\resources\\com\\example\\rockpaperscissors\\rock.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/rock.png");
                 computerChoice = Rock;
                 break;
             case 2:
-                image = new Image("C:\\Users\\User\\IdeaProjects\\RockPaperScissors\\src\\main\\resources\\com\\example\\rockpaperscissors\\scissors.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/scissors.png");
                 computerChoice = Scissors;
                 break;
         }
