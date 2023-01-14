@@ -65,7 +65,7 @@ public class NormalPlayers {
 
     @FXML
     private void player1Turn(ActionEvent event) {
-        tool.setVisible(false);
+        tool.setVisible(true);
         switch (((Button) event.getSource()).getId()) {
             case "paperBtn1":
                 player1Choice = Paper;
@@ -86,7 +86,7 @@ public class NormalPlayers {
 
     @FXML
     private void player2Turn(ActionEvent ev) {
-        tool.setVisible(true);
+        tool.setVisible(false);
         switch (((Button) ev.getSource()).getId()) {
             case "paperBtn2":
                 player2Choice = Paper;
@@ -115,7 +115,6 @@ public class NormalPlayers {
         result.setText("Player 2 wins!");
         player2Score.setText(String.valueOf(Integer.parseInt(player2Score.getText()) + 1));
     }
-
 
     private void checkIfWon() {
         if (player1Choice.equals(player2Choice)) {

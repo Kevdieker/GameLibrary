@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -73,6 +74,9 @@ public class ExtendedPlayer {
     private String player2Choice;
     private Image image;
 
+    @FXML
+    Rectangle tool;
+
     public void switchToMenu(ActionEvent e) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("menu.fxml")));
         stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -83,6 +87,7 @@ public class ExtendedPlayer {
 
     @FXML
     private void player1Turn(ActionEvent event) {
+        tool.setVisible(true);
         switch (((Button) event.getSource()).getId()) {
             case "paper1Btn":
                 player1Choice = Paper;
@@ -123,6 +128,7 @@ public class ExtendedPlayer {
 
     @FXML
     private void player2Turn(ActionEvent ev) {
+        tool.setVisible(false);
         switch (((Button) ev.getSource()).getId()) {
             case "paper2Btn":
                 player2Choice = Paper;
