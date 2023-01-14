@@ -52,6 +52,8 @@ public class NormalPlayers {
     @FXML
     private Button scissorBtn2;
     private Image image;
+    @FXML
+    Rectangle tool;
 
     public void switchToMenu(ActionEvent e) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("menu.fxml")));
@@ -63,6 +65,7 @@ public class NormalPlayers {
 
     @FXML
     private void player1Turn(ActionEvent event) {
+        tool.setVisible(false);
         switch (((Button) event.getSource()).getId()) {
             case "paperBtn1":
                 player1Choice = Paper;
@@ -83,6 +86,7 @@ public class NormalPlayers {
 
     @FXML
     private void player2Turn(ActionEvent ev) {
+        tool.setVisible(true);
         switch (((Button) ev.getSource()).getId()) {
             case "paperBtn2":
                 player2Choice = Paper;
