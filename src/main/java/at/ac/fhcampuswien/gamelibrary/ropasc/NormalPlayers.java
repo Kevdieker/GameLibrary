@@ -1,6 +1,7 @@
 package at.ac.fhcampuswien.gamelibrary.ropasc;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -8,6 +9,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -30,9 +34,9 @@ public class NormalPlayers {
     @FXML
     private Button paperBtn2;
     @FXML
-    private Label player1;
+    private ImageView player1;
     @FXML
-    private Label player2;
+    private ImageView player2;
     @FXML
     private Label result;
     @FXML
@@ -43,6 +47,7 @@ public class NormalPlayers {
     private Button scissorBtn1;
     @FXML
     private Button scissorBtn2;
+    private Image image;
 
     public void switchToMenu(ActionEvent e) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("menu.fxml")));
@@ -53,21 +58,27 @@ public class NormalPlayers {
     }
 
     @FXML
+    public void initialize() {
+
+    }
+
+    @FXML
     private void player1Turn(ActionEvent event) {
-        switch (((Button) event.getSource()).getId()) {
+        switch(((Button) event.getSource()).getId()){
             case "paperBtn1":
                 player1Choice = Paper;
-                player1.setText("Paper");
+                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\paper.png");
                 break;
             case "rockBtn1":
                 player1Choice = Rock;
-                player1.setText("Rock");
+                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\rock.png");
                 break;
             case "scissorBtn1":
                 player1Choice = Scissors;
-                player1.setText("Scissors");
+                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\scissors.png");
                 break;
         }
+        player1.setImage(image);
         checkIfWon();
     }
 
@@ -76,28 +87,29 @@ public class NormalPlayers {
         switch (((Button) ev.getSource()).getId()) {
             case "paperBtn2":
                 player2Choice = Paper;
-                player2.setText("Paper");
+                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\paper.png");
                 break;
             case "rockBtn2":
                 player2Choice = Rock;
-                player2.setText("Rock");
+                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\rock.png");
                 break;
             case "scissorBtn2":
                 player2Choice = Scissors;
-                player2.setText("Scissors");
+                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\scissors.png");
                 break;
         }
+        player2.setImage(image);
         checkIfWon();
     }
 
-    public void player1Win(){
+    public void player1Win() {
         result.setText("Player 1 wins!");
-        player1Score.setText(String.valueOf(Integer.parseInt(player1Score.getText()) +1));
+        player1Score.setText(String.valueOf(Integer.parseInt(player1Score.getText()) + 1));
     }
 
-    public void player2Win(){
+    public void player2Win() {
         result.setText("Player 2 wins!");
-        player2Score.setText(String.valueOf(Integer.parseInt(player2Score.getText()) +1));
+        player2Score.setText(String.valueOf(Integer.parseInt(player2Score.getText()) + 1));
     }
 
     private void checkIfWon() {
@@ -124,40 +136,9 @@ public class NormalPlayers {
             }
         }
     }
+
 }
 
-    /*
-    private void scoreplayer2 () {
-        if (player2Choice.equals(player1Choice)) {
-            result.setText("It's a tie");
-        }
-        if (player2Choice.equals(Paper)) {
-            if (player1Choice.equals(Rock)) {
-                result.setText("Player 2 wins");
-                player2Score.setText(String.valueOf(Integer.parseInt(player2Score.getText()) +1));
-            } else if (player1Choice.equals(Scissors)) {
-                result.setText("Player 1 wins");
-                player1Score.setText(String.valueOf(Integer.parseInt(player1Score.getText()) +1));
-            }
-        } else if (player2Choice.equals(Rock)) {
-            if (player1Choice.equals(Paper)) {
-                result.setText("Player 1 wins");
-                player1Score.setText(String.valueOf(Integer.parseInt(player1Score.getText()) +1));
-            } else if (player1Choice.equals(Scissors)) {
-                result.setText("Player 2 wins");
-                player2Score.setText(String.valueOf(Integer.parseInt(player2Score.getText()) +1));
-            }
-        } else if (player2Choice.equals(Scissors)) {
-            if (player1Choice.equals(Rock)) {
-                result.setText("Player 1 wins");
-                player1Score.setText(String.valueOf(Integer.parseInt(player1Score.getText()) +1));
-            } else if (player1Choice.equals(Paper)) {
-                result.setText("Player 2 wins");
-                player2Score.setText(String.valueOf(Integer.parseInt(player2Score.getText()) +1));
-            }
-        }
-    }
-     */
 
 
 

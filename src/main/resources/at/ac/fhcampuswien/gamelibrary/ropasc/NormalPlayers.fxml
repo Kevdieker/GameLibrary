@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="576.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.ac.fhcampuswien.gamelibrary.ropasc.NormalPlayers">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#000045" height="576.0" stroke="BLACK" strokeType="INSIDE" width="1024.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#000045" height="576.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1024.0" />
       <Label layoutX="278.0" layoutY="42.0" text="Player 1" textFill="WHITE">
          <font>
             <Font name="System Bold" size="23.0" />
@@ -78,15 +78,7 @@
       <Button fx:id="rockBtn2" layoutX="849.0" layoutY="134.0" mnemonicParsing="false" onAction="#player2Turn" opacity="0.0" prefHeight="110.0" prefWidth="110.0" text="Rock" />
       <Button fx:id="paperBtn2" layoutX="849.0" layoutY="266.0" mnemonicParsing="false" onAction="#player2Turn" opacity="0.0" prefHeight="110.0" prefWidth="110.0" text="Paper" />
       <Button fx:id="scissorBtn2" layoutX="849.0" layoutY="406.0" mnemonicParsing="false" onAction="#player2Turn" opacity="0.0" prefHeight="110.0" prefWidth="110.0" text="Scissors" />
-      <Label fx:id="player1" alignment="CENTER" layoutX="250.0" layoutY="217.0" prefHeight="141.0" prefWidth="141.0" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <Label fx:id="player2" alignment="CENTER" layoutX="659.0" layoutY="213.0" prefHeight="141.0" prefWidth="141.0" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
+      <ImageView fx:id="player1" fitHeight="141.0" fitWidth="141.0" layoutX="250.0" layoutY="217.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="player2" fitHeight="141.0" fitWidth="141.0" layoutX="660.0" layoutY="213.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

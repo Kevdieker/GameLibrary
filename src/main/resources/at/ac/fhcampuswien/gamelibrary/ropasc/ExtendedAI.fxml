@@ -77,16 +77,6 @@
             <Font name="System Bold" size="17.0" />
          </font>
       </Button>
-      <Label fx:id="player" alignment="CENTER" layoutX="269.0" layoutY="134.0" prefHeight="141.0" prefWidth="141.0" textFill="WHITE">
-         <font>
-            <Font size="21.0" />
-         </font>
-      </Label>
-      <Label fx:id="ai" alignment="CENTER" layoutX="640.0" layoutY="147.0" prefHeight="141.0" prefWidth="141.0" textFill="WHITE">
-         <font>
-            <Font size="21.0" />
-         </font>
-      </Label>
       <Label fx:id="result" alignment="CENTER" layoutX="429.0" layoutY="181.0" prefHeight="47.0" prefWidth="165.0" textFill="WHITE">
          <font>
             <Font size="21.0" />
@@ -132,5 +122,7 @@
             <Image url="@water.png" />
          </image>
       </ImageView>
+      <ImageView fx:id="player" fitHeight="141.0" fitWidth="141.0" layoutX="269.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="ai" fitHeight="141.0" fitWidth="141.0" layoutX="640.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
