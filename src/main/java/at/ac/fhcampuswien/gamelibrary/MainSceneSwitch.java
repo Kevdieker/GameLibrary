@@ -39,6 +39,18 @@ public class MainSceneSwitch {
         }
     }
 
+    public void switchToMainMenu(ActionEvent e) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenu.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+
+        stage.setResizable(false);
+        stage.centerOnScreen();
+        stage.setScene(scene);
+        stage.show();
+    }
+
     public void switchToPong(ActionEvent e) throws IOException {
         loader = new FXMLLoader(getClass().getResource("pong/PongView.fxml"));
         root = loader.load();

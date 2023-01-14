@@ -1,5 +1,6 @@
 package at.ac.fhcampuswien.gamelibrary.pong;
 
+import at.ac.fhcampuswien.gamelibrary.MainSceneSwitch;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
@@ -194,14 +195,6 @@ public class PongGame {
         }
     }
     public void switchToMainMenu(ActionEvent e) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenu.fxml"));
-        Parent root = loader.load();
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-
-        stage.setResizable(false);
-        stage.centerOnScreen();
-        stage.setScene(scene);
-        stage.show();
+        new MainSceneSwitch().switchToMainMenu(e);
     }
 }

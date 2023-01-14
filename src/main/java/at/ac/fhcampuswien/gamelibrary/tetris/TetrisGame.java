@@ -1,6 +1,7 @@
 package at.ac.fhcampuswien.gamelibrary.tetris;
 
 
+import at.ac.fhcampuswien.gamelibrary.MainSceneSwitch;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -562,19 +563,8 @@ public class TetrisGame {
     }
 
     public void switchToMainMenu(ActionEvent e) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("./MainMenu.fxml"));
-        Parent root = loader.load();
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-
-        stage.setResizable(false);
-        stage.centerOnScreen();
-        stage.setScene(scene);
-        stage.show();
+        new MainSceneSwitch().switchToMainMenu(e);
     }
-
-
-
 
 }
 
