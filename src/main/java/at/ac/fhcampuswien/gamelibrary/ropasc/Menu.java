@@ -1,5 +1,6 @@
 package at.ac.fhcampuswien.gamelibrary.ropasc;
 
+import at.ac.fhcampuswien.gamelibrary.MainSceneSwitch;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -49,4 +50,7 @@ public class Menu {
         stage.show();
     }
 
+    public void switchToMainMenu(ActionEvent e) throws IOException {
+        new MainSceneSwitch().switchToMainMenu(e);
+    }
 }
