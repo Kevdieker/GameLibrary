@@ -105,6 +105,7 @@ public class NormalPlayers {
         checkIfWon();
     }
 
+
     public void player1Win() {
         result.setText("Player 1 wins!");
         player1Score.setText(String.valueOf(Integer.parseInt(player1Score.getText()) + 1));
@@ -114,6 +115,7 @@ public class NormalPlayers {
         result.setText("Player 2 wins!");
         player2Score.setText(String.valueOf(Integer.parseInt(player2Score.getText()) + 1));
     }
+
 
     private void checkIfWon() {
         if (player1Choice.equals(player2Choice)) {

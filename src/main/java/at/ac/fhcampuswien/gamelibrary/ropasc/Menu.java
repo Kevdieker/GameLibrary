@@ -41,7 +41,6 @@ public class Menu {
         stage.show();
     }
 
-
     public void switchToExtededPlayer(ActionEvent e) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ExtendedPlayer.fxml")));
         stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
