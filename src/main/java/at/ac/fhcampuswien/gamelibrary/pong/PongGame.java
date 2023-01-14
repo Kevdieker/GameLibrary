@@ -192,6 +192,7 @@ public class PongGame {
         public void handle(KeyEvent e) {
             pongPaddle1.keyReleased(e);
             pongPaddle2.keyReleased(e);
+
         }
     }
     public void switchToMainMenu(ActionEvent e) throws IOException {
