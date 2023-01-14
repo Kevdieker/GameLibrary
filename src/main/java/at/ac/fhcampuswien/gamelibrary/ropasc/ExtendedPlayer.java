@@ -92,7 +92,7 @@ public class ExtendedPlayer {
                 player1Choice = Rock;
                 image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\rock.png");
                 break;
-            case "scissors1Btn":
+            case "scissor1Btn":
                 player1Choice = Scissors;
                 image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\scissors.png");
                 break;
@@ -132,7 +132,7 @@ public class ExtendedPlayer {
                 player2Choice = Rock;
                 image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\rock.png");
                 break;
-            case "scissors2Btn":
+            case "scissor2Btn":
                 player2Choice = Scissors;
                 image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\scissors.png");
                 break;
@@ -307,67 +307,5 @@ public class ExtendedPlayer {
     }
 }
 
-    /*
-    private void scoreplayer1() {
-        if (player1Choice.equals(player2Choice)) {
-            result.setText("It's a tie");
-        }
-        if (player1Choice.equals(Paper)) {
-            if (player2Choice.equals(Rock)) {
-                result.setText("Player 1 wins");
-                player1Score.setText(String.valueOf(Integer.parseInt(player1Score.getText()) + 1));
-            } else if (player2Choice.equals(Scissors)) {
-                result.setText("Player 2 wins");
-                player2Score.setText(String.valueOf(Integer.parseInt(player2Score.getText()) + 1));
-            }
-        } else if (player1Choice.equals(Rock)) {
-            if (player2Choice.equals(Paper)) {
-                result.setText("Player 2 wins");
-                player2Score.setText(String.valueOf(Integer.parseInt(player2Score.getText()) + 1));
-            } else if (player2Choice.equals(Scissors)) {
-                result.setText("Player 1 wins");
-                player1Score.setText(String.valueOf(Integer.parseInt(player1Score.getText()) + 1));
-            }
-        } else if (player1Choice.equals(Scissors)) {
-            if (player2Choice.equals(Rock)) {
-                result.setText("Player 2 wins");
-                player2Score.setText(String.valueOf(Integer.parseInt(player2Score.getText()) + 1));
-            } else if (player2Choice.equals(Paper)) {
-                result.setText("Player 1 wins");
-                player1Score.setText(String.valueOf(Integer.parseInt(player1Score.getText()) + 1));
-            }
-        }
-    }
 
-    private void scoreplayer2() {
-        if (player2Choice.equals(player1Choice)) {
-            result.setText("It's a tie");
-        }
-        if (player2Choice.equals(Paper)) {
-            if (player1Choice.equals(Rock)) {
-                result.setText("Player 2 wins");
-                player2Score.setText(String.valueOf(Integer.parseInt(player2Score.getText()) + 1));
-            } else if (player1Choice.equals(Scissors)) {
-                result.setText("Player 1 wins");
-                player1Score.setText(String.valueOf(Integer.parseInt(player1Score.getText()) + 1));
-            }
-        } else if (player2Choice.equals(Rock)) {
-            if (player1Choice.equals(Paper)) {
-                result.setText("Player 1 wins");
-                player1Score.setText(String.valueOf(Integer.parseInt(player1Score.getText()) + 1));
-            } else if (player1Choice.equals(Scissors)) {
-                result.setText("Player 2 wins");
-                player2Score.setText(String.valueOf(Integer.parseInt(player2Score.getText()) + 1));
-            }
-        } else if (player2Choice.equals(Scissors)) {
-            if (player1Choice.equals(Rock)) {
-                result.setText("Player 1 wins");
-                player1Score.setText(String.valueOf(Integer.parseInt(player1Score.getText()) + 1));
-            } else if (player1Choice.equals(Paper)) {
-                result.setText("Player 2 wins");
-                player2Score.setText(String.valueOf(Integer.parseInt(player2Score.getText()) + 1));
-            }
-        }
-    }
-     */
 

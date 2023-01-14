@@ -56,10 +56,7 @@
             <Font name="System Bold" size="26.0" />
          </font>
       </Label>
-      <Button layoutX="20.0" layoutY="530.0" mnemonicParsing="false" onAction="#switchToMenu" text="Back">
-         <font>
-            <Font size="15.0" />
-         </font></Button>
+      <Button layoutX="14.0" layoutY="536.0" mnemonicParsing="false" onAction="#switchToMenu" text="Back" />
       <ImageView disable="true" fitHeight="110.0" fitWidth="110.0" layoutX="188.0" layoutY="359.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@rock.png" />

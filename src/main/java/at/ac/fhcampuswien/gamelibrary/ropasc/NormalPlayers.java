@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -15,7 +16,9 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.Objects;
+import java.util.ResourceBundle;
 
 public class NormalPlayers {
     private Stage stage;
@@ -58,13 +61,8 @@ public class NormalPlayers {
     }
 
     @FXML
-    public void initialize() {
-
-    }
-
-    @FXML
     private void player1Turn(ActionEvent event) {
-        switch(((Button) event.getSource()).getId()){
+        switch (((Button) event.getSource()).getId()) {
             case "paperBtn1":
                 player1Choice = Paper;
                 image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\paper.png");
@@ -136,6 +134,7 @@ public class NormalPlayers {
             }
         }
     }
+
 
 }
 

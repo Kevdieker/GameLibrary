@@ -49,5 +49,4 @@ public class Menu {
         stage.show();
     }
 
-
 }
