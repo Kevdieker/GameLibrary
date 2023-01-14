@@ -3,7 +3,6 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -12,58 +11,100 @@
 
 <AnchorPane prefHeight="576.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.ac.fhcampuswien.gamelibrary.MainSceneSwitch">
    <children>
-      <ImageView fitHeight="576.0" fitWidth="1024.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="584.0" fitWidth="1024.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Titelloses 55_20230113183822.png" />
+            <Image url="@mainmenu%20pictures/Titelloses%2056_20230114212259.png" />
          </image>
       </ImageView>
-      <Button layoutX="33.0" layoutY="124.0" mnemonicParsing="false" onAction="#switchToPong" opacity="0.0" prefHeight="130.0" prefWidth="218.0" text="Pong">
+      <Button layoutX="246.0" layoutY="335.0" mnemonicParsing="false" onAction="#switchToTetris" opacity="0.0" prefHeight="118.0" prefWidth="218.0" text="Tetris">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Button layoutX="277.0" layoutY="123.0" mnemonicParsing="false" onAction="#switchToRoPaSc" opacity="0.0" prefHeight="131.0" prefWidth="234.0" text="Rock, Paper and Scissors">
+      <Button layoutX="102.0" layoutY="59.0" mnemonicParsing="false" onAction="#switchToPong" opacity="0.0" prefHeight="140.0" prefWidth="218.0" text="Pong">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Button layoutX="542.0" layoutY="123.0" mnemonicParsing="false" onAction="#switchToMemory" opacity="0.0" prefHeight="131.0" prefWidth="225.0" text="Memory">
+      <Button layoutX="705.0" layoutY="68.0" mnemonicParsing="false" onAction="#switchToMemory" opacity="0.0" prefHeight="131.0" prefWidth="225.0" text="Memory">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <TextField layoutX="800.0" layoutY="79.0" prefHeight="407.0" prefWidth="193.0" />
-      <Button layoutX="33.0" layoutY="368.0" mnemonicParsing="false" onAction="#switchToTetris" opacity="0.0" prefHeight="118.0" prefWidth="218.0" text="Tetris">
+      <Button layoutX="405.0" layoutY="68.0" mnemonicParsing="false" onAction="#switchToRoPaSc" opacity="0.0" prefHeight="131.0" prefWidth="206.0" text="Rock, Paper and Scissors">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Button layoutX="291.0" layoutY="342.0" mnemonicParsing="false" prefHeight="144.0" prefWidth="205.0" text="PacMan">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" disable="true" height="150.0" layoutX="236.0" layoutY="306.0" stroke="BLACK" strokeType="INSIDE" width="225.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" disable="true" height="140.0" layoutX="712.0" layoutY="60.0" stroke="BLACK" strokeType="INSIDE" width="212.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" disable="true" height="140.0" layoutX="406.0" layoutY="60.0" stroke="BLACK" strokeType="INSIDE" width="212.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" disable="true" height="140.0" layoutX="105.0" layoutY="62.0" stroke="BLACK" strokeType="INSIDE" width="212.0" />
+      <Button layoutX="553.0" layoutY="303.0" mnemonicParsing="false" onAction="#switchToTetris" prefHeight="150.0" prefWidth="218.0" text="PacMan">
          <cursor>
             <Cursor fx:constant="HAND" />
-         </cursor></Button>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="167.0" layoutX="555.0" layoutY="321.0" stroke="BLACK" strokeType="INSIDE" width="205.0" />
-      <Label alignment="CENTER" layoutX="600.0" layoutY="371.0" prefHeight="75.0" prefWidth="119.0" text="Coming Soon" />
-      <Label alignment="CENTER" layoutX="805.0" layoutY="46.0" prefHeight="27.0" prefWidth="180.0" text="HIGHSCORE" textFill="WHITE">
+         </cursor>
+      </Button>
+      <ImageView disable="true" fitHeight="130.0" fitWidth="198.0" layoutX="112.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@mainmenu%20pictures/Picsart_23-01-14_21-36-55-567.jpg" />
+         </image>
+      </ImageView>
+      <ImageView disable="true" fitHeight="131.0" fitWidth="198.0" layoutX="414.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@mainmenu%20pictures/Picsart_23-01-14_21-35-31-752.jpg" />
+         </image>
+      </ImageView>
+      <ImageView disable="true" fitHeight="150.0" fitWidth="200.0" layoutX="718.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@mainmenu%20pictures/Picsart_23-01-14_21-32-54-900.jpg" />
+         </image>
+      </ImageView>
+      <ImageView disable="true" fitHeight="150.0" fitWidth="212.0" layoutX="243.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@mainmenu%20pictures/Picsart_23-01-14_21-37-34-330.jpg" />
+         </image>
+      </ImageView>
+      <ImageView disable="true" fitHeight="57.0" fitWidth="119.0" layoutX="151.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@mainmenu%20pictures/Titelloses%2057_20230114221443.png" />
+         </image>
+      </ImageView>
+      <ImageView disable="true" fitHeight="57.0" fitWidth="134.0" layoutX="452.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@mainmenu%20pictures/Titelloses%2057_20230114221443.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="190.0" layoutY="228.0" text="Pong">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <ImageView disable="true" fitHeight="150.0" fitWidth="218.0" layoutX="33.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView disable="true" fitHeight="57.0" fitWidth="134.0" layoutX="758.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Screenshot 13.01.2023 19_18_32.png" />
+            <Image url="@mainmenu%20pictures/Titelloses%2057_20230114221443.png" />
          </image>
       </ImageView>
-      <ImageView disable="true" fitHeight="137.0" fitWidth="237.0" layoutX="277.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+      <Label alignment="CENTER" layoutX="466.0" layoutY="218.0" prefHeight="20.0" prefWidth="91.0" text="Rock, Paper">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="466.0" layoutY="240.0" prefHeight="20.0" prefWidth="91.0" text="&amp; Scissors">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="784.0" layoutY="227.0" text="Memory">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <ImageView disable="true" fitHeight="57.0" fitWidth="119.0" layoutX="289.0" layoutY="471.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@RPS.png" />
+            <Image url="@mainmenu%20pictures/Titelloses%2057_20230114221443.png" />
          </image>
       </ImageView>
-      <ImageView disable="true" fitHeight="144.0" fitWidth="225.0" layoutX="542.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Memory Game 13.01.2023 22_10_58.png" />
-         </image>
-      </ImageView>
-      <ImageView disable="true" fitHeight="118.0" fitWidth="218.0" layoutX="33.0" layoutY="367.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Tetris.png" />
-         </image>
-      </ImageView>
+      <Label layoutX="326.0" layoutY="486.0" text="Tetris">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -49,6 +49,14 @@ public class Menu {
         stage.show();
     }
 
+    public void openNAIExplainer (ActionEvent e) throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("NormalExplainer.fxml")));
+        stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
+        scene = new Scene (root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
     public void switchToMainMenu(ActionEvent e) throws IOException {
         new MainSceneSwitch().switchToMainMenu(e);
     }

@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
@@ -29,12 +30,12 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Label layoutX="151.0" layoutY="185.0" text="Normal Rock, Paper &amp; Scissors" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="159.0" layoutY="185.0" text="Normal Rock, Paper &amp; Scissors" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="620.0" layoutY="185.0" text="Extended Rock, Paper &amp; Scissors" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="620.0" layoutY="185.0" text="Extended Rock, Paper &amp; Scissors" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
@@ -44,6 +45,13 @@
             <Font name="System Bold" size="32.0" />
          </font>
       </Label>
-      <Button layoutX="60.0" layoutY="60.0" mnemonicParsing="false" onAction="#switchToMainMenu" prefHeight="60.0" prefWidth="60.0" text="Back" />
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToMainMenu" prefHeight="39.0" prefWidth="60.0" text="Back" />
+      <Button layoutX="403.0" layoutY="207.0" mnemonicParsing="false" onAction="#openNAIExplainer" opacity="0.0" prefHeight="25.0" prefWidth="28.0" text="NAIExplain" />
+      <Circle disable="true" fill="#ff3d3d" layoutX="417.0" layoutY="220.0" radius="14.0" stroke="#ff3d3d" strokeType="INSIDE" />
+      <Label disable="true" layoutX="414.0" layoutY="205.0" text="i">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
