@@ -3,10 +3,14 @@ package at.ac.fhcampuswien.gamelibrary.tetris;
 
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
@@ -14,8 +18,10 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Timer;
@@ -43,6 +49,7 @@ public class TetrisGame {
         for (int[] a : MESH) {
             Arrays.fill(a, 0);
         }
+
 
 
         Line line = new Line(XMAX, 0, XMAX, YMAX);
@@ -553,5 +560,21 @@ public class TetrisGame {
             yb = rect.getY() + y * MOVE < YMAX;
         return xb && yb && MESH[((int) rect.getX() / SIZE) + x][((int) rect.getY() / SIZE) - y] == 0;
     }
+
+    public void switchToMainMenu(ActionEvent e) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("./MainMenu.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+
+        stage.setResizable(false);
+        stage.centerOnScreen();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+
+
+
 }
 

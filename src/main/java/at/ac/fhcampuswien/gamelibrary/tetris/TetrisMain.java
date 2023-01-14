@@ -1,10 +1,13 @@
 package at.ac.fhcampuswien.gamelibrary.tetris;
 
 import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 import java.io.IOException;
 
@@ -29,6 +32,13 @@ public class TetrisMain extends Application {
         stage.setScene(scene);
         stage.setTitle("T E T R I S");
         stage.show();
+        stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            @Override
+            public void handle(WindowEvent t) {
+                Platform.exit();
+                System.exit(0);
+            }
+        });
 
     }
     public static void main(String[] args) {

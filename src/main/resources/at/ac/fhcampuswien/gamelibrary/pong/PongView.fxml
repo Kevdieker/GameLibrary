@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 
-
 <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="1024.0" style="-fx-background-color: BLACK;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.ac.fhcampuswien.gamelibrary.pong.PongGame">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="470.0" layoutX="102.0" layoutY="53.0" stroke="BLACK" strokeType="OUTSIDE" width="820.0" />
@@ -31,5 +30,6 @@
             <Cursor fx:constant="DEFAULT" />
          </cursor>
       </ImageView>
+      <Button layoutX="22.0" layoutY="22.0" mnemonicParsing="false" onAction="#switchToMainMenu" prefHeight="60.0" prefWidth="60.0" text="Back" />
    </children>
 </AnchorPane>

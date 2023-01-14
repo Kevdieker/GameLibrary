@@ -19,11 +19,8 @@ public class MainMenu extends Application {
         Parent root = loader.load();
         Scene scene = new Scene(root);
         stage.setResizable(false);
-        stage.setX(0);
-        stage.setY(0);
-        stage.setFullScreen(false);
+        stage.centerOnScreen();
         stage.setScene(scene);
-        stage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
         stage.show();
 
     }
