@@ -26,6 +26,7 @@ public class NormalPlayers {
     private static final String Rock = "rock";
     private static final String Paper = "paper";
     private static final String Scissors = "scissors";
+
     private String player1Choice;
     private String player2Choice;
     @FXML
@@ -61,24 +62,19 @@ public class NormalPlayers {
     }
 
     @FXML
-    private void initialize(){
-
-    }
-
-    @FXML
     private void player1Turn(ActionEvent event) {
         switch (((Button) event.getSource()).getId()) {
             case "paperBtn1":
                 player1Choice = Paper;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\paper.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/paper.png");
                 break;
             case "rockBtn1":
                 player1Choice = Rock;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\rock.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/rock.png");
                 break;
             case "scissorBtn1":
                 player1Choice = Scissors;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\scissors.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/scissors.png");
                 break;
         }
         player1.setImage(image);
@@ -90,15 +86,15 @@ public class NormalPlayers {
         switch (((Button) ev.getSource()).getId()) {
             case "paperBtn2":
                 player2Choice = Paper;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\paper.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/paper.png");
                 break;
             case "rockBtn2":
                 player2Choice = Rock;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\rock.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/rock.png");
                 break;
             case "scissorBtn2":
                 player2Choice = Scissors;
-                image = new Image("C:\\Users\\User\\IdeaProjects\\GameLibrary\\src\\main\\resources\\at\\ac\\fhcampuswien\\gamelibrary\\ropasc\\scissors.png");
+                image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/scissors.png");
                 break;
         }
         player2.setImage(image);
