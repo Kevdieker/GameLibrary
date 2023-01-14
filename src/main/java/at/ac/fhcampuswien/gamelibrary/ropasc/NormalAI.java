@@ -70,7 +70,6 @@ public class NormalAI {
         winner(playerChoice, AITurn());
     }
 
-
     private String AITurn() {
         String computerChoice = null;
         int r = (int) (Math.random() * 3);

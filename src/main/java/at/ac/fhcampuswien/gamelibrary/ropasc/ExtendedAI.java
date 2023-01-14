@@ -63,6 +63,7 @@ public class ExtendedAI {
         stage.show();
     }
 
+
     @FXML
     private void playerTurn(ActionEvent event) {
         String playerChoice = null;

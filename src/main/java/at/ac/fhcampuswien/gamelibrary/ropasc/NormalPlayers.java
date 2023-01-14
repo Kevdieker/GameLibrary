@@ -112,6 +112,7 @@ public class NormalPlayers {
         player2Score.setText(String.valueOf(Integer.parseInt(player2Score.getText()) + 1));
     }
 
+
     private void checkIfWon() {
         if (player1Choice.equals(player2Choice)) {
             result.setText("It's a tie");
