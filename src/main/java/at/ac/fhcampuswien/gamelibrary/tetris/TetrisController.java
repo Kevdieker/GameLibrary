@@ -6,11 +6,11 @@ import javafx.scene.shape.Rectangle;
 
 public class TetrisController {
     // Getting the numbers and the MESH from Tetris
-    public static final int MOVE = TetrisMain.MOVE;
-    public static final int SIZE = TetrisMain.SIZE;
-    public static int XMAX = TetrisMain.XMAX;
-    public static int YMAX = TetrisMain.YMAX;
-    public static int[][] MESH = TetrisMain.MESH;
+    public static final int MOVE = TetrisGame.MOVE;
+    public static final int SIZE = TetrisGame.SIZE;
+    public static int XMAX = TetrisGame.XMAX;
+    public static int YMAX = TetrisGame.YMAX;
+    public static int[][] MESH = TetrisGame.MESH;
 
     public static void MoveRight(TetrisForm tetrisForm) {
         if (tetrisForm.a.getX() + MOVE <= XMAX - SIZE && tetrisForm.b.getX() + MOVE <= XMAX - SIZE

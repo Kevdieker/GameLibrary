@@ -90,7 +90,6 @@ public class PongGame {
             gc.setTextAlign(TextAlignment.CENTER);
             gc.strokeText("Press Any Button to Start", WIDTH / 2, HEIGHT / 2);
 
-
             canvas.addEventFilter(KeyEvent.ANY, keyEvent -> {gameStarted = true;});
         }
     }
@@ -161,9 +160,6 @@ public class PongGame {
             gameStarted = false;
 
         }
-    }
-    public void render(GraphicsContext gc) {
-
     }
 
     private void run(GraphicsContext gc) {
