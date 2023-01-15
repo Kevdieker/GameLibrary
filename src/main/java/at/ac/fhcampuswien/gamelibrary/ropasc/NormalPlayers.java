@@ -109,11 +109,13 @@ public class NormalPlayers {
     public void player1Win() {
         result.setText("Player 1 wins!");
         player1Score.setText(String.valueOf(Integer.parseInt(player1Score.getText()) + 1));
+        player2Choice.equals("0");
     }
 
     public void player2Win() {
         result.setText("Player 2 wins!");
         player2Score.setText(String.valueOf(Integer.parseInt(player2Score.getText()) + 1));
+        player1Choice.equals("0");
     }
 
     private void checkIfWon() {
