@@ -64,7 +64,7 @@ public class NormalPlayers {
     }
 
     @FXML
-    private void player1Turn(ActionEvent event) {
+    private void player1Turn(ActionEvent event){
         tool.setVisible(true);
         switch (((Button) event.getSource()).getId()) {
             case "paperBtn1":

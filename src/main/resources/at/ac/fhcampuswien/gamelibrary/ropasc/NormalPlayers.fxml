@@ -80,6 +80,6 @@
       <Button fx:id="scissorBtn2" layoutX="849.0" layoutY="406.0" mnemonicParsing="false" onAction="#player2Turn" opacity="0.0" prefHeight="110.0" prefWidth="110.0" text="Scissors" />
       <ImageView fx:id="player1" fitHeight="141.0" fitWidth="141.0" layoutX="250.0" layoutY="217.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="player2" fitHeight="141.0" fitWidth="141.0" layoutX="660.0" layoutY="213.0" pickOnBounds="true" preserveRatio="true" />
-      <Rectangle fx:id="tool" arcHeight="5.0" arcWidth="5.0" fill="#000045" height="255.0" layoutX="226.0" layoutY="174.0" stroke="#000045" strokeType="INSIDE" width="595.0" />
+      <Rectangle fx:id="tool" arcHeight="5.0" arcWidth="5.0" fill="#000045" height="255.0" layoutX="226.0" layoutY="174.0" stroke="#000045" strokeType="INSIDE" width="609.0" />
    </children>
 </AnchorPane>

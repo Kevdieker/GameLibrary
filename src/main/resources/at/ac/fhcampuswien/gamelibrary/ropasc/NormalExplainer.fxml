@@ -5,6 +5,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
@@ -16,96 +17,65 @@
             <Font name="System Bold" size="27.0" />
          </font>
       </Label>
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="558.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="111.0" fitWidth="123.0" layoutX="650.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@rock.png" />
          </image>
       </ImageView>
-      <Label layoutX="227.0" layoutY="203.0" text="smashes" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="345.0" layoutY="167.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="131.0" fitWidth="111.0" layoutX="468.0" layoutY="329.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@scissors.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="84.0" layoutY="167.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@rock.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="857.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@rock.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="345.0" layoutY="288.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@rock.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="84.0" layoutY="288.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@paper.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="235.0" layoutY="324.0" text="wraps" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="19.0" />
-         </font>
-      </Label>
-      <Label layoutX="694.0" layoutY="186.0" prefHeight="33.0" prefWidth="133.0" text="does nothting to" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="857.0" layoutY="395.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@scissors.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="545.0" layoutY="395.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@scissors.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="686.0" layoutY="431.0" text="does nothting to" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="19.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="79.0" layoutY="395.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@scissors.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="244.0" layoutY="431.0" text="cuts" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="19.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="365.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@paper.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="868.0" layoutY="288.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@paper.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="686.0" layoutY="324.0" text="does nothting to" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="19.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="558.0" layoutY="288.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="111.0" fitWidth="111.0" layoutX="827.0" layoutY="338.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@paper.png" />
          </image>
       </ImageView>
       <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToMenu" text="Back" />
+      <Line endX="24.6666259765625" endY="139.66665649414062" layoutX="835.0" layoutY="193.0" startX="-100.0" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="40.6666259765625" endY="148.0" layoutX="796.0" layoutY="236.0" startX="-223.33331298828125" startY="148.0" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-102.99996948242188" endY="-10.666671752929688" layoutX="760.0" layoutY="201.0" startX="-223.33331298828125" startY="148.0" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-115.0" endY="-20.666671752929688" layoutX="649.0" layoutY="346.0" startX="-115.0" startY="3.3333282470703125" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-95.0" endY="3.33331298828125" layoutX="651.0" layoutY="347.0" startX="-115.0" startY="3.3333282470703125" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-127.0" endY="-15.333343505859375" layoutX="947.0" layoutY="378.0" startX="-110.3333740234375" startY="4.66668701171875" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-121.878662109375" endY="-14.54534912109375" layoutX="957.0" layoutY="401.0" startX="-136.66668701171875" startY="-2.0" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-127.0" endY="-15.333343505859375" layoutX="862.0" layoutY="206.0" startX="-103.66668701171875" startY="-15.333328247070312" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-127.0" endY="-15.333343505859375" layoutX="859.0" layoutY="208.0" startX="-127.0" startY="3.3333282470703125" stroke="WHITE" strokeWidth="3.0" />
+      <ImageView fitHeight="111.0" fitWidth="123.0" layoutX="137.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@rock.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="111.0" fitWidth="123.0" layoutX="137.0" layoutY="241.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@paper.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="111.0" fitWidth="123.0" layoutX="137.0" layoutY="373.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@scissors.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="262.0" layoutY="157.0" text="Rock" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="258.0" layoutY="275.0" text="Paper" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="258.0" layoutY="416.0" text="Scissors" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="185.0" layoutY="496.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
