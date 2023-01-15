@@ -13,6 +13,7 @@ import java.util.Objects;
 
 
 public class NormalExplainer {
+
     private Stage stage;
     private Scene scene;
 

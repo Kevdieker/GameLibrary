@@ -46,9 +46,16 @@
          </font>
       </Label>
       <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToMainMenu" prefHeight="39.0" prefWidth="60.0" text="Back" />
-      <Button layoutX="403.0" layoutY="207.0" mnemonicParsing="false" onAction="#openNAIExplainer" opacity="0.0" prefHeight="25.0" prefWidth="28.0" text="NAIExplain" />
+      <Button layoutX="403.0" layoutY="207.0" mnemonicParsing="false" onAction="#openNormalExplainer" opacity="0.0" prefHeight="25.0" prefWidth="28.0" text="NormalExplain" />
       <Circle disable="true" fill="#ff3d3d" layoutX="417.0" layoutY="220.0" radius="14.0" stroke="#ff3d3d" strokeType="INSIDE" />
       <Label disable="true" layoutX="414.0" layoutY="205.0" text="i">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Button layoutX="878.0" layoutY="207.0" mnemonicParsing="false" onAction="#openExtendedExplainer" opacity="0.0" prefHeight="25.0" prefWidth="28.0" text="ExtendExplain" />
+      <Circle disable="true" fill="#ff3d3d" layoutX="892.0" layoutY="220.0" radius="14.0" stroke="#ff3d3d" strokeType="INSIDE" />
+      <Label disable="true" layoutX="889.0" layoutY="205.0" text="i">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>

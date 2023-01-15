@@ -1,14 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="at.ac.fhcampuswien.gamelibrary.ropasc.ExtendedExplainer"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="576.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.ac.fhcampuswien.gamelibrary.ropasc.ExtendedExplainer">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#000045" height="576.0" stroke="BLACK" strokeType="INSIDE" width="1024.0" />
+      <Label alignment="CENTER" layoutX="272.0" layoutY="49.0" prefHeight="39.0" prefWidth="499.0" text="Extended Rock, Paper and Scissors" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Label>
+      <ImageView disable="true" fitHeight="540.0" fitWidth="517.0" layoutX="263.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Titelloses%2058_20230115113658.png" />
+         </image>
+      </ImageView>
+      <Line endX="115.0" layoutX="521.0" layoutY="175.0" startX="-99.00003051757812" startY="-6.3333282470703125" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="138.6666259765625" endY="8.666656494140625" layoutX="483.0" layoutY="414.0" startX="-102.33334350585938" startY="16.666656494140625" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-115.99996948242188" endY="196.66665649414062" layoutX="468.0" layoutY="196.0" startX="-103.33334350585938" startY="-2.6666717529296875" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-103.3333740234375" endY="181.33331298828125" layoutX="780.0" layoutY="216.0" startX="-103.3333740234375" startY="4.6666717529296875" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="8.666656494140625" endY="247.66665649414062" layoutX="482.0" layoutY="197.0" startX="-103.33334350585938" startY="-2.6666717529296875" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-19.999969482421875" endY="246.99996948242188" layoutX="490.0" layoutY="213.0" startX="-172.0" startY="106.33331298828125" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="157.3333740234375" endY="194.33331298828125" layoutX="492.0" layoutY="207.0" startX="-94.66665649414062" startY="-12.333328247070312" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="204.66668701171875" endY="74.0" layoutX="506.0" layoutY="218.0" startX="-91.33334350585938" startY="-29.333328247070312" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="130.66668701171875" endY="193.0" layoutX="502.0" layoutY="217.0" startX="-176.0" startY="89.0" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="124.0" endY="-40.33332824707031" layoutX="512.0" layoutY="227.0" startX="-181.33331298828125" startY="52.33331298828125" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-34.666656494140625" endY="-87.0" layoutX="522.0" layoutY="237.0" startX="-193.33331298828125" startY="29.0" stroke="WHITE" strokeWidth="2.5" />
+      <Line endX="-14.6666259765625" endY="-90.33332824707031" layoutX="532.0" layoutY="247.0" startX="-21.333343505859375" startY="190.33334350585938" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-39.0" endY="-86.0" layoutX="585.0" layoutY="236.0" startX="135.0" startY="42.666656494140625" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-61.66668701171875" endY="-88.0" layoutX="595.0" layoutY="246.0" startX="68.3333740234375" startY="147.33331298828125" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-32.666656494140625" endY="-91.0" layoutX="532.0" layoutY="247.0" startX="-164.66665649414062" startY="157.0" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="117.3333740234375" endY="-42.99998474121094" layoutX="542.0" layoutY="257.0" startX="-6.6666259765625" startY="188.99996948242188" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="168.66668701171875" endY="51.666656494140625" layoutX="552.0" layoutY="267.0" startX="-4.0" startY="194.99996948242188" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="193.3333740234375" endY="76.66665649414062" layoutX="516.0" layoutY="228.0" startX="-186.0" startY="64.66665649414062" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-43.666656494140625" endY="-23.0" layoutX="531.0" layoutY="185.0" startX="-43.666656494140625" startY="-35.666656494140625" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-66.33334350585938" endY="-47.0" layoutX="541.0" layoutY="195.0" startX="-53.666656494140625" startY="-47.0" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-42.787994384765625" endY="-19.878692626953125" layoutX="408.0" layoutY="426.0" startX="-39.545318603515625" startY="-41.12132263183594" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-42.787994384765625" endY="-20.878692626953125" layoutX="408.0" layoutY="427.0" startX="-24.000030517578125" startY="-27.0" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-41.121307373046875" endY="-17.2120361328125" layoutX="391.0" layoutY="412.0" startX="-50.333343505859375" startY="-32.66668701171875" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-39.666656494140625" endY="-38.0" layoutX="401.0" layoutY="422.0" startX="-51.66668701171875" startY="-27.333343505859375" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-41.33331298828125" endY="-20.333343505859375" layoutX="666.0" layoutY="443.0" startX="-52.6666259765625" startY="-28.2120361328125" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-51.33331298828125" endY="-29.66668701171875" layoutX="676.0" layoutY="453.0" startX="-62.6666259765625" startY="-22.333343505859375" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-58.66668701171875" endY="-30.000030517578125" layoutX="396.0" layoutY="329.0" startX="-73.24267578125" startY="-26.24267578125" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-68.0" endY="-27.66668701171875" layoutX="398.0" layoutY="343.0" startX="-74.121337890625" startY="-39.121337890625" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-51.33331298828125" endY="-29.66668701171875" layoutX="395.0" layoutY="317.0" startX="-63.66668701171875" startY="-23.333343505859375" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-63.66668701171875" endY="-20.66668701171875" layoutX="405.0" layoutY="325.0" startX="-73.66668701171875" startY="-33.333343505859375" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-52.0" endY="-34.333343505859375" layoutX="394.0" layoutY="303.0" startX="-63.66668701171875" startY="-23.333343505859375" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-58.666656494140625" endY="-24.0" layoutX="404.0" layoutY="308.0" startX="-75.78802490234375" startY="-26.2120361328125" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-42.787994384765625" endY="-20.878692626953125" layoutX="553.0" layoutY="462.0" startX="-30.33331298828125" startY="-30.66668701171875" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-37.666656494140625" endY="-18.666656494140625" layoutX="547.0" layoutY="458.0" startX="-45.666656494140625" startY="-28.0" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-42.787994384765625" endY="-20.878692626953125" layoutX="590.0" layoutY="483.0" startX="-27.6666259765625" startY="-20.878692626953125" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-54.2879638671875" endY="-32.378692626953125" layoutX="600.0" layoutY="494.0" startX="-54.2879638671875" startY="-45.666656494140625" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-58.66668701171875" endY="-30.000030517578125" layoutX="389.0" layoutY="347.0" startX="-73.24267578125" startY="-26.24267578125" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-76.33334350585938" endY="-25.0" layoutX="399.0" layoutY="363.0" startX="-83.121337890625" startY="-39.78802490234375" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-53.000030517578125" endY="-20.333328247070312" layoutX="443.0" layoutY="221.0" startX="-63.000030517578125" startY="-28.333328247070312" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-63.000030517578125" endY="-14.999984741210938" layoutX="435.0" layoutY="221.0" startX="-56.333343505859375" startY="-27.666671752929688" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-53.000030517578125" endY="-20.333328247070312" layoutX="703.0" layoutY="423.0" startX="-53.0" startY="-35.0" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-63.0" endY="-27.66668701171875" layoutX="713.0" layoutY="433.0" startX="-77.0" startY="-34.333343505859375" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-59.6666259765625" endY="-46.666656494140625" layoutX="593.0" layoutY="202.0" startX="-49.6666259765625" startY="-40.0" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-71.78790283203125" endY="-58.7879638671875" layoutX="603.0" layoutY="212.0" startX="-71.78790283203125" startY="-46.666656494140625" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-71.78790283203125" endY="-58.7879638671875" layoutX="793.0" layoutY="324.0" startX="-71.78790283203125" startY="-42.666656494140625" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-64.33331298828125" endY="-39.333343505859375" layoutX="767.0" layoutY="320.0" startX="-47.6666259765625" startY="-39.33332824707031" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-53.000030517578125" endY="-26.333328247070312" layoutX="481.0" layoutY="211.0" startX="-68.45468139648438" startY="-24.454635620117188" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-56.333343505859375" endY="-16.666671752929688" layoutX="472.0" layoutY="212.0" startX="-61.576019287109375" startY="-26.393966674804688" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-56.333343505859375" endY="-32.666656494140625" layoutX="492.0" layoutY="195.0" startX="-69.33334350585938" startY="-26.333328247070312" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-71.00003051757812" endY="-24.666671752929688" layoutX="503.0" layoutY="201.0" startX="-81.57601928710938" startY="-34.560638427734375" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-53.000030517578125" endY="-20.333328247070312" layoutX="729.0" layoutY="416.0" startX="-41.0" startY="-31.333343505859375" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-63.0" endY="-27.66668701171875" layoutX="739.0" layoutY="425.0" startX="-69.6666259765625" startY="-42.333343505859375" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="152.13671875" endY="-220.59095764160156" layoutX="493.0" layoutY="424.0" startX="-114.45468139648438" startY="-3.454681396484375" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-42.0" endY="-14.333328247070312" layoutX="706.0" layoutY="243.0" startX="-42.4239501953125" startY="-33.24259948730469" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-70.0" endY="-36.33332824707031" layoutX="716.0" layoutY="253.0" startX="-54.5452880859375" startY="-41.12129211425781" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-70.0" endY="-36.33332824707031" layoutX="700.0" layoutY="241.0" startX="-56.984619140625" startY="-38.84861755371094" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-54.5452880859375" endY="-24.666671752929688" layoutX="697.0" layoutY="240.0" startX="-53.4239501953125" startY="-35.72731018066406" stroke="WHITE" strokeWidth="3.0" />
+      <ImageView fitHeight="97.0" fitWidth="116.0" layoutX="36.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@rock.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="97.0" fitWidth="116.0" layoutX="42.0" layoutY="203.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@paper.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="97.0" fitWidth="116.0" layoutX="42.0" layoutY="304.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@scissors.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="97.0" fitWidth="116.0" layoutX="42.0" layoutY="415.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@spock.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="97.0" fitWidth="116.0" layoutX="899.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@lizard.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="97.0" fitWidth="116.0" layoutX="899.0" layoutY="203.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@fire.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="97.0" fitWidth="116.0" layoutX="899.0" layoutY="304.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@air.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="97.0" fitWidth="116.0" layoutX="899.0" layoutY="416.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@water.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="139.0" layoutY="134.0" text="Rock" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="139.0" layoutY="239.0" text="Paper" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="139.0" layoutY="340.0" text="Scissors" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="147.0" layoutY="449.0" text="Spock" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="853.0" layoutY="135.0" text="Lizard" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="862.0" layoutY="239.0" text="Fire" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="862.0" layoutY="340.0" text="Air" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="850.0" layoutY="451.0" text="Water" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Button layoutX="16.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToMenu" text="Back" />
+   </children>
 </AnchorPane>
