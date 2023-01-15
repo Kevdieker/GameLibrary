@@ -73,7 +73,6 @@ public class ExtendedPlayer {
     private String player1Choice;
     private String player2Choice;
     private Image image;
-
     @FXML
     Rectangle tool;
 
@@ -169,14 +168,20 @@ public class ExtendedPlayer {
 
     public void player1Win() {
         result.setText("Player 1 wins!");
-        player1Score.setText(String.valueOf(Integer.parseInt(player1Score.getText()) + 1));
-        player2Choice.equals("0");
+        if(!tool.isVisible()){
+            player1Score.setText(String.valueOf(Integer.parseInt(player1Score.getText()) + 1));
+        }else{
+            player1Score.setText(String.valueOf(Integer.parseInt(player1Score.getText())));
+        }
     }
 
     public void player2Win() {
         result.setText("Player 2 wins!");
-        player2Score.setText(String.valueOf(Integer.parseInt(player2Score.getText()) + 1));
-        player1Choice.equals("0");
+        if(!tool.isVisible()){
+            player2Score.setText(String.valueOf(Integer.parseInt(player1Score.getText()) + 1));
+        }else{
+            player2Score.setText(String.valueOf(Integer.parseInt(player1Score.getText())));
+        }
     }
 
     private void checkIfWon() {
