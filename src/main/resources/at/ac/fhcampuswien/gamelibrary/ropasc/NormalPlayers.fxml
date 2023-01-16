@@ -81,5 +81,10 @@
       <ImageView fx:id="player1" fitHeight="141.0" fitWidth="141.0" layoutX="250.0" layoutY="217.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="player2" fitHeight="141.0" fitWidth="141.0" layoutX="660.0" layoutY="213.0" pickOnBounds="true" preserveRatio="true" />
       <Rectangle fx:id="tool" arcHeight="5.0" arcWidth="5.0" fill="#000045" height="200.0" layoutX="221.0" layoutY="201.0" stroke="#000045" strokeType="INSIDE" width="597.0" />
+      <Label fx:id="playertext" alignment="CENTER" layoutX="418.0" layoutY="264.0" prefHeight="34.0" prefWidth="207.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

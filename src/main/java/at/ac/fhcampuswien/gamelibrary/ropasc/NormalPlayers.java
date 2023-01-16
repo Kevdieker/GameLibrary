@@ -54,6 +54,8 @@ public class NormalPlayers {
     private Image image;
     @FXML
     Rectangle tool;
+    @FXML
+    private Label playertext;
 
     public void switchToMenu(ActionEvent e) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("menu.fxml")));
