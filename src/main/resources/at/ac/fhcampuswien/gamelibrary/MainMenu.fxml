@@ -32,7 +32,7 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Button layoutX="557.0" layoutY="347.0" mnemonicParsing="false" onAction="#switchToTetris" opacity="0.0" prefHeight="150.0" prefWidth="218.0" text="PacMan">
+      <Button layoutX="557.0" layoutY="347.0" mnemonicParsing="false" onAction="#windowCredits" opacity="0.0" prefHeight="150.0" prefWidth="218.0" text="Cedits">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -102,6 +102,6 @@
             <Image url="@mainmenu%20pictures/Titelloses%2065_20230116163408.png" />
          </image>
       </ImageView>
-      <TextArea layoutX="566.0" layoutY="316.0" prefHeight="200.0" prefWidth="200.0" text="&#10;&#10;&#10;&#10;&#10;               Coming Soon !" />
+      <TextArea disable="true" layoutX="566.0" layoutY="316.0" prefHeight="200.0" prefWidth="200.0" text="&#10;&#10;&#10;&#10;        &#9; Coming Soon ! &#10;&#9;&#9;&#9;   &amp; &#10;&#9;&#9;       Credits&#10;" />
    </children>
 </AnchorPane>

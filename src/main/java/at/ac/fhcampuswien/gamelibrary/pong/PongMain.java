@@ -16,6 +16,7 @@ public class PongMain extends Application {
     Parent root;
     PongGame controller;
 
+
     @Override
     public void start(Stage stage) throws IOException {
 
