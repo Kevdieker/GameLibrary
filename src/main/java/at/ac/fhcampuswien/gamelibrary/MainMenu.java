@@ -20,6 +20,7 @@ public class MainMenu extends Application {
         Parent root = loader.load();
         Scene scene = new Scene(root);
 
+        stage.setTitle("G A M E L I B R A R Y  \uD83C\uDFAE️\uD83D\uDCDA");
         stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("Redflag.jpeg"))));
         stage.setResizable(false);
         stage.centerOnScreen();
