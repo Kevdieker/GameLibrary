@@ -25,12 +25,12 @@ tasks.withType(JavaCompile) {
 
 application {
     mainModule = 'at.ac.fhcampuswien.gamelibrary'
-    mainClass = 'at.ac.fhcampuswien.gamelibrary.HelloApplication'
+    mainClass = 'at.ac.fhcampuswien.gamelibrary.MainMenu'
 }
 
 javafx {
     version = '17.0.2'
-    modules = ['javafx.controls', 'javafx.fxml']
+    modules = ['javafx.controls', 'javafx.fxml','javafx.media']
 }
 
 dependencies {

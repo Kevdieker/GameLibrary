@@ -9,41 +9,42 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class MainSceneSwitch {
     Scene scene;
     FXMLLoader loader;
+    FXMLLoader loader2;
     Parent root;
     Parent root1;
     Stage stage;
 
-    public void windowMenu(ActionEvent event) throws IOException {
 
-        try {
-            if (!stage.isShowing()) {
+    public void windowCredits(ActionEvent event) throws IOException {
 
-                loader = new FXMLLoader(getClass().getResource("MenuMenu.fxml"));
-                root1 = loader.load();
-                stage = new Stage();
-                stage.setScene(new Scene(root1));
-                stage.isAlwaysOnTop();
-                stage.show();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+            loader = new FXMLLoader(getClass().getResource("Credits.fxml"));
+            root1 = loader.load();
+            stage = new Stage();
+
+            stage.setTitle("G A M E L I B R A R Y   Credits");
+            stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("Redflag.jpeg"))));
+            stage.setScene(new Scene(root1));
+            stage.isAlwaysOnTop();
+            stage.show();
+
     }
 
     public void switchToMainMenu(ActionEvent e) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenu.fxml"));
-        Parent root = loader.load();
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        loader = new FXMLLoader(getClass().getResource("MainMenu.fxml"));
+        root = loader.load();
+        scene = new Scene(root);
+        stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 
         stage.setResizable(false);
         stage.centerOnScreen();
@@ -111,5 +112,7 @@ public class MainSceneSwitch {
         });
     }
 
-    public void exit(){Platform.exit();}
+    public void exit() {
+        Platform.exit();
+    }
 }

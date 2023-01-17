@@ -6,10 +6,12 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class TetrisMain extends Application {
     Scene scene;
@@ -26,7 +28,7 @@ public class TetrisMain extends Application {
         controller = loader.getController();
         controller.createGrid();
 
-
+        stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("Redflag_white.jpg"))));
         stage.setResizable(false);
         stage.centerOnScreen();
         stage.setScene(scene);
