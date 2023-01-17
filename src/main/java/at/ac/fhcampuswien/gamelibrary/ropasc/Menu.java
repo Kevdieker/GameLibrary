@@ -15,7 +15,6 @@ import java.util.Objects;
 public class Menu {
     private Stage stage;
     private Scene scene;
-    private Parent root;
 
     public void switchToNormalAI(ActionEvent e) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("NormalAI.fxml")));

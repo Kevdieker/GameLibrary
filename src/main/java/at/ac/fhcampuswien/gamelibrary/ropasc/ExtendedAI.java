@@ -18,7 +18,6 @@ import java.util.Objects;
 public class ExtendedAI {
     private Stage stage;
     private Scene scene;
-
     private static final String Rock = "rock";
     private static final String Paper = "paper";
     private static final String Scissors = "scissors";
@@ -32,27 +31,11 @@ public class ExtendedAI {
     @FXML
     private Label aiScore;
     @FXML
-    private Button airBtn;
-    @FXML
-    private Button fireBtn;
-    @FXML
-    private Button lizardBtn;
-    @FXML
-    private Button paperBtn;
-    @FXML
     private ImageView player;
     @FXML
     private Label playerScore;
     @FXML
     private Label result;
-    @FXML
-    private Button rockBtn;
-    @FXML
-    private Button scissorsBtn;
-    @FXML
-    private Button spockBtn;
-    @FXML
-    private Button waterBtn;
     private Image image;
 
     public void switchToMenu(ActionEvent e) throws IOException {

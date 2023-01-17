@@ -34,28 +34,14 @@ public class NormalPlayers {
     @FXML
     private Label player1Score;
     @FXML
-    private Button paperBtn1;
-    @FXML
-    private Button paperBtn2;
-    @FXML
     private ImageView player1;
     @FXML
     private ImageView player2;
     @FXML
     private Label result;
-    @FXML
-    private Button rockBtn1;
-    @FXML
-    private Button rockBtn2;
-    @FXML
-    private Button scissorBtn1;
-    @FXML
-    private Button scissorBtn2;
     private Image image;
     @FXML
     Rectangle tool;
-    @FXML
-    private Label playertext;
 
     public void switchToMenu(ActionEvent e) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("menu.fxml")));

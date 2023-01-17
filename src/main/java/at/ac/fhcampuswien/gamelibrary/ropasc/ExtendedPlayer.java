@@ -21,43 +21,11 @@ public class ExtendedPlayer {
     private Stage stage;
     private Scene scene;
     @FXML
-    private Button air1Btn;
-    @FXML
-    private Button air2Btn;
-    @FXML
-    private Button fire1Btn;
-    @FXML
-    private Button fire2Btn;
-    @FXML
-    private Button lizard1Btn;
-    @FXML
-    private Button lizard2Btn;
-    @FXML
-    private Button paper1Btn;
-    @FXML
-    private Button paper2Btn;
-    @FXML
     private ImageView player1;
     @FXML
     private ImageView player2;
     @FXML
     private Label result;
-    @FXML
-    private Button rock1Btn;
-    @FXML
-    private Button rock2Btn;
-    @FXML
-    private Button scissor1Btn;
-    @FXML
-    private Button scissor2Btn;
-    @FXML
-    private Button spock1Btn;
-    @FXML
-    private Button spock2Btn;
-    @FXML
-    private Button water1Btn;
-    @FXML
-    private Button water2Btn;
     @FXML
     private Label player1Score;
     @FXML
@@ -171,16 +139,16 @@ public class ExtendedPlayer {
         if(!tool.isVisible()){
             player1Score.setText(String.valueOf(Integer.parseInt(player1Score.getText()) + 1));
         }else{
-            player1Score.setText(String.valueOf(Integer.parseInt(player1Score.getText())));
+            player2Score.setText(String.valueOf(Integer.parseInt(player2Score.getText())));
         }
     }
 
     public void player2Win() {
         result.setText("Player 2 wins!");
         if(!tool.isVisible()){
-            player2Score.setText(String.valueOf(Integer.parseInt(player1Score.getText()) + 1));
+            player2Score.setText(String.valueOf(Integer.parseInt(player2Score.getText()) + 1));
         }else{
-            player2Score.setText(String.valueOf(Integer.parseInt(player1Score.getText())));
+            player1Score.setText(String.valueOf(Integer.parseInt(player1Score.getText())));
         }
     }
 

@@ -28,15 +28,9 @@ public class NormalAI {
     @FXML
     private Label AIScore;
     @FXML
-    private Button PaperBtn;
-    @FXML
     private ImageView player;
     @FXML
     private Label PlayerScore;
-    @FXML
-    private Button RockBtn;
-    @FXML
-    private Button ScissorsBtn;
     @FXML
     private Label result;
     private Image image;
