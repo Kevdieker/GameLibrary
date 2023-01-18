@@ -3,6 +3,7 @@ module at.ac.fhcampuswien.gamelibrary {
     requires javafx.fxml;
 
     requires org.controlsfx.controls;
+    requires java.desktop;
 
     exports at.ac.fhcampuswien.gamelibrary;
     opens at.ac.fhcampuswien.gamelibrary to javafx.fxml;

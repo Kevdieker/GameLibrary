@@ -17,19 +17,17 @@
             <Point3D />
          </rotationAxis>
       </Canvas>
-      <Button fx:id="exitButton" layoutX="618.0" layoutY="9.0" mnemonicParsing="false" opacity="0.0" prefHeight="97.0" prefWidth="104.0" text="ExIT">
+      <ImageView disable="true" fitHeight="79.0" fitWidth="74.0" layoutX="15.0" layoutY="16.0" preserveRatio="true">
+         <image>
+            <Image url="@Pong_backbutton.jpg" />
+         </image>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
-      </Button>
-      <ImageView disable="true" fitHeight="105.0" fitWidth="100.0" layoutX="1809.0" layoutY="9.0" preserveRatio="true">
-         <image>
-            <Image url="@MenuImages/Exit_Button.jpg" />
-         </image>
-         <cursor>
-            <Cursor fx:constant="DEFAULT" />
-         </cursor>
       </ImageView>
-      <Button layoutX="22.0" layoutY="22.0" mnemonicParsing="false" onAction="#switchToMainMenu" prefHeight="60.0" prefWidth="60.0" text="Back" />
+      <Button layoutX="17.0" layoutY="21.0" mnemonicParsing="false" onAction="#switchToMainMenu" opacity="0.0" prefHeight="60.0" prefWidth="60.0" text="Back">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
    </children>
 </AnchorPane>

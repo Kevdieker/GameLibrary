@@ -7,17 +7,12 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.TextAlignment;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -32,8 +27,6 @@ public class PongGame {
 
     @FXML
     Canvas canvas;
-    @FXML
-    Button exitButton;
 
     PongScore score;
 
@@ -52,9 +45,6 @@ public class PongGame {
         tl.setCycleCount(Timeline.INDEFINITE);
         tl.play();
 
-        exitButton.setOnAction((ActionEvent event) -> {
-            Platform.exit();
-        });
     }
 
     public void newBall() {

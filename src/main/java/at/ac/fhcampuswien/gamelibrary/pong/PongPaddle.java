@@ -5,7 +5,9 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-import static at.ac.fhcampuswien.gamelibrary.pong.PongConstants.PADDLE_SPEED;
+
+import static at.ac.fhcampuswien.gamelibrary.pong.PongConstants.*;
+
 public class PongPaddle extends Rectangle {
 
     private int id;
@@ -83,6 +85,11 @@ public class PongPaddle extends Rectangle {
             gc.setFill(Color.DEEPSKYBLUE);
         } else gc.setFill(Color.LIME);
         gc.fillRect(getX(),getY(),getWidth(),getHeight());
+
+
+        gc.setFill(Color.RED);
+        gc.fillRect(getX(),getY(),getWidth(),getHeight()-PADDLE_HEIGHT+5);
+        gc.fillRect(getX(),getY()+PADDLE_HEIGHT,getWidth(),getHeight()-PADDLE_HEIGHT+5);
     }
 }
 
