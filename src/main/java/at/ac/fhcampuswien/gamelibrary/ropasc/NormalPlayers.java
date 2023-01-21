@@ -42,6 +42,8 @@ public class NormalPlayers {
     private Image image;
     @FXML
     Rectangle tool;
+    @FXML
+    private Label playertext;
 
     /*****************************************************************************
      * switches to Rock,Paper,Scissors-Menu if Back-Button is clicked
@@ -162,7 +164,6 @@ public class NormalPlayers {
             }
         }
     }
-
 
 }
 
