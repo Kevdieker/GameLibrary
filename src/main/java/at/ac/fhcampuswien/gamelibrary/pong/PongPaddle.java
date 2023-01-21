@@ -68,15 +68,28 @@ public class PongPaddle extends Rectangle {
      ****************************************************/
     public void keyReleased(KeyEvent e) {
 
-        if (id == 1 && e.getCode() == KeyCode.W || e.getCode() == KeyCode.S) {
-            setYDirection(0);
-            move();
+        switch (id) {
+            case 1 -> {
+                if (e.getCode() == KeyCode.W) {
+                    setYDirection(0);
+                    move();
+                }
+                if (e.getCode() == KeyCode.S) {
+                    setYDirection(0);
+                    move();
+                }
+            }
+            case 2 -> {
+                if (e.getCode() == KeyCode.UP) {
+                    setYDirection(0);
+                    move();
+                }
+                if (e.getCode() == KeyCode.DOWN) {
+                    setYDirection(0);
+                    move();
+                }
+            }
         }
-        if (id == 2 && e.getCode() == KeyCode.UP || e.getCode() == KeyCode.DOWN) {
-            setYDirection(0);
-            move();
-        }
-
     }
 
     /**********************************************************
