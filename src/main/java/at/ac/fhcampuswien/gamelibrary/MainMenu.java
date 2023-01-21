@@ -7,14 +7,22 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+
 import java.io.IOException;
 import java.util.Objects;
 
+/*****************************************************************
+ * Class used as an EntryPoint for the Game Library Application.
+ * @author Kevin D. Kerbl
+ ****************************************************************/
 public class MainMenu extends Application {
-
+    /*************************************************************
+     * EntryPoint for the Game Library Application
+     * @param stage the primary stage for this application.
+     * @throws IOException when we can't read the fxml file.
+     ************************************************************/
     @Override
     public void start(Stage stage) throws IOException {
-
         FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("MainMenu.fxml")));
         Parent root = loader.load();
         Scene scene = new Scene(root);
@@ -25,9 +33,12 @@ public class MainMenu extends Application {
         stage.centerOnScreen();
         stage.setScene(scene);
         stage.show();
-
     }
 
+    /*********************************************
+     * Our main method. Launches the application.
+     * @param args The command line arguments.
+     *********************************************/
     public static void main(String[] args) {
         launch();
     }
