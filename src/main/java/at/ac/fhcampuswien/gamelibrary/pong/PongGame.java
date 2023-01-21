@@ -153,8 +153,8 @@ public class PongGame {
         if (paddleTwo.getY() >= (HEIGHT - PADDLE_HEIGHT)) paddleTwo.setY(HEIGHT - PADDLE_HEIGHT);
 
         // ball bounces off top/bottom window edges
-        if (ball.getY() <= 0) ball.setYDirection(-ball.yVelocity);
-        if (ball.getY() >= HEIGHT - BALL_R) ball.setYDirection(-ball.yVelocity);
+        if (ball.getY() <= 0) ball.setYVelocity(-ball.yVelocity);
+        if (ball.getY() >= HEIGHT - BALL_R) ball.setYVelocity(-ball.yVelocity);
 
         // ball bounces off paddles
         if (ball.intersects(paddleOne.getBoundsInLocal()) || ball.intersects(paddleTwo.getBoundsInLocal())) {
@@ -177,13 +177,13 @@ public class PongGame {
             }
 
             if (ball.intersects(paddleOne.getBoundsInLocal())) {
-                ball.setXDirection(ball.xVelocity);
+                ball.setXVelocity(ball.xVelocity);
 
             } else if (ball.intersects(paddleTwo.getBoundsInLocal())) {
-                ball.setXDirection(-ball.xVelocity);
+                ball.setXVelocity(-ball.xVelocity);
             }
 
-            ball.setYDirection(ball.yVelocity);
+            ball.setYVelocity(ball.yVelocity);
 
          /*   obx = ball.xVelocity;
             oby = ball.yVelocity;*/
