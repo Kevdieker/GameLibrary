@@ -16,6 +16,10 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
+/*****************************************************************************
+ * Class for Extended-Player-Mode if chosen in Rock,Paper,Scissors-Menu
+ * @author Fatima Hossain
+ *****************************************************************************/
 public class ExtendedPlayer {
 
     private Stage stage;
@@ -30,20 +34,23 @@ public class ExtendedPlayer {
     private Label player1Score;
     @FXML
     private Label player2Score;
-    private static final String Rock = "rock";
-    private static final String Paper = "paper";
-    private static final String Scissors = "scissors";
-    private static final String Spock = "spock";
-    private static final String Lizard = "lizard";
-    private static final String Fire = "fire";
-    private static final String Air = "air";
-    private static final String Water = "water";
+    private static final String ROCK = "rock";
+    private static final String PAPER = "paper";
+    private static final String SCISSORS = "scissors";
+    private static final String SPOCK = "spock";
+    private static final String LIZARD = "lizard";
+    private static final String FIRE = "fire";
+    private static final String AIR = "air";
+    private static final String WATER = "water";
     private String player1Choice;
     private String player2Choice;
     private Image image;
     @FXML
     Rectangle tool;
 
+    /*****************************************************************************
+     * switches to Menu-Window if Back-Button is clicked
+     *****************************************************************************/
     public void switchToMenu(ActionEvent e) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("menu.fxml")));
         stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -52,88 +59,101 @@ public class ExtendedPlayer {
         stage.show();
     }
 
+    /*****************************************************************************
+     * identifies player1's buttons and sets player1's image
+     * winner()-method is implemented
+     *****************************************************************************/
     @FXML
     private void player1Turn(ActionEvent event) {
         tool.setVisible(true);
         switch (((Button) event.getSource()).getId()) {
             case "paper1Btn":
-                player1Choice = Paper;
+                player1Choice = PAPER;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/paper.png");
                 break;
             case "rock1Btn":
-                player1Choice = Rock;
+                player1Choice = ROCK;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/rock.png");
                 break;
             case "scissor1Btn":
-                player1Choice = Scissors;
+                player1Choice = SCISSORS;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/scissors.png");
                 break;
             case "spock1Btn":
-                player1Choice = Spock;
+                player1Choice = SPOCK;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/spock.png");
                 break;
             case "lizard1Btn":
-                player1Choice = Lizard;
+                player1Choice = LIZARD;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/lizard.png");
                 break;
             case "fire1Btn":
-                player1Choice = Fire;
+                player1Choice = FIRE;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/fire.png");
                 break;
             case "air1Btn":
-                player1Choice = Air;
+                player1Choice = AIR;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/air.png");
                 break;
             case "water1Btn":
-                player1Choice = Water;
+                player1Choice = WATER;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/water.png");
                 break;
         }
         player1.setImage(image);
-        checkIfWon();
+        winner();
     }
 
+    /*****************************************************************************
+     * identifies player2's buttons and sets player2's image
+     * winner()-method is implemented
+     *****************************************************************************/
     @FXML
     private void player2Turn(ActionEvent ev) {
         tool.setVisible(false);
         switch (((Button) ev.getSource()).getId()) {
             case "paper2Btn":
-                player2Choice = Paper;
+                player2Choice = PAPER;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/paper.png");
                 break;
             case "rock2Btn":
-                player2Choice = Rock;
+                player2Choice = ROCK;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/rock.png");
                 break;
             case "scissor2Btn":
-                player2Choice = Scissors;
+                player2Choice = SCISSORS;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/scissors.png");
                 break;
             case "spock2Btn":
-                player2Choice = Spock;
+                player2Choice = SPOCK;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/spock.png");
                 break;
             case "lizard2Btn":
-                player2Choice = Lizard;
+                player2Choice = LIZARD;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/lizard.png");
                 break;
             case "fire2Btn":
-                player2Choice = Fire;
+                player2Choice = FIRE;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/fire.png");
                 break;
             case "air2Btn":
-                player2Choice = Air;
+                player2Choice = AIR;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/air.png");
                 break;
             case "water2Btn":
-                player2Choice = Water;
+                player2Choice = WATER;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/water.png");
                 break;
         }
         player2.setImage(image);
-        checkIfWon();
+        winner();
     }
 
+    /*****************************************************************************
+     * sets result to "Player 1 wins!" if player 1 wins
+     * sets player1Score to +1 if tool is not visible
+     * sets player2Score to +0 if tool is visible
+     *****************************************************************************/
     public void player1Win() {
         result.setText("Player 1 wins!");
         if(!tool.isVisible()){
@@ -143,6 +163,11 @@ public class ExtendedPlayer {
         }
     }
 
+    /*****************************************************************************
+     * sets result to "Player 2 wins!" if player 2 wins
+     * sets player2Score to +1 if tool is not visible
+     * sets player1Score to +0 if tool is visible
+     *****************************************************************************/
     public void player2Win() {
         result.setText("Player 2 wins!");
         if(!tool.isVisible()){
@@ -152,136 +177,142 @@ public class ExtendedPlayer {
         }
     }
 
-    private void checkIfWon() {
+    /*****************************************************************************
+     * goes through every possibility between player1Choice and player2Choice
+     * if player1 and player2 have chosen the same option then result set to "It's a tie"
+     * if player1 wins, then player1Win()-method is used
+     * if player2 wins, then player2Win()-method is used
+     *****************************************************************************/
+    private void winner() {
         if (player1Choice.equals(player2Choice)) {
             result.setText("It's a tie");
         }
-        if (player1Choice.equals(Paper)) {
-            if (player2Choice.equals(Rock)) {
+        if (player1Choice.equals(PAPER)) {
+            if (player2Choice.equals(ROCK)) {
                 player1Win();
-            } else if (player2Choice.equals(Scissors)) {
+            } else if (player2Choice.equals(SCISSORS)) {
                 player2Win();
-            } else if (player2Choice.equals(Spock)) {
+            } else if (player2Choice.equals(SPOCK)) {
                 player1Win();
-            } else if (player2Choice.equals(Lizard)) {
+            } else if (player2Choice.equals(LIZARD)) {
                 player2Win();
-            } else if (player2Choice.equals(Fire)) {
+            } else if (player2Choice.equals(FIRE)) {
                 player2Win();
-            } else if (player2Choice.equals(Air)) {
+            } else if (player2Choice.equals(AIR)) {
                 player1Win();
-            } else if (player2Choice.equals(Water)) {
-                player1Win();
-            }
-        } else if (player1Choice.equals(Rock)) {
-            if (player2Choice.equals(Paper)) {
-                player2Win();
-            } else if (player2Choice.equals(Scissors)) {
-                player1Win();
-            } else if (player2Choice.equals(Spock)) {
-                player2Win();
-            } else if (player2Choice.equals(Lizard)) {
-                player1Win();
-            } else if (player2Choice.equals(Fire)) {
-                player1Win();
-            } else if (player2Choice.equals(Air)) {
-                player2Win();
-            } else if (player2Choice.equals(Water)) {
-                player2Win();
-            }
-        } else if (player1Choice.equals(Scissors)) {
-            if (player2Choice.equals(Rock)) {
-                player2Win();
-            } else if (player2Choice.equals(Paper)) {
-                player1Win();
-            } else if (player2Choice.equals(Spock)) {
-                player2Win();
-            } else if (player2Choice.equals(Lizard)) {
-                player1Win();
-            } else if (player2Choice.equals(Fire)) {
-                player2Win();
-            } else if (player2Choice.equals(Air)) {
-                player1Win();
-            } else if (player2Choice.equals(Water)) {
+            } else if (player2Choice.equals(WATER)) {
                 player1Win();
             }
-        } else if (player1Choice.equals(Spock)) {
-            if (player2Choice.equals(Rock)) {
-                player1Win();
-            } else if (player2Choice.equals(Paper)) {
+        } else if (player1Choice.equals(ROCK)) {
+            if (player2Choice.equals(PAPER)) {
                 player2Win();
-            } else if (player2Choice.equals(Scissors)) {
+            } else if (player2Choice.equals(SCISSORS)) {
                 player1Win();
-            } else if (player2Choice.equals(Lizard)) {
+            } else if (player2Choice.equals(SPOCK)) {
                 player2Win();
-            } else if (player2Choice.equals(Fire)) {
-                player2Win();
-            } else if (player2Choice.equals(Air)) {
+            } else if (player2Choice.equals(LIZARD)) {
                 player1Win();
-            } else if (player2Choice.equals(Water)) {
+            } else if (player2Choice.equals(FIRE)) {
+                player1Win();
+            } else if (player2Choice.equals(AIR)) {
+                player2Win();
+            } else if (player2Choice.equals(WATER)) {
                 player2Win();
             }
-        } else if (player1Choice.equals(Lizard)) {
-            if (player2Choice.equals(Rock)) {
+        } else if (player1Choice.equals(SCISSORS)) {
+            if (player2Choice.equals(ROCK)) {
                 player2Win();
-            } else if (player2Choice.equals(Paper)) {
+            } else if (player2Choice.equals(PAPER)) {
                 player1Win();
-            } else if (player2Choice.equals(Scissors)) {
+            } else if (player2Choice.equals(SPOCK)) {
                 player2Win();
-            } else if (player2Choice.equals(Spock)) {
+            } else if (player2Choice.equals(LIZARD)) {
                 player1Win();
-            } else if (player2Choice.equals(Fire)) {
+            } else if (player2Choice.equals(FIRE)) {
                 player2Win();
-            } else if (player2Choice.equals(Air)) {
-                player2Win();
-            } else if (player2Choice.equals(Water)) {
+            } else if (player2Choice.equals(AIR)) {
                 player1Win();
-            }
-        } else if (player1Choice.equals(Fire)) {
-            if (player2Choice.equals(Rock)) {
-                player2Win();
-            } else if (player2Choice.equals(Paper)) {
-                player1Win();
-            } else if (player2Choice.equals(Scissors)) {
-                player1Win();
-            } else if (player2Choice.equals(Spock)) {
-                player1Win();
-            } else if (player2Choice.equals(Lizard)) {
-                player1Win();
-            } else if (player2Choice.equals(Air)) {
-                player2Win();
-            } else if (player2Choice.equals(Water)) {
-                player2Win();
-            }
-        } else if (player1Choice.equals(Air)) {
-            if (player2Choice.equals(Rock)) {
-                player1Win();
-            } else if (player2Choice.equals(Paper)) {
-                player2Win();
-            } else if (player2Choice.equals(Scissors)) {
-                player2Win();
-            } else if (player2Choice.equals(Spock)) {
-                player2Win();
-            } else if (player2Choice.equals(Lizard)) {
-                player2Win();
-            } else if (player2Choice.equals(Fire)) {
-                player1Win();
-            } else if (player2Choice.equals(Water)) {
+            } else if (player2Choice.equals(WATER)) {
                 player1Win();
             }
-        } else if (player1Choice.equals(Water)) {
-            if (player2Choice.equals(Rock)) {
+        } else if (player1Choice.equals(SPOCK)) {
+            if (player2Choice.equals(ROCK)) {
                 player1Win();
-            } else if (player2Choice.equals(Paper)) {
+            } else if (player2Choice.equals(PAPER)) {
                 player2Win();
-            } else if (player2Choice.equals(Scissors)) {
-                player2Win();
-            } else if (player2Choice.equals(Spock)) {
+            } else if (player2Choice.equals(SCISSORS)) {
                 player1Win();
-            } else if (player2Choice.equals(Lizard)) {
+            } else if (player2Choice.equals(LIZARD)) {
                 player2Win();
-            } else if (player2Choice.equals(Fire)) {
+            } else if (player2Choice.equals(FIRE)) {
+                player2Win();
+            } else if (player2Choice.equals(AIR)) {
                 player1Win();
-            } else if (player2Choice.equals(Air)) {
+            } else if (player2Choice.equals(WATER)) {
+                player2Win();
+            }
+        } else if (player1Choice.equals(LIZARD)) {
+            if (player2Choice.equals(ROCK)) {
+                player2Win();
+            } else if (player2Choice.equals(PAPER)) {
+                player1Win();
+            } else if (player2Choice.equals(SCISSORS)) {
+                player2Win();
+            } else if (player2Choice.equals(SPOCK)) {
+                player1Win();
+            } else if (player2Choice.equals(FIRE)) {
+                player2Win();
+            } else if (player2Choice.equals(AIR)) {
+                player2Win();
+            } else if (player2Choice.equals(WATER)) {
+                player1Win();
+            }
+        } else if (player1Choice.equals(FIRE)) {
+            if (player2Choice.equals(ROCK)) {
+                player2Win();
+            } else if (player2Choice.equals(PAPER)) {
+                player1Win();
+            } else if (player2Choice.equals(SCISSORS)) {
+                player1Win();
+            } else if (player2Choice.equals(SPOCK)) {
+                player1Win();
+            } else if (player2Choice.equals(LIZARD)) {
+                player1Win();
+            } else if (player2Choice.equals(AIR)) {
+                player2Win();
+            } else if (player2Choice.equals(WATER)) {
+                player2Win();
+            }
+        } else if (player1Choice.equals(AIR)) {
+            if (player2Choice.equals(ROCK)) {
+                player1Win();
+            } else if (player2Choice.equals(PAPER)) {
+                player2Win();
+            } else if (player2Choice.equals(SCISSORS)) {
+                player2Win();
+            } else if (player2Choice.equals(SPOCK)) {
+                player2Win();
+            } else if (player2Choice.equals(LIZARD)) {
+                player2Win();
+            } else if (player2Choice.equals(FIRE)) {
+                player1Win();
+            } else if (player2Choice.equals(WATER)) {
+                player1Win();
+            }
+        } else if (player1Choice.equals(WATER)) {
+            if (player2Choice.equals(ROCK)) {
+                player1Win();
+            } else if (player2Choice.equals(PAPER)) {
+                player2Win();
+            } else if (player2Choice.equals(SCISSORS)) {
+                player2Win();
+            } else if (player2Choice.equals(SPOCK)) {
+                player1Win();
+            } else if (player2Choice.equals(LIZARD)) {
+                player2Win();
+            } else if (player2Choice.equals(FIRE)) {
+                player1Win();
+            } else if (player2Choice.equals(AIR)) {
                 player2Win();
             }
         }

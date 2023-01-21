@@ -15,26 +15,33 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
+/*****************************************************************************
+ * Class for Normal-AI-Mode if chosen in Rock,Paper,Scissors-Menu
+ * @author Fatima Hossain
+ *****************************************************************************/
 public class NormalAI {
     private Stage stage;
     private Scene scene;
 
-    private static final String Rock = "rock";
-    private static final String Paper = "paper";
-    private static final String Scissors = "scissors";
+    private static final String ROCK = "rock";
+    private static final String PAPER = "paper";
+    private static final String SCISSORS = "scissors";
 
     @FXML
-    private ImageView AI;
+    private ImageView ai;
     @FXML
-    private Label AIScore;
+    private Label aiScore;
     @FXML
     private ImageView player;
     @FXML
-    private Label PlayerScore;
+    private Label playerScore;
     @FXML
     private Label result;
     private Image image;
 
+    /*****************************************************************************
+     * switch to Rock,Paper,Scissors-Menu if Back-Button is clicked
+     *****************************************************************************/
     public void switchToMenu(ActionEvent e) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("menu.fxml")));
         stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -43,83 +50,107 @@ public class NormalAI {
         stage.show();
     }
 
+    /*****************************************************************************
+     * identifies player's buttons and sets correct image
+     * winner()-method is implemented
+     *****************************************************************************/
     @FXML
     private void playerTurn(ActionEvent event) {
         String playerChoice = null;
         switch (((Button) event.getSource()).getId()) {
             case "PaperBtn":
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/paper.png");
-                playerChoice = Paper;
+                playerChoice = PAPER;
                 break;
             case "RockBtn":
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/rock.png");
-                playerChoice = Rock;
+                playerChoice = ROCK;
                 break;
             case "ScissorsBtn":
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/scissors.png");
-                playerChoice = Scissors;
+                playerChoice = SCISSORS;
                 break;
         }
         player.setImage(image);
         winner(playerChoice, AITurn());
     }
 
+    /*****************************************************************************
+     * Math.random chooses one of three options and sets correct image
+     *****************************************************************************/
     private String AITurn() {
-        String computerChoice = null;
+        String aiChoice = null;
         int r = (int) (Math.random() * 3);
         switch (r) {
             case 0:
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/paper.png");
-                computerChoice = Paper;
+                aiChoice = PAPER;
                 break;
             case 1:
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/rock.png");
-                computerChoice = Rock;
+                aiChoice = ROCK;
                 break;
             case 2:
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/scissors.png");
-                computerChoice = Scissors;
+                aiChoice = SCISSORS;
                 break;
         }
-        AI.setImage(image);
-        return computerChoice;
+        ai.setImage(image);
+        return aiChoice;
     }
 
+    /*****************************************************************************
+     * result set to "You Win" if player wins
+     * playerScore is risen to +1 point
+     *****************************************************************************/
     public void playerWin() {
         result.setText("You Win");
-        PlayerScore.setText(String.valueOf(Integer.parseInt(PlayerScore.getText()) + 1));
+        playerScore.setText(String.valueOf(Integer.parseInt(playerScore.getText()) + 1));
     }
 
-    public void computerWin() {
+    /*****************************************************************************
+     * result set to "You Lost" if player loses against AI
+     * aiScore is risen to +1 point
+     *****************************************************************************/
+    public void aiWin() {
         result.setText("You Lost");
-        AIScore.setText(String.valueOf(Integer.parseInt(AIScore.getText()) + 1));
+        aiScore.setText(String.valueOf(Integer.parseInt(aiScore.getText()) + 1));
     }
 
+    /*****************************************************************************
+     * if player and AI chose same option, then result is set to "It's a tie"
+     * playerScore and AIScore stays the same
+     *****************************************************************************/
     public void draw() {
         result.setText("It's a tie");
     }
 
-    private void winner(String playerChoice, String computerChoice) {
-
-        if (playerChoice.equals(computerChoice)) {
+    /*****************************************************************************
+     * goes through every possibitly between playerChoice and aiChoice
+     * if player and AI chooses same option, then draw()-method is used
+     * if player wins, then playerWin()-method is used
+     * if AI wins, then aiWin()-method is used
+     *****************************************************************************/
+    private void winner(String playerChoice, String aiChoice) {
+        if (playerChoice.equals(aiChoice)) {
             draw();
         }
-        if (playerChoice.equals(Paper)) {
-            if (computerChoice.equals(Rock)) {
-                computerWin();
-            } else if (computerChoice.equals(Scissors)) {
+        if (playerChoice.equals(PAPER)) {
+            if (aiChoice.equals(ROCK)) {
+                aiWin();
+            } else if (aiChoice.equals(SCISSORS)) {
                 playerWin();
             }
-        } else if (playerChoice.equals(Rock)) {
-            if (computerChoice.equals(Paper)) {
-                computerWin();
-            } else if (computerChoice.equals(Scissors)) {
+        } else if (playerChoice.equals(ROCK)) {
+            if (aiChoice.equals(PAPER)) {
+                aiWin();
+            } else if (aiChoice.equals(SCISSORS)) {
                 playerWin();
             }
-        } else if (playerChoice.equals(Scissors)) {
-            if (computerChoice.equals(Rock)) {
-                computerWin();
-            } else if (computerChoice.equals(Paper)) {
+        } else if (playerChoice.equals(SCISSORS)) {
+            if (aiChoice.equals(ROCK)) {
+                aiWin();
+            } else if (aiChoice.equals(PAPER)) {
                 playerWin();
             }
         }

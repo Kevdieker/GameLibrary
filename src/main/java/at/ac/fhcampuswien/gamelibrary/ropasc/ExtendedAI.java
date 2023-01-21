@@ -15,17 +15,21 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
+/*****************************************************************************
+ * Class for Extended-AI-Mode if chosen in Rock,Paper,Scissors-Menu
+ * @author Fatima Hossain
+ *****************************************************************************/
 public class ExtendedAI {
     private Stage stage;
     private Scene scene;
-    private static final String Rock = "rock";
-    private static final String Paper = "paper";
-    private static final String Scissors = "scissors";
-    private static final String Spock = "spock";
-    private static final String Lizard = "lizard";
-    private static final String Fire = "fire";
-    private static final String Air = "air";
-    private static final String Water = "water";
+    private static final String ROCK = "rock";
+    private static final String PAPER = "paper";
+    private static final String SCISSORS = "scissors";
+    private static final String SPOCK = "spock";
+    private static final String LIZARD = "lizard";
+    private static final String FIRE = "fire";
+    private static final String AIR = "air";
+    private static final String WATER = "water";
     @FXML
     private ImageView ai;
     @FXML
@@ -38,6 +42,9 @@ public class ExtendedAI {
     private Label result;
     private Image image;
 
+    /*****************************************************************************
+     * switches to Rock,Paper,Scissors-Menu when clicked
+     *****************************************************************************/
     public void switchToMenu(ActionEvent e) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("menu.fxml")));
         stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -46,41 +53,44 @@ public class ExtendedAI {
         stage.show();
     }
 
-
+    /*****************************************************************************
+     * identifies player's buttons and shows image
+     * winner-method is implemented
+     *****************************************************************************/
     @FXML
     private void playerTurn(ActionEvent event) {
         String playerChoice = null;
         switch (((Button) event.getSource()).getId()) {
             case "paperBtn":
-                playerChoice = Paper;
+                playerChoice = PAPER;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/paper.png");
                 break;
             case "rockBtn":
-                playerChoice = Rock;
+                playerChoice = ROCK;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/rock.png");
                 break;
             case "scissorsBtn":
-                playerChoice = Scissors;
+                playerChoice = SCISSORS;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/scissors.png");
                 break;
             case "spockBtn":
-                playerChoice = Spock;
+                playerChoice = SPOCK;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/spock.png");
                 break;
             case "lizardBtn":
-                playerChoice = Lizard;
+                playerChoice = LIZARD;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/lizard.png");
                 break;
             case "fireBtn":
-                playerChoice = Fire;
+                playerChoice = FIRE;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/fire.png");
                 break;
             case "airBtn":
-                playerChoice = Air;
+                playerChoice = AIR;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/air.png");
                 break;
             case "waterBtn":
-                playerChoice = Water;
+                playerChoice = WATER;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/water.png");
                 break;
         }
@@ -88,194 +98,214 @@ public class ExtendedAI {
         winner(playerChoice, AITurn());
     }
 
-
+    /*****************************************************************************
+     * chooses random choices, identifies it and shows image
+     *****************************************************************************/
     private String AITurn() {
-        String computerChoice = null;
+        String aiChoice = null;
         int r = (int) (Math.random() * 8);
         switch (r) {
             case 0:
-                computerChoice = Paper;
+                aiChoice = PAPER;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/paper.png");
                 break;
             case 1:
-                computerChoice = Rock;
+                aiChoice = ROCK;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/rock.png");
                 break;
             case 2:
-                computerChoice = Scissors;
+                aiChoice = SCISSORS;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/scissors.png");
                 break;
             case 3:
-                computerChoice = Spock;
+                aiChoice = SPOCK;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/spock.png");
                 break;
             case 4:
-                computerChoice = Lizard;
+                aiChoice = LIZARD;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/lizard.png");
                 break;
             case 5:
-                computerChoice = Fire;
+                aiChoice = FIRE;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/fire.png");
                 break;
             case 6:
-                computerChoice = Air;
+                aiChoice = AIR;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/air.png");
                 break;
             case 7:
-                computerChoice = Water;
+                aiChoice = WATER;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/water.png");
                 break;
         }
         ai.setImage(image);
-        return computerChoice;
+        return aiChoice;
     }
 
+    /*****************************************************************************
+     * result is set to "You Win" if player wins
+     * playerScore is risen to +1 point
+     *****************************************************************************/
     public void playerWin() {
         result.setText("You Win");
         playerScore.setText(String.valueOf(Integer.parseInt(playerScore.getText()) + 1));
     }
 
-    public void computerWin() {
+    /*****************************************************************************
+     * result is set to "You Lost" if AI wins
+     * aiScore is risen to +1 point
+     *****************************************************************************/
+    public void aiWin() {
         result.setText("You Lost");
         aiScore.setText(String.valueOf(Integer.parseInt(aiScore.getText()) + 1));
     }
 
+    /*****************************************************************************
+     * if player and AI have same choice then result is set to "It's a tie"
+     * score of AI and player stays the same
+     *****************************************************************************/
     public void draw() {
         result.setText("It's a tie");
     }
 
-    private void winner(String playerChoice, String computerChoice) {
+    /*****************************************************************************
+     * goes through every possibility between playerChoice and aiChoice
+     * if player wins, then playerWin()-method is used
+     * if AI wins, then aiWin()-method is used
+     * if neither of them wins, then draw()-method is used
+     *****************************************************************************/
+    private void winner(String playerChoice, String aiChoice) {
 
-        if (playerChoice.equals(computerChoice)) {
+        if (playerChoice.equals(aiChoice)) {
             draw();
         }
-        if (playerChoice.equals(Paper)) {
-            if (computerChoice.equals(Rock)) {
-                computerWin();
-            } else if (computerChoice.equals(Scissors)) {
+        if (playerChoice.equals(PAPER)) {
+            if (aiChoice.equals(ROCK)) {
+                aiWin();
+            } else if (aiChoice.equals(SCISSORS)) {
                 playerWin();
-            } else if (computerChoice.equals(Spock)) {
+            } else if (aiChoice.equals(SPOCK)) {
                 playerWin();
-            } else if (computerChoice.equals(Lizard)) {
-                computerWin();
-            } else if (computerChoice.equals(Fire)) {
-                computerWin();
-            } else if (computerChoice.equals(Air)) {
+            } else if (aiChoice.equals(LIZARD)) {
+                aiWin();
+            } else if (aiChoice.equals(FIRE)) {
+                aiWin();
+            } else if (aiChoice.equals(AIR)) {
                 playerWin();
-            } else if (computerChoice.equals(Water)) {
-                playerWin();
-            }
-        } else if (playerChoice.equals(Rock)) {
-            if (computerChoice.equals(Paper)) {
-                computerWin();
-            } else if (computerChoice.equals(Scissors)) {
-                playerWin();
-            } else if (computerChoice.equals(Spock)) {
-                computerWin();
-            } else if (computerChoice.equals(Lizard)) {
-                playerWin();
-            } else if (computerChoice.equals(Fire)) {
-                playerWin();
-            } else if (computerChoice.equals(Air)) {
-                computerWin();
-            } else if (computerChoice.equals(Water)) {
-                computerWin();
-            }
-        } else if (playerChoice.equals(Scissors)) {
-            if (computerChoice.equals(Rock)) {
-                computerWin();
-            } else if (computerChoice.equals(Paper)) {
-                playerWin();
-            } else if (computerChoice.equals(Spock)) {
-                computerWin();
-            } else if (computerChoice.equals(Lizard)) {
-                playerWin();
-            } else if (computerChoice.equals(Fire)) {
-                playerWin();
-            } else if (computerChoice.equals(Air)) {
-                playerWin();
-            } else if (computerChoice.equals(Water)) {
+            } else if (aiChoice.equals(WATER)) {
                 playerWin();
             }
-        } else if (playerChoice.equals(Spock)) {
-            if (computerChoice.equals(Rock)) {
+        } else if (playerChoice.equals(ROCK)) {
+            if (aiChoice.equals(PAPER)) {
+                aiWin();
+            } else if (aiChoice.equals(SCISSORS)) {
                 playerWin();
-            } else if (computerChoice.equals(Paper)) {
+            } else if (aiChoice.equals(SPOCK)) {
+                aiWin();
+            } else if (aiChoice.equals(LIZARD)) {
                 playerWin();
-            } else if (computerChoice.equals(Scissors)) {
-                computerWin();
-            } else if (computerChoice.equals(Lizard)) {
-                computerWin();
-            } else if (computerChoice.equals(Fire)) {
-                computerWin();
-            } else if (computerChoice.equals(Air)) {
+            } else if (aiChoice.equals(FIRE)) {
                 playerWin();
-            } else if (computerChoice.equals(Water)) {
-                computerWin();
+            } else if (aiChoice.equals(AIR)) {
+                aiWin();
+            } else if (aiChoice.equals(WATER)) {
+                aiWin();
             }
-        } else if (playerChoice.equals(Lizard)) {
-            if (computerChoice.equals(Rock)) {
+        } else if (playerChoice.equals(SCISSORS)) {
+            if (aiChoice.equals(ROCK)) {
+                aiWin();
+            } else if (aiChoice.equals(PAPER)) {
                 playerWin();
-            } else if (computerChoice.equals(Paper)) {
+            } else if (aiChoice.equals(SPOCK)) {
+                aiWin();
+            } else if (aiChoice.equals(LIZARD)) {
                 playerWin();
-            } else if (computerChoice.equals(Scissors)) {
-                computerWin();
-            } else if (computerChoice.equals(Spock)) {
-                computerWin();
-            } else if (computerChoice.equals(Fire)) {
-                computerWin();
-            } else if (computerChoice.equals(Air)) {
+            } else if (aiChoice.equals(FIRE)) {
                 playerWin();
-            } else if (computerChoice.equals(Water)) {
-                computerWin();
-            }
-        } else if (playerChoice.equals(Fire)) {
-            if (computerChoice.equals(Rock)) {
-                computerWin();
-            } else if (computerChoice.equals(Paper)) {
+            } else if (aiChoice.equals(AIR)) {
                 playerWin();
-            } else if (computerChoice.equals(Scissors)) {
-                playerWin();
-            } else if (computerChoice.equals(Spock)) {
-                playerWin();
-            } else if (computerChoice.equals(Lizard)) {
-                playerWin();
-            } else if (computerChoice.equals(Air)) {
-                computerWin();
-            } else if (computerChoice.equals(Water)) {
-                computerWin();
-            }
-        } else if (playerChoice.equals(Air)) {
-            if (computerChoice.equals(Rock)) {
-                playerWin();
-            } else if (computerChoice.equals(Paper)) {
-                computerWin();
-            } else if (computerChoice.equals(Scissors)) {
-                computerWin();
-            } else if (computerChoice.equals(Spock)) {
-                computerWin();
-            } else if (computerChoice.equals(Lizard)) {
-                playerWin();
-            } else if (computerChoice.equals(Fire)) {
-                playerWin();
-            } else if (computerChoice.equals(Water)) {
+            } else if (aiChoice.equals(WATER)) {
                 playerWin();
             }
-        } else if (playerChoice.equals(Water)) {
-            if (computerChoice.equals(Rock)) {
+        } else if (playerChoice.equals(SPOCK)) {
+            if (aiChoice.equals(ROCK)) {
                 playerWin();
-            } else if (computerChoice.equals(Paper)) {
-                computerWin();
-            } else if (computerChoice.equals(Scissors)) {
-                computerWin();
-            } else if (computerChoice.equals(Spock)) {
+            } else if (aiChoice.equals(PAPER)) {
                 playerWin();
-            } else if (computerChoice.equals(Lizard)) {
-                computerWin();
-            } else if (computerChoice.equals(Fire)) {
+            } else if (aiChoice.equals(SCISSORS)) {
+                aiWin();
+            } else if (aiChoice.equals(LIZARD)) {
+                aiWin();
+            } else if (aiChoice.equals(FIRE)) {
+                aiWin();
+            } else if (aiChoice.equals(AIR)) {
                 playerWin();
-            } else if (computerChoice.equals(Air)) {
-                computerWin();
+            } else if (aiChoice.equals(WATER)) {
+                aiWin();
+            }
+        } else if (playerChoice.equals(LIZARD)) {
+            if (aiChoice.equals(ROCK)) {
+                playerWin();
+            } else if (aiChoice.equals(PAPER)) {
+                playerWin();
+            } else if (aiChoice.equals(SCISSORS)) {
+                aiWin();
+            } else if (aiChoice.equals(SPOCK)) {
+                aiWin();
+            } else if (aiChoice.equals(FIRE)) {
+                aiWin();
+            } else if (aiChoice.equals(AIR)) {
+                playerWin();
+            } else if (aiChoice.equals(WATER)) {
+                aiWin();
+            }
+        } else if (playerChoice.equals(FIRE)) {
+            if (aiChoice.equals(ROCK)) {
+                aiWin();
+            } else if (aiChoice.equals(PAPER)) {
+                playerWin();
+            } else if (aiChoice.equals(SCISSORS)) {
+                playerWin();
+            } else if (aiChoice.equals(SPOCK)) {
+                playerWin();
+            } else if (aiChoice.equals(LIZARD)) {
+                playerWin();
+            } else if (aiChoice.equals(AIR)) {
+                aiWin();
+            } else if (aiChoice.equals(WATER)) {
+                aiWin();
+            }
+        } else if (playerChoice.equals(AIR)) {
+            if (aiChoice.equals(ROCK)) {
+                playerWin();
+            } else if (aiChoice.equals(PAPER)) {
+                aiWin();
+            } else if (aiChoice.equals(SCISSORS)) {
+                aiWin();
+            } else if (aiChoice.equals(SPOCK)) {
+                aiWin();
+            } else if (aiChoice.equals(LIZARD)) {
+                playerWin();
+            } else if (aiChoice.equals(FIRE)) {
+                playerWin();
+            } else if (aiChoice.equals(WATER)) {
+                playerWin();
+            }
+        } else if (playerChoice.equals(WATER)) {
+            if (aiChoice.equals(ROCK)) {
+                playerWin();
+            } else if (aiChoice.equals(PAPER)) {
+                aiWin();
+            } else if (aiChoice.equals(SCISSORS)) {
+                aiWin();
+            } else if (aiChoice.equals(SPOCK)) {
+                playerWin();
+            } else if (aiChoice.equals(LIZARD)) {
+                aiWin();
+            } else if (aiChoice.equals(FIRE)) {
+                playerWin();
+            } else if (aiChoice.equals(AIR)) {
+                aiWin();
             }
         }
     }

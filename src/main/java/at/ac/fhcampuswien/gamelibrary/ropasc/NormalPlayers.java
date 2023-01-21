@@ -1,10 +1,8 @@
 package at.ac.fhcampuswien.gamelibrary.ropasc;
 
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -16,16 +14,18 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.Objects;
-import java.util.ResourceBundle;
 
+/*****************************************************************************
+ * Class for Normal-Player-Mode if chosen in Rock,Paper,Scissors-Menu
+ * @author Fatima Hossain
+ *****************************************************************************/
 public class NormalPlayers {
     private Stage stage;
     private Scene scene;
-    private static final String Rock = "rock";
-    private static final String Paper = "paper";
-    private static final String Scissors = "scissors";
+    private static final String ROCK = "rock";
+    private static final String PAPER = "paper";
+    private static final String SCISSORS = "scissors";
 
     private String player1Choice;
     private String player2Choice;
@@ -43,6 +43,9 @@ public class NormalPlayers {
     @FXML
     Rectangle tool;
 
+    /*****************************************************************************
+     * switches to Rock,Paper,Scissors-Menu if Back-Button is clicked
+     *****************************************************************************/
     public void switchToMenu(ActionEvent e) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("menu.fxml")));
         stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -51,86 +54,110 @@ public class NormalPlayers {
         stage.show();
     }
 
+    /*****************************************************************************
+     * identifies player1's buttons and sets correct image
+     * winner-method() is implemented
+     *****************************************************************************/
     @FXML
     private void player1Turn(ActionEvent event){
         tool.setVisible(true);
         switch (((Button) event.getSource()).getId()) {
             case "paperBtn1":
-                player1Choice = Paper;
+                player1Choice = PAPER;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/paper.png");
                 break;
             case "rockBtn1":
-                player1Choice = Rock;
+                player1Choice = ROCK;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/rock.png");
                 break;
             case "scissorBtn1":
-                player1Choice = Scissors;
+                player1Choice = SCISSORS;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/scissors.png");
                 break;
         }
         player1.setImage(image);
-        checkIfWon();
+        winner();
     }
 
+    /*****************************************************************************
+     * identifies player2's buttons and sets correct image
+     * winner-method() is implemented
+     *****************************************************************************/
     @FXML
     private void player2Turn(ActionEvent ev) {
         tool.setVisible(false);
         switch (((Button) ev.getSource()).getId()) {
             case "paperBtn2":
-                player2Choice = Paper;
+                player2Choice = PAPER;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/paper.png");
                 break;
             case "rockBtn2":
-                player2Choice = Rock;
+                player2Choice = ROCK;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/rock.png");
                 break;
             case "scissorBtn2":
-                player2Choice = Scissors;
+                player2Choice = SCISSORS;
                 image = new Image("at/ac/fhcampuswien/gamelibrary/ropasc/scissors.png");
                 break;
         }
         player2.setImage(image);
-        checkIfWon();
+        winner();
     }
 
+    /*****************************************************************************
+     * result set to "Player 1 wins!", if player 1 wins
+     * if tool is not visible player1Scores raises to +1 point
+     * if tool is visible player2Score stays the same
+     *****************************************************************************/
     public void player1Win() {
         result.setText("Player 1 wins!");
         if(!tool.isVisible()){
             player1Score.setText(String.valueOf(Integer.parseInt(player1Score.getText()) + 1));
         }else{
-            player1Score.setText(String.valueOf(Integer.parseInt(player1Score.getText())));
+            player2Score.setText(String.valueOf(Integer.parseInt(player2Score.getText())));
         }
     }
 
+    /*****************************************************************************
+     * result set to "Player 2 wins!", if player 1 wins
+     * if tool is not visible player2Scores raises to +1 point
+     * if tool is visible player1Score stays the same
+     *****************************************************************************/
     public void player2Win() {
         result.setText("Player 2 wins!");
         if(!tool.isVisible()){
             player2Score.setText(String.valueOf(Integer.parseInt(player2Score.getText()) + 1));
         }else{
-            player2Score.setText(String.valueOf(Integer.parseInt(player2Score.getText())));
+            player1Score.setText(String.valueOf(Integer.parseInt(player1Score.getText())));
         }
     }
 
-    private void checkIfWon() {
+    /*****************************************************************************
+     * goes through every possibility between player1Choice and player2Choice
+     * result set to "It's a tie" if player1 and player2 chooses same option
+     * if player1 wins, then player1Win()-method is used
+     * if player2 wins, then player2Win()-method is used
+     *****************************************************************************/
+    private void winner() {
         if (player1Choice.equals(player2Choice)) {
             result.setText("It's a tie");
         }
-        if (player1Choice.equals(Paper)) {
-            if (player2Choice.equals(Rock)) {
+        if (player1Choice.equals(PAPER)) {
+            if (player2Choice.equals(ROCK)) {
                 player1Win();
-            } else if (player2Choice.equals(Scissors)) {
+            } else if (player2Choice.equals(SCISSORS)) {
                 player2Win();
             }
-        } else if (player1Choice.equals(Rock)) {
-            if (player2Choice.equals(Paper)) {
+        } else if (player1Choice.equals(ROCK)) {
+            if (player2Choice.equals(PAPER)) {
                 player2Win();
-            } else if (player2Choice.equals(Scissors)) {
+            } else if (player2Choice.equals(SCISSORS)) {
                 player1Win();
             }
-        } else if (player1Choice.equals(Scissors)) {
-            if (player2Choice.equals(Rock)) {
+        } else if (player1Choice.equals(SCISSORS)) {
+            if (player2Choice.equals(ROCK)) {
                 player2Win();
-            } else if (player2Choice.equals(Paper)) {
+            } else if (player2Choice.equals(PAPER)) {
                 player1Win();
             }
         }

@@ -3,7 +3,6 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -32,7 +31,7 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Button layoutX="557.0" layoutY="347.0" mnemonicParsing="false" onAction="#windowCredits" opacity="0.0" prefHeight="150.0" prefWidth="218.0" text="Cedits">
+      <Button layoutX="557.0" layoutY="347.0" mnemonicParsing="false" onAction="#windowCredits" opacity="0.0" prefHeight="150.0" prefWidth="243.0" text="Cedits">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -57,12 +56,12 @@
             <Image url="@mainmenu%20pictures/Titelloses%2057_20230114221443.png" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" layoutX="466.0" layoutY="252.0" prefHeight="20.0" prefWidth="91.0" text="Rock, Paper">
+      <Label alignment="CENTER" layoutX="466.0" layoutY="252.0" prefHeight="20.0" prefWidth="91.0" text="Rock, Paper,">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="466.0" layoutY="275.0" prefHeight="20.0" prefWidth="91.0" text="&amp; Scissors">
+      <Label alignment="CENTER" layoutX="466.0" layoutY="275.0" prefHeight="20.0" prefWidth="91.0" text="Scissors">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -102,6 +101,20 @@
             <Image url="@mainmenu%20pictures/Titelloses%2065_20230116163408.png" />
          </image>
       </ImageView>
-      <TextArea disable="true" layoutX="566.0" layoutY="316.0" prefHeight="200.0" prefWidth="200.0" text="&#10;&#10;&#10;&#10;        &#9; Coming Soon ! &#10;&#9;&#9;&#9;   &amp; &#10;&#9;&#9;       Credits&#10;" />
+      <ImageView disable="true" fitHeight="274.0" fitWidth="313.0" layoutX="529.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@mainmenu%20pictures/Titelloses%2069_20230121173109.png" />
+         </image>
+      </ImageView>
+      <ImageView disable="true" fitHeight="48.0" fitWidth="119.0" layoutX="616.0" layoutY="520.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@mainmenu%20pictures/Titelloses%2057_20230114221443.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="638.0" layoutY="531.0" text="Credits">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

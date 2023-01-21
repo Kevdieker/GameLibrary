@@ -8,8 +8,8 @@ Buggy shots if ball hits top of paddle
 
 _______________________________________________________________
 
-Rock Paper Scicors:
-
+Rock Paper Scissors:
+When 2-Player-Mode is chosen, only player1 can start first
 _______________________________________________________________
 
 Tetris:
@@ -18,7 +18,7 @@ Game breaks if going back to menu
 _______________________________________________________________
 
 Memory:
-No pictures as inteded
+No pictures as intended
 
 _______________________________________________________________
 

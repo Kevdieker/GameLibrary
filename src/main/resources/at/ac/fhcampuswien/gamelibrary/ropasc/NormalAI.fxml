@@ -41,12 +41,12 @@
             <Font name="System Bold" size="22.0" />
          </font>
       </Label>
-      <Label fx:id="PlayerScore" layoutX="442.0" layoutY="32.0" text="0" textFill="WHITE">
+      <Label fx:id="playerScore" layoutX="442.0" layoutY="32.0" text="0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="23.0" />
          </font>
       </Label>
-      <Label fx:id="AIScore" layoutX="564.0" layoutY="32.0" text="0" textFill="WHITE">
+      <Label fx:id="aiScore" layoutX="564.0" layoutY="32.0" text="0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="23.0" />
          </font>
@@ -73,6 +73,6 @@
          </image>
       </ImageView>
       <ImageView fx:id="player" fitHeight="119.0" fitWidth="130.0" layoutX="228.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="AI" fitHeight="119.0" fitWidth="130.0" layoutX="662.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="ai" fitHeight="119.0" fitWidth="130.0" layoutX="662.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
