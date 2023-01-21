@@ -10,31 +10,40 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
+/*****************************************************************************
+ * Class used as an EntryPoint for the Pong Application.
+ * Its sole purpose is to only Start the game without going through the menu.
+ * @author Kevin D. Kerbl
+ *****************************************************************************/
 public class PongMain extends Application {
-    Scene scene;
-    FXMLLoader loader;
-    Parent root;
-    PongGame controller;
 
+    /*******************************************************************************************************************
+     * EntryPoint for the Pong Application
+     * @param stage the primary stage for this application, onto which the pong scene can be set.
+     * @throws IOException when we can't read the fxml file.
+     ******************************************************************************************************************/
 
     @Override
     public void start(Stage stage) throws IOException {
 
-        loader = new FXMLLoader(getClass().getResource("PongView.fxml"));
-        root = loader.load();
-        scene = new Scene(root);
-        controller = loader.getController();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("PongView.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        PongGame controller = loader.getController();
         controller.createGrid();
 
         stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("Redflag.jpeg"))));
         stage.setResizable(false);
         stage.centerOnScreen();
         stage.setScene(scene);
-        stage.setFullScreen(false);
         stage.show();
 
     }
 
+    /*********************************************
+     * Our main method. Launches the application.
+     * @param args The command line arguments.
+     *********************************************/
     public static void main(String[] args) {
         launch();
     }
