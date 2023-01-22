@@ -1,7 +1,10 @@
 package at.ac.fhcampuswien.gamelibrary.pong;
 
+/*****************************************************************************
+ * Class for Constants. For testing mods
+ * @author Kevin D. Kerbl
+ *****************************************************************************/
 public class PongConstants {
-
     public static final double WIDTH = 800;
     public static final double HEIGHT = 450;
     public static final double PADDLE_HEIGHT = 100;
@@ -11,5 +14,4 @@ public class PongConstants {
     public static final double BALL_SPEED = 1;
     public static final double BALL_SPEED_INCREASE = 0.2;
     public static final int BALL_SPEED_CAP = 30;
-
 }
