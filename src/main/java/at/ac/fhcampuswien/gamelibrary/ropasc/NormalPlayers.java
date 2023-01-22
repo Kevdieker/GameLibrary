@@ -14,6 +14,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.Objects;
 
 /*****************************************************************************
@@ -27,23 +28,21 @@ public class NormalPlayers {
     private static final String PAPER = "paper";
     private static final String SCISSORS = "scissors";
 
-    private String player1Choice;
-    private String player2Choice;
-    @FXML
-    private Label player2Score;
-    @FXML
-    private Label player1Score;
     @FXML
     private ImageView player1;
     @FXML
+    private Label player1Score;
+    @FXML
     private ImageView player2;
     @FXML
+    private Label player2Score;
+    @FXML
     private Label result;
+    private String player1Choice;
+    private String player2Choice;
     private Image image;
     @FXML
     Rectangle tool;
-    @FXML
-    private Label playertext;
 
     /*****************************************************************************
      * switches to Rock,Paper,Scissors-Menu if Back-Button is clicked
@@ -61,7 +60,7 @@ public class NormalPlayers {
      * winner-method() is implemented
      *****************************************************************************/
     @FXML
-    private void player1Turn(ActionEvent event){
+    private void player1Turn(ActionEvent event) throws NullPointerException {
         tool.setVisible(true);
         switch (((Button) event.getSource()).getId()) {
             case "paperBtn1":
@@ -86,7 +85,7 @@ public class NormalPlayers {
      * winner-method() is implemented
      *****************************************************************************/
     @FXML
-    private void player2Turn(ActionEvent ev) {
+    private void player2Turn(ActionEvent ev) throws NullPointerException{
         tool.setVisible(false);
         switch (((Button) ev.getSource()).getId()) {
             case "paperBtn2":
