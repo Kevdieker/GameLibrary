@@ -26,11 +26,9 @@ public class PongMain extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("PongView.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("PongMenu.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
-        PongGame controller = loader.getController();
-        controller.createGrid();
 
         stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("Redflag.jpeg"))));
         stage.setResizable(false);

@@ -6,7 +6,7 @@ import javafx.scene.shape.Rectangle;
 
 import java.util.Random;
 
-import static at.ac.fhcampuswien.gamelibrary.pong.PongConstants.BALL_SPEED;
+import static at.ac.fhcampuswien.gamelibrary.pong.PongConstants.*;
 
 /*****************************************************************************
  * Class for Ball entity. Random ball spawn. Ball movement. Draw ball.
@@ -14,7 +14,6 @@ import static at.ac.fhcampuswien.gamelibrary.pong.PongConstants.BALL_SPEED;
  *****************************************************************************/
 public class PongBall extends Rectangle {
     Random random = new Random();
-    ;
     public double xVelocity;
     public double yVelocity;
 
@@ -66,5 +65,6 @@ public class PongBall extends Rectangle {
     public void draw(GraphicsContext gc) {
         gc.setFill(Color.ORANGE);
         gc.fillOval(getX(), getY(), getWidth(), getHeight());
+
     }
 }

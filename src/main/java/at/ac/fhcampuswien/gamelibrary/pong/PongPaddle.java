@@ -21,7 +21,7 @@ public class PongPaddle extends Rectangle {
      * Sets y velocity to y direction
      * @param yDirection random y direction
      *********************************************/
-    private void setYDirection(double yDirection) {
+    void setYDirection(double yDirection) {
         yVelocity = yDirection;
     }
 

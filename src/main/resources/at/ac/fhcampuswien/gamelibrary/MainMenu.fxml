@@ -19,7 +19,7 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Button layoutX="135.0" layoutY="42.0" mnemonicParsing="false" onAction="#switchToPong" opacity="0.0" prefHeight="196.0" prefWidth="151.0" text="Pong">
+      <Button layoutX="135.0" layoutY="42.0" mnemonicParsing="false" onAction="#switchToPongMenu" opacity="0.0" prefHeight="196.0" prefWidth="151.0" text="Pong">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>

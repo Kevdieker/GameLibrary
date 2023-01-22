@@ -13,9 +13,11 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.util.Duration;
 
+import java.awt.*;
 import java.io.IOException;
 
 /*****************************************************************************
@@ -26,16 +28,22 @@ import java.io.IOException;
 public class PongGame {
     int paddleOneIntersections, paddleTwoIntersections;
     private boolean gameStarted = false;
-    private double cBallXVelocity, nBallYVelocity, nBallYVelocity2, nby;
-    private double cBallXVelocity2, nBallXVelocity = BALL_SPEED, nBallXVelocity2 = BALL_SPEED, oby;
+    private double nBallYVelocity, nBallYVelocity2;
+    private double nBallXVelocity = BALL_SPEED, nBallXVelocity2 = BALL_SPEED;
     @FXML
     private Canvas canvas;
+    @FXML
+    private Text playerLabel;
     private PongPaddle paddleOne;
     private PongPaddle paddleTwo;
     private PongBall ball;
     private int playerOneScore;
     private int playerTwoScore;
+    private boolean twoPlayerMode;
 
+    public void setTwoPlayerMode(boolean twoPlayerMode) {
+        this.twoPlayerMode = twoPlayerMode;
+    }
     /*****************************************************************
      * Creates new ball entity.
      *****************************************************************/
@@ -64,12 +72,17 @@ public class PongGame {
 
         canvas.setOnKeyPressed(e -> {
                     paddleOne.keyPressed(e);
-                    paddleTwo.keyPressed(e);
+                    if (twoPlayerMode) {
+                        paddleTwo.keyPressed(e);
+                    }
                 }
         );
         canvas.setOnKeyReleased(e -> {
             paddleOne.keyReleased(e);
-            paddleTwo.keyReleased(e);
+            if (twoPlayerMode) {
+                paddleTwo.keyReleased(e);
+            }
+
         });
 
         GraphicsContext gc = canvas.getGraphicsContext2D();
@@ -79,6 +92,7 @@ public class PongGame {
         timeline.play();
 
     }
+
 
     /***************************************************
      * Draws the play field.
@@ -118,15 +132,30 @@ public class PongGame {
     }
 
     /*****************************************************
+     * This method lets the bot run after the ball
+     *****************************************************/
+    public void simpleBot() {
+        if (paddleTwo.getY() < ball.getY()) {
+            paddleTwo.setYDirection(PADDLE_SPEED);
+        } else if (paddleTwo.getY() >= ball.getY()) {
+            paddleTwo.setYDirection(-PADDLE_SPEED);
+
+        }
+    }
+
+    /*****************************************************
      * This method handles the start of a Round
      * @param gc used to draw on canvas using a buffer
      *****************************************************/
 
     private void processInput(GraphicsContext gc) {
         if (gameStarted) {
+            if (!twoPlayerMode) simpleBot();
             paddleOne.move();
             paddleTwo.move();
             ball.move();
+
+
         } else {
             gc.setLineWidth(2);
             gc.setStroke(Color.BLUEVIOLET);
@@ -184,7 +213,7 @@ public class PongGame {
                     ball.xVelocity = nBallXVelocity2;
                     ball.yVelocity = nBallYVelocity2;
                 }
-                
+
 
                 ball.setXVelocity(ball.xVelocity);
                 ball.setYVelocity(ball.yVelocity);
@@ -251,5 +280,36 @@ public class PongGame {
     public void switchToMainMenu(ActionEvent e) throws IOException {
         new MainSceneSwitch().switchToMainMenu(e);
 
+    }
+    /******************************************************************************************
+     * Switches scene to PongMenu
+     * @param e used to draw on canvas using a buffer
+     * @throws IOException when we can't read the fxml file.
+     ******************************************************************************************/
+    public void switchToPongMenu(ActionEvent e) throws IOException {
+        new MainSceneSwitch().switchToPongMenu(e);
+
+    }
+    /******************************************************************************************
+     * Switches scene to PongMenu
+     * @param e used to draw on canvas using a buffer
+     * @throws IOException when we can't read the fxml file.
+     ******************************************************************************************/
+    public void switchToPongGame(ActionEvent e) throws IOException {
+        new MainSceneSwitch().switchToPongGame(e);
+    }
+    /******************************************************************************************
+     * Switches scene to 2 player mode
+     ******************************************************************************************/
+    public void twoPlayerMode()  {
+        playerLabel.setText("2 Player");
+        setTwoPlayerMode(true);
+    }
+    /******************************************************************************************
+     * Switches scene to bot mode
+     ******************************************************************************************/
+    public void onePLayerMode(){
+    playerLabel.setText("1 Player");
+        setTwoPlayerMode(false);
     }
 }

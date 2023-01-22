@@ -25,7 +25,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <Button layoutX="17.0" layoutY="21.0" mnemonicParsing="false" onAction="#switchToMainMenu" opacity="0.0" prefHeight="60.0" prefWidth="60.0" text="Back">
+      <Button layoutX="17.0" layoutY="21.0" mnemonicParsing="false" onAction="#switchToPongMenu" opacity="0.0" prefHeight="60.0" prefWidth="60.0" text="Back">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
