@@ -184,6 +184,7 @@ public class PongGame {
                     ball.xVelocity = nBallXVelocity2;
                     ball.yVelocity = nBallYVelocity2;
                 }
+                
 
                 ball.setXVelocity(ball.xVelocity);
                 ball.setYVelocity(ball.yVelocity);
