@@ -96,16 +96,17 @@ public class MainSceneSwitch {
     /**********************************************************
      * Switches scene to pong game
      * @param e for ActionEvent to switch between scenes.
+     * @param twoPlayerMode for modifying Player mode.
      * @throws IOException when we can't read the fxml file.
      **********************************************************/
-    public void switchToPongGame(ActionEvent e) throws IOException {
+    public void switchToPongGame(ActionEvent e,Boolean twoPlayerMode) throws IOException {
         loader = new FXMLLoader(getClass().getResource("pong/PongView.fxml"));
         mainRoot = loader.load();
         scene = new Scene(mainRoot);
         PongGame controller = loader.getController();
         stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         controller.createGrid();
-        controller.setTwoPlayerMode(false);
+        controller.setTwoPlayerMode(twoPlayerMode);
 
         stage.setResizable(false);
         stage.centerOnScreen();

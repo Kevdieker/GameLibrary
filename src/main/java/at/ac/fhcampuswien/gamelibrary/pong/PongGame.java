@@ -296,17 +296,18 @@ public class PongGame {
      * @throws IOException when we can't read the fxml file.
      ******************************************************************************************/
     public void switchToPongGame(ActionEvent e) throws IOException {
-        new MainSceneSwitch().switchToPongGame(e);
+        MainSceneSwitch a = new MainSceneSwitch();
+        a.switchToPongGame(e,twoPlayerMode);
     }
     /******************************************************************************************
-     * Switches scene to 2 player mode
+     * Switches to 2 player mode
      ******************************************************************************************/
     public void twoPlayerMode()  {
         playerLabel.setText("2 Player");
         setTwoPlayerMode(true);
     }
     /******************************************************************************************
-     * Switches scene to bot mode
+     * Switches to bot mode
      ******************************************************************************************/
     public void onePLayerMode(){
     playerLabel.setText("1 Player");
