@@ -31,7 +31,7 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Button layoutX="557.0" layoutY="347.0" mnemonicParsing="false" onAction="#windowCredits" opacity="0.0" prefHeight="150.0" prefWidth="243.0" text="Cedits">
+      <Button layoutX="563.0" layoutY="347.0" mnemonicParsing="false" onAction="#creditsWindow" opacity="0.0" prefHeight="150.0" prefWidth="208.0" text="Cedits">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

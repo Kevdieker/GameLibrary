@@ -24,9 +24,10 @@ import java.io.IOException;
  *****************************************************************************/
 
 public class PongGame {
+    int paddleOneIntersections, paddleTwoIntersections;
     private boolean gameStarted = false;
-    private double nax, nbx, nay, nby;
-    private double oax, obx, oay, oby;
+    private double cBallXVelocity, nBallYVelocity, nBallYVelocity2, nby;
+    private double cBallXVelocity2, nBallXVelocity = BALL_SPEED, nBallXVelocity2 = BALL_SPEED, oby;
     @FXML
     private Canvas canvas;
     private PongPaddle paddleOne;
@@ -91,11 +92,11 @@ public class PongGame {
 
         //draws score
         gc.setFill(Color.WHITE);
-        gc.setFont(new Font( "Consolas",50));
+        gc.setFont(new Font("Consolas", 50));
         gc.setTextAlign(TextAlignment.CENTER);
         gc.setTextBaseline(VPos.CENTER);
-        gc.fillText(playerOneScore / 10 +String.valueOf(playerOneScore %10), (WIDTH/2)-75,50);
-        gc.fillText(playerTwoScore / 10 +String.valueOf(playerTwoScore %10),(WIDTH/2)+ 75,50);
+        gc.fillText(playerOneScore / 10 + String.valueOf(playerOneScore % 10), (WIDTH / 2) - 75, 50);
+        gc.fillText(playerTwoScore / 10 + String.valueOf(playerTwoScore % 10), (WIDTH / 2) + 75, 50);
 
         //Draws the net in the middle of the field.
         gc.setStroke(Color.WHITE);
@@ -159,13 +160,6 @@ public class PongGame {
         // ball bounces off paddles
         if (ball.intersects(paddleOne.getBoundsInLocal()) || ball.intersects(paddleTwo.getBoundsInLocal())) {
 
-            /* nbx = pongBall.xVelocity;
-             nby = pongBall.yVelocity;
-
-            if (nbx != nax){
-                pongBall.xVelocity = nax;
-            }
-*/
             ball.xVelocity = Math.abs(ball.xVelocity);
 
             //makes ball faster
@@ -177,16 +171,45 @@ public class PongGame {
             }
 
             if (ball.intersects(paddleOne.getBoundsInLocal())) {
-                ball.setXVelocity(ball.xVelocity);
 
-            } else if (ball.intersects(paddleTwo.getBoundsInLocal())) {
-                ball.setXVelocity(-ball.xVelocity);
+                //saves Bal velocity when it intersects with paddle the second time
+                if (paddleOneIntersections == 1) {
+                    nBallXVelocity = Math.abs(ball.xVelocity);
+                    nBallYVelocity = ball.yVelocity;
+                }
+
+                /*if a ball intersected with player two more than one time,
+                 set back ball-velocity to before the multiple intersections*/
+                if (paddleTwoIntersections > 1) {
+                    ball.xVelocity = nBallXVelocity2;
+                    ball.yVelocity = nBallYVelocity2;
+                }
+
+                ball.setXVelocity(ball.xVelocity);
+                ball.setYVelocity(ball.yVelocity);
+
+                paddleOneIntersections++;
+                paddleTwoIntersections = 0;
             }
 
-            ball.setYVelocity(ball.yVelocity);
+            if (ball.intersects(paddleTwo.getBoundsInLocal())) {
 
-         /*   obx = ball.xVelocity;
-            oby = ball.yVelocity;*/
+                if (paddleTwoIntersections == 1) {
+                    nBallXVelocity2 = Math.abs(ball.xVelocity);
+                    nBallYVelocity2 = ball.yVelocity;
+                }
+
+                if (paddleOneIntersections > 1) {
+                    ball.xVelocity = nBallXVelocity;
+                    ball.yVelocity = nBallYVelocity;
+                }
+
+                ball.setXVelocity(-ball.xVelocity);
+                ball.setYVelocity(ball.yVelocity);
+
+                paddleOneIntersections = 0;
+                paddleTwoIntersections++;
+            }
 
         }
 
@@ -200,6 +223,9 @@ public class PongGame {
 
             newPaddles();
             newBall();
+            nBallXVelocity = BALL_SPEED;
+            nBallXVelocity2 = BALL_SPEED;
+
             gameStarted = false;
         }
     }

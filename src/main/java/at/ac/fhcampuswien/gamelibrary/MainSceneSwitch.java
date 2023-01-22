@@ -23,7 +23,6 @@ public class MainSceneSwitch {
     private Scene scene;
     private FXMLLoader loader;
     private Parent mainRoot;
-    private Parent childRoot;
     private Stage stage;
 
 /**********************************************************
@@ -33,12 +32,12 @@ public class MainSceneSwitch {
     public void creditsWindow() throws IOException {
 
             loader = new FXMLLoader(getClass().getResource("Credits.fxml"));
-            childRoot = loader.load();
+            Parent creditsRoot = loader.load();
             stage = new Stage();
 
             stage.setTitle("G A M E L I B R A R Y   Credits");
             stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("Redflag.jpeg"))));
-            stage.setScene(new Scene(childRoot));
+            stage.setScene(new Scene(creditsRoot));
             stage.isAlwaysOnTop();
             stage.show();
 
