@@ -22,7 +22,7 @@ import javafx.util.Duration;
 import java.io.IOException;
 
 /*****************************************************************************
- * Class for running the PongGame. Drawing playing field. Update Game states.
+ * Class for running the pong-game. Drawing playing field. Update game states.
  * @author Kevin D. Kerbl
  *****************************************************************************/
 
@@ -121,7 +121,6 @@ public class PongGame {
 
     }
 
-
     /***************************************************
      * Draws the play field.
      * @param gc used to draw on canvas using a buffer
@@ -163,6 +162,7 @@ public class PongGame {
      * This method lets the bot run after the ball
      *****************************************************/
     public void simpleBot() {
+
         if (paddleTwo.getY() < ball.getY()) {
             paddleTwo.setYDirection(PADDLE_SPEED);
         } else if (paddleTwo.getY() >= ball.getY()) {
@@ -182,7 +182,6 @@ public class PongGame {
             paddleTwo.move();
             ball.move();
 
-
         } else if (!gameEnded) {
             gc.setLineWidth(2);
             gc.setStroke(Color.BLUEVIOLET);
@@ -193,6 +192,7 @@ public class PongGame {
                 roundStarted = true;
             });
         } else {
+
             gc.setLineWidth(2);
             if (playerOneScore == winCon) {
                 playerOneWins(gc);
@@ -234,7 +234,6 @@ public class PongGame {
                     ball.yVelocity += BALL_SPEED_INCREASE;
                 else ball.yVelocity -= BALL_SPEED_INCREASE;
             }
-
             if (ball.intersects(paddleOne.getBoundsInLocal())) {
 
                 //saves Bal velocity when it intersects with paddle the second time
@@ -257,7 +256,6 @@ public class PongGame {
                 paddleOneIntersections++;
                 paddleTwoIntersections = 0;
             }
-
             if (ball.intersects(paddleTwo.getBoundsInLocal())) {
 
                 if (paddleTwoIntersections == 1) {
@@ -276,9 +274,7 @@ public class PongGame {
                 paddleOneIntersections = 0;
                 paddleTwoIntersections++;
             }
-
         }
-
         //adds point to scoring player and redraws entities
         if (ball.getX() <= 0 || ball.getX() >= WIDTH - BALL_R) {
 
@@ -294,10 +290,8 @@ public class PongGame {
 
             roundStarted = false;
         }
-
         //looks who won and ends game
         if (playerOneScore == winCon || playerTwoScore == winCon) gameEnded = true;
-
     }
 
     /***************************************************************************
@@ -311,7 +305,7 @@ public class PongGame {
     }
 
     /***************************************************************************
-     * Draws that Player 2 did not lose
+     * Draws that player 2 did not lose
      * @param gc used to draw on canvas using a buffer
      ***************************************************************************/
     private void playerTwoWins(GraphicsContext gc) {
@@ -334,7 +328,7 @@ public class PongGame {
 
     /******************************************************************************************
      * This method runs every 10ms on the timeline tl.
-     * it draws everyting on the canvas, looks at every user input and updates the game state.
+     * it draws everything on the canvas, looks at every user input and updates the game state.
      *
      * @param gc used to draw on canvas using a buffer
      ******************************************************************************************/
@@ -360,7 +354,6 @@ public class PongGame {
      ******************************************************************************************/
     public void switchToPongMenu(ActionEvent e) throws IOException {
         new MainSceneSwitch().switchToPongMenu(e);
-
 
     }
 
@@ -392,20 +385,18 @@ public class PongGame {
 
     /******************************************************************************************
      * Opens secret heart scene for special person.
-     * @param e used to draw on canvas using a buffer.
      * @throws IOException if we can't read the fxml file.
      ******************************************************************************************/
-    public void heartWindow(ActionEvent e) throws IOException {
+    public void heartWindow() throws IOException {
         new MainSceneSwitch().heartWindow();
     }
 
     @FXML
     TextField txtfieldHeart;
+
     public void checktxtdield() throws IOException {
         if (txtfieldHeart.getText().equals("0312")) {
             new MainSceneSwitch().biggerHeartWindow();
         }
     }
-
-
 }
