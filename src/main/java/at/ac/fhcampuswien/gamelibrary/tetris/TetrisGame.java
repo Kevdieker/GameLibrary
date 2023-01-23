@@ -71,10 +71,10 @@ public class TetrisGame {
         level.setFill(Color.GREEN);
         group.getChildren().addAll(scoretext, line, level);
         group.setFocusTraversable(true);
+        // background color change
         BackgroundFill bkg = new BackgroundFill(Paint.valueOf("#262626"), new CornerRadii(0), new Insets(0));
         Background bg = new Background(bkg);
         group.setBackground(bg);
-
         TetrisForm a = nextObj;
         group.getChildren().addAll(a.a, a.b, a.c, a.d);
         moveOnKeyPress(a);
@@ -130,7 +130,6 @@ public class TetrisGame {
                         break;
                     case S:
                         MoveDown(tetrisForm);
-                        score++;
                         break;
                     case A:
                         TetrisController.MoveLeft(tetrisForm);

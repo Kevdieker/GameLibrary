@@ -28,25 +28,25 @@ public class TetrisForm {
 
         switch (name) {
             case "j":
-                color = Color.SLATEGRAY;
+                color = Color.ROYALBLUE;
                 break;
             case "l":
-                color = Color.DARKGOLDENROD;
+                color = Color.DARKORANGE;
                 break;
             case "o":
-                color = Color.INDIANRED;
+                color = Color.GOLD;
                 break;
             case "s":
                 color = Color.FORESTGREEN;
                 break;
             case "t":
-                color = Color.CADETBLUE;
+                color = Color.MEDIUMPURPLE;
                 break;
             case "z":
-                color = Color.HOTPINK;
+                color = Color.INDIANRED;
                 break;
             case "i":
-                color = Color.SANDYBROWN;
+                color = Color.LIGHTSKYBLUE;
                 break;
 
         }
