@@ -34,6 +34,9 @@ Rock Paper Scissors:
 - I tried to make rectangles switches between player1 and player2, but couldn't do it
 - if I have time, I would change my code to make the 2 players switch within each round
 
+Known bug:
++ buttons from two player mode are not locked for other player
+
 _______________________________________________________________
 
 Tetris:
@@ -43,6 +46,9 @@ Controls:
 W : turn blocks
 A,S: move left/right
 D : fast fall
+
+Known bug:
++ breaks if going back to menu and reenter
 
 _______________________________________________________________
 
