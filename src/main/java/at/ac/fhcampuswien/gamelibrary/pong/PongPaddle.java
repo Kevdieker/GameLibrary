@@ -9,12 +9,12 @@ import javafx.scene.shape.Rectangle;
 import static at.ac.fhcampuswien.gamelibrary.pong.PongConstants.*;
 
 public class PongPaddle extends Rectangle {
-    private final int id;
+    private final int ID;
     public double yVelocity;
 
-    PongPaddle(double x, double y, double w, double h, int id) {
+    PongPaddle(double x, double y, double w, double h, int ID) {
         super(x, y, w, h);
-        this.id = id;
+        this.ID = ID;
     }
 
     /*********************************************
@@ -38,7 +38,7 @@ public class PongPaddle extends Rectangle {
      ****************************************************/
     public void keyPressed(KeyEvent e) {
 
-        switch (id) {
+        switch (ID) {
             case 1 -> {
                 if (e.getCode() == KeyCode.W) {
                     setYDirection(-PADDLE_SPEED);
@@ -68,7 +68,7 @@ public class PongPaddle extends Rectangle {
      ****************************************************/
     public void keyReleased(KeyEvent e) {
 
-        switch (id) {
+        switch (ID) {
             case 1 -> {
                 if (e.getCode() == KeyCode.W) {
                     setYDirection(0);
@@ -97,7 +97,7 @@ public class PongPaddle extends Rectangle {
      * @param gc used to draw on canvas using a buffer
      ****************************************************+*****/
     public void draw(GraphicsContext gc) {
-        if (id == 1) {
+        if (ID == 1) {
             gc.setFill(Color.DEEPSKYBLUE);
         } else gc.setFill(Color.LIME);
 

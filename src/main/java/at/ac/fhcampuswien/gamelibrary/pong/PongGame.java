@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.geometry.VPos;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.RadioButton;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -17,7 +18,6 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.util.Duration;
 
-import java.awt.*;
 import java.io.IOException;
 
 /*****************************************************************************
@@ -26,14 +26,18 @@ import java.io.IOException;
  *****************************************************************************/
 
 public class PongGame {
-    int paddleOneIntersections, paddleTwoIntersections;
-    private boolean gameStarted = false;
-    private double nBallYVelocity, nBallYVelocity2;
-    private double nBallXVelocity = BALL_SPEED, nBallXVelocity2 = BALL_SPEED;
+    private int winCon;
+    private int paddleOneIntersections, paddleTwoIntersections;
+    private boolean roundStarted = false;
+    private boolean gameEnded = false;
+    private double storedPaddleOneBallYVelocity, storedPaddleTwoBallYVelocity;
+    private double storedPaddleOneBallXVelocity, storedPaddleTwoBallXVelocity;
     @FXML
     private Canvas canvas;
     @FXML
     private Text playerLabel;
+    @FXML
+    private RadioButton rdb7, rdb13, rdb21;
     private PongPaddle paddleOne;
     private PongPaddle paddleTwo;
     private PongBall ball;
@@ -41,9 +45,33 @@ public class PongGame {
     private int playerTwoScore;
     private boolean twoPlayerMode;
 
+    /*****************************************************************
+     * TwoPlayerMode setter.
+     * @param twoPlayerMode to set two player mode.
+     *****************************************************************/
     public void setTwoPlayerMode(boolean twoPlayerMode) {
         this.twoPlayerMode = twoPlayerMode;
     }
+
+    /*****************************************************************
+     * Win condition setter.
+     * @param winCon to set winning condition.
+     *****************************************************************/
+    public void setWinCon(int winCon) {
+        this.winCon = winCon;
+    }
+
+    /*****************************************************************
+     * Get winning condition from radiobutton
+     * @return winCon, is the winning condition.
+     *****************************************************************/
+    public int getWinCon() {
+        if (rdb7.isSelected()) setWinCon(2);
+        else if (rdb13.isSelected()) setWinCon(13);
+        else if (rdb21.isSelected()) setWinCon(21);
+        return winCon;
+    }
+
     /*****************************************************************
      * Creates new ball entity.
      *****************************************************************/
@@ -52,7 +80,7 @@ public class PongGame {
     }
 
     /*****************************************************************
-     * Creates new pall entities.
+     * Creates new paddle entities.
      *****************************************************************/
     private void newPaddles() {
         paddleOne = new PongPaddle(25, HEIGHT / 2 - PADDLE_HEIGHT / 2, PADDLE_WIDTH, PADDLE_HEIGHT, 1);
@@ -82,7 +110,6 @@ public class PongGame {
             if (twoPlayerMode) {
                 paddleTwo.keyReleased(e);
             }
-
         });
 
         GraphicsContext gc = canvas.getGraphicsContext2D();
@@ -139,39 +166,47 @@ public class PongGame {
             paddleTwo.setYDirection(PADDLE_SPEED);
         } else if (paddleTwo.getY() >= ball.getY()) {
             paddleTwo.setYDirection(-PADDLE_SPEED);
-
         }
     }
 
-    /*****************************************************
-     * This method handles the start of a Round
+    /*******************************************************************
+     * This method handles the start of a Round and the End of a game
      * @param gc used to draw on canvas using a buffer
-     *****************************************************/
+     ******************************************************************/
 
     private void processInput(GraphicsContext gc) {
-        if (gameStarted) {
+        if (roundStarted && !gameEnded) {
             if (!twoPlayerMode) simpleBot();
             paddleOne.move();
             paddleTwo.move();
             ball.move();
 
 
-        } else {
+        } else if (!gameEnded) {
             gc.setLineWidth(2);
             gc.setStroke(Color.BLUEVIOLET);
             gc.setTextAlign(TextAlignment.CENTER);
             gc.strokeText("Press Any Button to Start", WIDTH / 2, HEIGHT / 2);
 
             canvas.addEventFilter(KeyEvent.ANY, keyEvent -> {
-                gameStarted = true;
+                roundStarted = true;
             });
+        } else {
+            gc.setLineWidth(2);
+            if (playerOneScore == winCon) {
+                playerOneWins(gc);
+            } else if (playerTwoScore == winCon) {
+                if (twoPlayerMode) playerTwoWins(gc);
+                else botWins(gc);
+            }
         }
     }
 
     /***************************************************************************
      * This method
-     * + handles how play field, paddles and ball interacts with each other.
+     * + handles how play field, paddles and ball interacts with each other
      * + changes score when ball gets behind paddle
+     * + looks who won
      ***************************************************************************/
     public void updateState() {
 
@@ -203,15 +238,15 @@ public class PongGame {
 
                 //saves Bal velocity when it intersects with paddle the second time
                 if (paddleOneIntersections == 1) {
-                    nBallXVelocity = Math.abs(ball.xVelocity);
-                    nBallYVelocity = ball.yVelocity;
+                    storedPaddleOneBallXVelocity = Math.abs(ball.xVelocity);
+                    storedPaddleOneBallYVelocity = ball.yVelocity;
                 }
 
                 /*if a ball intersected with player two more than one time,
                  set back ball-velocity to before the multiple intersections*/
                 if (paddleTwoIntersections > 1) {
-                    ball.xVelocity = nBallXVelocity2;
-                    ball.yVelocity = nBallYVelocity2;
+                    ball.xVelocity = storedPaddleTwoBallXVelocity;
+                    ball.yVelocity = storedPaddleTwoBallYVelocity;
                 }
 
 
@@ -225,13 +260,13 @@ public class PongGame {
             if (ball.intersects(paddleTwo.getBoundsInLocal())) {
 
                 if (paddleTwoIntersections == 1) {
-                    nBallXVelocity2 = Math.abs(ball.xVelocity);
-                    nBallYVelocity2 = ball.yVelocity;
+                    storedPaddleTwoBallXVelocity = Math.abs(ball.xVelocity);
+                    storedPaddleTwoBallYVelocity = ball.yVelocity;
                 }
 
                 if (paddleOneIntersections > 1) {
-                    ball.xVelocity = nBallXVelocity;
-                    ball.yVelocity = nBallYVelocity;
+                    ball.xVelocity = storedPaddleOneBallXVelocity;
+                    ball.yVelocity = storedPaddleOneBallYVelocity;
                 }
 
                 ball.setXVelocity(-ball.xVelocity);
@@ -253,12 +288,48 @@ public class PongGame {
 
             newPaddles();
             newBall();
-            nBallXVelocity = BALL_SPEED;
-            nBallXVelocity2 = BALL_SPEED;
+            storedPaddleOneBallXVelocity = BALL_SPEED;
+            storedPaddleTwoBallXVelocity = BALL_SPEED;
 
-            gameStarted = false;
+            roundStarted = false;
         }
+
+        //looks who won and ends game
+        if (playerOneScore == winCon || playerTwoScore == winCon) gameEnded = true;
+
     }
+
+    /***************************************************************************
+     * Draws that Player 1 did not cheat
+     * @param gc used to draw on canvas using a buffer
+     ***************************************************************************/
+    private void playerOneWins(GraphicsContext gc) {
+        gc.setStroke(Color.DEEPSKYBLUE);
+        gc.setTextAlign(TextAlignment.CENTER);
+        gc.strokeText("PLAYER 1 WINS", WIDTH / 4, HEIGHT / 4);
+    }
+
+    /***************************************************************************
+     * Draws that Player 2 did not lose
+     * @param gc used to draw on canvas using a buffer
+     ***************************************************************************/
+    private void playerTwoWins(GraphicsContext gc) {
+        gc.setStroke(Color.LIME);
+        gc.setTextAlign(TextAlignment.CENTER);
+        gc.strokeText("PLAYER 2 WINS", WIDTH - WIDTH / 4, HEIGHT / 4);
+    }
+
+    /***************************************************************************
+     * Draws the real winner of the hearts
+     * @param gc used to draw on canvas using a buffer
+     ***************************************************************************/
+    private void botWins(GraphicsContext gc) {
+        gc.setFont(new Font("Consolas", 80));
+        gc.setStroke(Color.LIME);
+        gc.setTextAlign(TextAlignment.CENTER);
+        gc.strokeText("You lose", WIDTH / 2, HEIGHT / 2);
+    }
+
 
     /******************************************************************************************
      * This method runs every 10ms on the timeline tl.
@@ -279,8 +350,8 @@ public class PongGame {
      ******************************************************************************************/
     public void switchToMainMenu(ActionEvent e) throws IOException {
         new MainSceneSwitch().switchToMainMenu(e);
-
     }
+
     /******************************************************************************************
      * Switches scene to PongMenu
      * @param e used to draw on canvas using a buffer
@@ -289,28 +360,34 @@ public class PongGame {
     public void switchToPongMenu(ActionEvent e) throws IOException {
         new MainSceneSwitch().switchToPongMenu(e);
 
+
     }
+
     /******************************************************************************************
      * Switches scene to PongMenu
      * @param e used to draw on canvas using a buffer
      * @throws IOException when we can't read the fxml file.
      ******************************************************************************************/
     public void switchToPongGame(ActionEvent e) throws IOException {
+
         MainSceneSwitch a = new MainSceneSwitch();
-        a.switchToPongGame(e,twoPlayerMode);
+        a.switchToPongGame(e, twoPlayerMode, getWinCon());
     }
+
     /******************************************************************************************
      * Switches to 2 player mode
      ******************************************************************************************/
-    public void twoPlayerMode()  {
+    public void twoPlayerMode() {
         playerLabel.setText("2 Player");
         setTwoPlayerMode(true);
     }
+
     /******************************************************************************************
      * Switches to bot mode
      ******************************************************************************************/
-    public void onePLayerMode(){
-    playerLabel.setText("1 Player");
+    public void onePLayerMode() {
+        playerLabel.setText("1 Player");
         setTwoPlayerMode(false);
     }
+
 }
