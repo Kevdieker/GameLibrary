@@ -98,7 +98,7 @@
       </ImageView>
       <ImageView disable="true" fitHeight="196.0" fitWidth="135.0" layoutX="286.0" layoutY="318.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@mainmenu%20pictures/Titelloses%2065_20230116163408.png" />
+            <Image url="@mainmenu%20pictures/Titelloses%2065_20230123133508.png" />
          </image>
       </ImageView>
       <ImageView disable="true" fitHeight="274.0" fitWidth="313.0" layoutX="529.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true">

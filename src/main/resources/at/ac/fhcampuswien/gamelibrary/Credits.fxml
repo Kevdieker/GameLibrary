@@ -5,83 +5,72 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fitHeight="588.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@mainmenu%20pictures/Titelloses%2070_20230121175135.png" />
+            <Image url="@mainmenu%20pictures/Titelloses%2070_20230123134344.png" />
          </image>
       </ImageView>
-      <Text layoutX="429.0" layoutY="463.0" strokeType="OUTSIDE" strokeWidth="0.0" text="incompetech.com Licensed under Creative Commons: By Attribution 3.0http://creativecommons.org/licenses/by/3.0/" wrappingWidth="348.6953125">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Text>
-      <Label layoutX="123.0" layoutY="39.0" prefHeight="78.0" prefWidth="167.0" text="Credits" underline="true">
+      <Label layoutX="132.0" layoutY="39.0" prefHeight="78.0" prefWidth="167.0" text="Credits" underline="true">
          <font>
             <Font size="52.0" />
          </font>
       </Label>
-      <Label layoutX="438.0" layoutY="87.0" prefHeight="30.0" prefWidth="260.0" text="Music by Kevin MacLeod">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Text layoutX="438.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Used Titels: " wrappingWidth="121.666015625">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
-      <Text layoutX="438.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Main Menu: -&gt;Local Forecast" wrappingWidth="121.666015625">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Text>
-      <Label layoutX="41.0" layoutY="132.0" prefHeight="30.0" prefWidth="260.0" text="Team Redflag" underline="true">
+      <Label layoutX="65.0" layoutY="132.0" prefHeight="30.0" prefWidth="260.0" text="Team Redflag" underline="true">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-      <Label layoutX="41.0" layoutY="180.0" prefHeight="30.0" prefWidth="349.0" text="Kevin David Kerbl">
+      <Label layoutX="65.0" layoutY="174.0" prefHeight="30.0" prefWidth="349.0" text="Kevin David Kerbl">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="41.0" layoutY="288.0" prefHeight="30.0" prefWidth="260.0" text="Ahmed Ghonim">
+      <Label layoutX="65.0" layoutY="267.0" prefHeight="30.0" prefWidth="260.0" text="Ahmed Ghonim">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="41.0" layoutY="252.0" prefHeight="30.0" prefWidth="260.0" text="Taha Hagar">
+      <Label layoutX="65.0" layoutY="234.0" prefHeight="30.0" prefWidth="260.0" text="Taha Hagar">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="41.0" layoutY="325.0" prefHeight="30.0" prefWidth="260.0" text="Isha Gautam">
+      <Label layoutX="65.0" layoutY="297.0" prefHeight="30.0" prefWidth="260.0" text="Isha Gautam">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="41.0" layoutY="216.0" prefHeight="30.0" prefWidth="260.0" text="Fatima Hossain">
+      <Label layoutX="65.0" layoutY="204.0" prefHeight="30.0" prefWidth="260.0" text="Fatima Hossain">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="32.0" layoutY="405.0" prefHeight="17.0" prefWidth="167.0" text="Special Thanks to:" underline="true">
+      <Label layoutX="447.0" layoutY="132.0" prefHeight="36.0" prefWidth="211.0" text="Special Thanks to:" underline="true">
          <font>
-            <Font size="18.0" />
+            <Font size="25.0" />
          </font>
       </Label>
-      <Label layoutX="32.0" layoutY="435.0" prefHeight="30.0" prefWidth="349.0" text="Armin Assadzadeh, Lukas Aaron Schertler,  ">
+      <Label layoutX="450.0" layoutY="174.0" prefHeight="30.0" prefWidth="349.0" text="Armin Assadzadeh">
          <font>
-            <Font size="18.0" />
+            <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="32.0" layoutY="461.0" prefHeight="30.0" prefWidth="349.0" text="Valentina Krennwallner, Nadine Kirnbauer">
+      <Label layoutX="450.0" layoutY="234.0" prefHeight="30.0" prefWidth="349.0" text="Valentina Krennwallner">
          <font>
-            <Font size="18.0" />
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="450.0" layoutY="204.0" prefHeight="30.0" prefWidth="349.0" text="Lukas Aaron Schertler">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="450.0" layoutY="267.0" prefHeight="30.0" prefWidth="349.0" text="Nadine Kirnbauer">
+         <font>
+            <Font size="20.0" />
          </font>
       </Label>
    </children>
