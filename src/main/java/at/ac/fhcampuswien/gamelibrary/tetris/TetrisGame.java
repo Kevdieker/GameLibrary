@@ -8,14 +8,19 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.Node;
 
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
@@ -58,6 +63,7 @@ public class TetrisGame {
         scoretext.setStyle("-fx-font: 20 arial;");
         scoretext.setY(50);
         scoretext.setX(XMAX + 5);
+        scoretext.setFill(Color.WHITE);
         Text level = new Text("Lines: ");
         level.setStyle("-fx-font: 20 arial;");
         level.setY(100);
@@ -65,7 +71,10 @@ public class TetrisGame {
         level.setFill(Color.GREEN);
         group.getChildren().addAll(scoretext, line, level);
         group.setFocusTraversable(true);
-
+        // background color change
+        BackgroundFill bkg = new BackgroundFill(Paint.valueOf("#262626"), new CornerRadii(0), new Insets(0));
+        Background bg = new Background(bkg);
+        group.setBackground(bg);
         TetrisForm a = nextObj;
         group.getChildren().addAll(a.a, a.b, a.c, a.d);
         moveOnKeyPress(a);
@@ -121,7 +130,6 @@ public class TetrisGame {
                         break;
                     case S:
                         MoveDown(tetrisForm);
-                        score++;
                         break;
                     case A:
                         TetrisController.MoveLeft(tetrisForm);
