@@ -37,7 +37,12 @@ Rock Paper Scissors:
 _______________________________________________________________
 
 Tetris:
-Game breaks if going back to menu
+classic tetris
+
+Controls:
+W : turn blocks
+A,S: move left/right
+D : fast fall
 
 _______________________________________________________________
 
