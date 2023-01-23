@@ -27,6 +27,7 @@ import java.io.IOException;
  *****************************************************************************/
 
 public class PongGame {
+    private int clickHeartCount=0;
     private int winCon;
     private int paddleOneIntersections, paddleTwoIntersections;
     private boolean roundStarted = false;
@@ -388,12 +389,11 @@ public class PongGame {
      * @throws IOException if we can't read the fxml file.
      ******************************************************************************************/
     public void heartWindow() throws IOException {
-        new MainSceneSwitch().heartWindow();
+    if (clickHeartCount==13) {new MainSceneSwitch().heartWindow();}
+        clickHeartCount++;
     }
-
     @FXML
-    TextField txtfieldHeart;
-
+    private TextField txtfieldHeart;
     public void checktxtdield() throws IOException {
         if (txtfieldHeart.getText().equals("0312")) {
             new MainSceneSwitch().biggerHeartWindow();
