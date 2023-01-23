@@ -41,7 +41,7 @@ _______________________________________________________________
 
 Memory:
 This is a memory game that you can play. Still in early stages xD
-Hope you have fun though :)
+Hope you have fun though! :)
 
 No pictures as intended.
 Used numbers instead.
