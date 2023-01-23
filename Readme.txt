@@ -34,15 +34,30 @@ Rock Paper Scissors:
 - I tried to make rectangles switches between player1 and player2, but couldn't do it
 - if I have time, I would change my code to make the 2 players switch within each round
 
+Known bug:
++ buttons from two player mode are not locked for other player
+
 _______________________________________________________________
 
 Tetris:
-Game breaks if going back to menu
+classic tetris
+
+Controls:
+W : turn blocks
+A,S: move left/right
+D : fast fall
+
+Known bug:
++ breaks if going back to menu and reenter
 
 _______________________________________________________________
 
 Memory:
-No pictures as intended
+This is a memory game that you can play. Still in early stages xD
+Hope you have fun thoug :)
+
+No pictures as intended.
+Used numbers instead.
 
 _______________________________________________________________
 

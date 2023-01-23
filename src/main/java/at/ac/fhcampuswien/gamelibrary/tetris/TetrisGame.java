@@ -72,7 +72,7 @@ public class TetrisGame {
         group.getChildren().addAll(scoretext, line, level);
         group.setFocusTraversable(true);
         // background color change
-        BackgroundFill bkg = new BackgroundFill(Paint.valueOf("#262626"), new CornerRadii(0), new Insets(0));
+        BackgroundFill bkg = new BackgroundFill(Paint.valueOf("#ff00ff"), new CornerRadii(0), new Insets(0));
         Background bg = new Background(bkg);
         group.setBackground(bg);
         TetrisForm a = nextObj;
@@ -97,16 +97,12 @@ public class TetrisGame {
                             // GAME OVER
                             Text over = new Text("GAME OVER");
                             over.setFill(Color.RED);
-                            over.setStyle("-fx-font: 70 arial;");
+                            over.setStyle("-fx-font: 80 arial;");
                             over.setY(250);
-                            over.setX(10);
+                            over.setX(-130);
                             group.getChildren().add(over);
                             game = false;
                         }
-                       /* // Exit
-                        if (top == 15) {
-                            System.exit(0);
-                        }*/
 
                         if (game) {
                             MoveDown(object);
