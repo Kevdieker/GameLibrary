@@ -4,16 +4,9 @@ import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
-import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
@@ -28,7 +21,6 @@ public class TetrisMain extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-
         loader = new FXMLLoader(getClass().getResource("TetrisView.fxml"));
         root = loader.load();
         scene = new Scene(root);

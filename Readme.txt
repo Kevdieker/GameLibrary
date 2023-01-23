@@ -35,8 +35,9 @@ Main Menu and Credit designs are drawn by Fatima Hossain as well
 _______________________________________________________________
 
 Tetris:
-Game breaks if going back to menu
-
+A Classic Arcade game
+The geometric forms descend from the top of the field. USE Arrow Keys or WASD to move the pieces.
+Each cleared line is 50 score points
 _______________________________________________________________
 
 Memory:

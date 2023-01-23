@@ -2,18 +2,12 @@ package at.ac.fhcampuswien.gamelibrary.tetris;
 
 
 import at.ac.fhcampuswien.gamelibrary.MainSceneSwitch;
-import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
-
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.canvas.Canvas;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -24,8 +18,6 @@ import javafx.scene.paint.Paint;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
-
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -103,10 +95,10 @@ public class TetrisGame {
                             group.getChildren().add(over);
                             game = false;
                         }
-                       /* // Exit
+                        // Exit
                         if (top == 15) {
                             System.exit(0);
-                        }*/
+                        }
 
                         if (game) {
                             MoveDown(object);
@@ -442,7 +434,7 @@ public class TetrisGame {
             }
             if (full == MESH.length)
                 lines.add(i);
-            //lines.add(i + lines.size());
+            lines.add(i + lines.size());
             full = 0;
         }
         if (lines.size() > 0)
