@@ -27,7 +27,7 @@ import java.io.IOException;
  *****************************************************************************/
 
 public class PongGame {
-    private int clickHeartCount=0;
+    private int clickHeartCount=1;
     private int winCon;
     private int paddleOneIntersections, paddleTwoIntersections;
     private boolean roundStarted = false;
@@ -187,7 +187,7 @@ public class PongGame {
             gc.setLineWidth(2);
             gc.setStroke(Color.BLUEVIOLET);
             gc.setTextAlign(TextAlignment.CENTER);
-            gc.strokeText("Press Any Button to Start", WIDTH / 2, HEIGHT / 2);
+            gc.strokeText("Press any button to Start", WIDTH / 2, HEIGHT / 2);
 
             canvas.addEventFilter(KeyEvent.ANY, keyEvent -> {
                 roundStarted = true;
