@@ -40,7 +40,11 @@ Game breaks if going back to menu
 _______________________________________________________________
 
 Memory:
-No pictures as intended
+This is a memory game that you can play. Still in early stages xD
+Hope you have fun though :)
+
+No pictures as intended.
+Used numbers instead.
 
 _______________________________________________________________
 
