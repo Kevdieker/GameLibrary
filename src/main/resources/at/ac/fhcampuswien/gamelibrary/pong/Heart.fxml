@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="359.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.ac.fhcampuswien.gamelibrary.pong.PongGame">
+   <children>
+      <ImageView fitHeight="436.0" fitWidth="623.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Heart.PNG" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtfieldHeart" layoutX="199.0" layoutY="193.0" onAction="#checktxtdield" promptText="Passcode" />
+   </children>
+</AnchorPane>

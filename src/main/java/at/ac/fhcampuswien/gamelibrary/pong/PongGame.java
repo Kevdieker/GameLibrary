@@ -11,6 +11,7 @@ import javafx.geometry.VPos;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -346,7 +347,7 @@ public class PongGame {
     /******************************************************************************************
      * Switches scene to main menu
      * @param e used to draw on canvas using a buffer
-     * @throws IOException when we can't read the fxml file.
+     * @throws IOException if we can't read the fxml file.
      ******************************************************************************************/
     public void switchToMainMenu(ActionEvent e) throws IOException {
         new MainSceneSwitch().switchToMainMenu(e);
@@ -355,7 +356,7 @@ public class PongGame {
     /******************************************************************************************
      * Switches scene to PongMenu
      * @param e used to draw on canvas using a buffer
-     * @throws IOException when we can't read the fxml file.
+     * @throws IOException if we can't read the fxml file.
      ******************************************************************************************/
     public void switchToPongMenu(ActionEvent e) throws IOException {
         new MainSceneSwitch().switchToPongMenu(e);
@@ -366,12 +367,11 @@ public class PongGame {
     /******************************************************************************************
      * Switches scene to PongMenu
      * @param e used to draw on canvas using a buffer
-     * @throws IOException when we can't read the fxml file.
+     * @throws IOException if we can't read the fxml file.
      ******************************************************************************************/
     public void switchToPongGame(ActionEvent e) throws IOException {
-
-        MainSceneSwitch a = new MainSceneSwitch();
-        a.switchToPongGame(e, twoPlayerMode, getWinCon());
+        MainSceneSwitch newSwitch = new MainSceneSwitch();
+        newSwitch.switchToPongGame(e, twoPlayerMode, getWinCon());
     }
 
     /******************************************************************************************
@@ -389,5 +389,23 @@ public class PongGame {
         playerLabel.setText("1 Player");
         setTwoPlayerMode(false);
     }
+
+    /******************************************************************************************
+     * Opens secret heart scene for special person.
+     * @param e used to draw on canvas using a buffer.
+     * @throws IOException if we can't read the fxml file.
+     ******************************************************************************************/
+    public void heartWindow(ActionEvent e) throws IOException {
+        new MainSceneSwitch().heartWindow();
+    }
+
+    @FXML
+    TextField txtfieldHeart;
+    public void checktxtdield() throws IOException {
+        if (txtfieldHeart.getText().equals("0312")) {
+            new MainSceneSwitch().biggerHeartWindow();
+        }
+    }
+
 
 }

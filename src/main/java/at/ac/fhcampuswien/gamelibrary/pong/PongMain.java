@@ -20,7 +20,7 @@ public class PongMain extends Application {
     /*******************************************************************************************************************
      * EntryPoint for the Pong Application
      * @param stage the primary stage for this application, onto which the pong scene can be set.
-     * @throws IOException when we can't read the fxml file.
+     * @throws IOException if we can't read the fxml file.
      ******************************************************************************************************************/
 
     @Override

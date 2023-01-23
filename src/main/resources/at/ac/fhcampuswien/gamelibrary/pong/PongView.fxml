@@ -29,5 +29,11 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
+      <Button layoutX="953.0" layoutY="490.0" mnemonicParsing="false" onAction="#heartWindow" opacity="0.0" prefHeight="40.0" prefWidth="41.0" text="Heart" />
+      <ImageView disable="true" fitHeight="42.0" fitWidth="50.0" layoutX="949.0" layoutY="492.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Heart.PNG" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

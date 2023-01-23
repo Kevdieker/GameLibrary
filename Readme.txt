@@ -1,10 +1,19 @@
 ***************************************************************
 
+This Application is a small game collection.
+Programmed by first year Students. Please enjoy.
+
+    ***   ***
+   *    **   *
+    *       *
+      *   *
+        *
 _______________________________________________________________
 
-
 Pong:
-Buggy shots if ball hits top of paddle
+Controls:
+Player 1 : W,S
+Player 2 : Arrow_UP, Arrow_DOWN
 
 _______________________________________________________________
 

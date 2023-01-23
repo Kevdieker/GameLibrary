@@ -27,7 +27,7 @@ public class MainSceneSwitch {
 
 /**********************************************************
  * Opens the credits window.
- * @throws IOException when we can't read the fxml file.
+ * @throws IOException if we can't read the fxml file.
  **********************************************************/
     public void creditsWindow() throws IOException {
 
@@ -45,7 +45,7 @@ public class MainSceneSwitch {
     /**********************************************************
      * Switches scene to the main menu
      * @param e for ActionEvent to switch between scenes.
-     * @throws IOException when we can't read the fxml file.
+     * @throws IOException if we can't read the fxml file.
      **********************************************************/
     public void switchToMainMenu(ActionEvent e) throws IOException {
         loader = new FXMLLoader(getClass().getResource("MainMenu.fxml"));
@@ -61,7 +61,7 @@ public class MainSceneSwitch {
     /**********************************************************
      * Switches scene to pong-menu
      * @param e for ActionEvent to switch between scenes.
-     * @throws IOException when we can't read the fxml file.
+     * @throws IOException if we can't read the fxml file.
      **********************************************************/
     public void switchToPongMenu(ActionEvent e) throws IOException {
         loader = new FXMLLoader(getClass().getResource("pong/PongMenu.fxml"));
@@ -80,7 +80,7 @@ public class MainSceneSwitch {
      * @param e for ActionEvent to switch between scenes.
      * @param twoPlayerMode for modifying Player mode.
      * @param winCon for modifying winning condition.
-     * @throws IOException when we can't read the fxml file.
+     * @throws IOException if we can't read the fxml file.
      **********************************************************/
     public void switchToPongGame(ActionEvent e,Boolean twoPlayerMode,int winCon) throws IOException {
         loader = new FXMLLoader(getClass().getResource("pong/PongView.fxml"));
@@ -101,7 +101,7 @@ public class MainSceneSwitch {
     /**********************************************************
      * Switches scene to rock,paper,scissors
      * @param e for ActionEvent to switch between scenes.
-     * @throws IOException when we can't read the fxml file.
+     * @throws IOException if we can't read the fxml file.
      **********************************************************/
     public void switchToRoPaSc(ActionEvent e) throws IOException {
         loader = new FXMLLoader(getClass().getResource("ropasc/menu.fxml"));
@@ -117,7 +117,7 @@ public class MainSceneSwitch {
     /**********************************************************
      * Switches scene to memory
      * @param e for ActionEvent to switch between scenes.
-     * @throws IOException when we can't read the fxml file.
+     * @throws IOException if we can't read the fxml file.
      **********************************************************/
     public void switchToMemory(ActionEvent e) throws IOException {
         loader = new FXMLLoader(getClass().getResource("memory/MemoryView.fxml"));
@@ -133,7 +133,7 @@ public class MainSceneSwitch {
     /**********************************************************
      * Switches scene to tetris
      * @param e for ActionEvent to switch between scenes.
-     * @throws IOException when we can't read the fxml file.
+     * @throws IOException if we can't read the fxml file.
      **********************************************************/
     public void switchToTetris(ActionEvent e) throws IOException {
         loader = new FXMLLoader(getClass().getResource("tetris/TetrisView.fxml"));
@@ -157,5 +157,36 @@ public class MainSceneSwitch {
             }
         });
     }
+    /**********************************************************
+     * Opens window for special person.
+     * @throws IOException if we can't read the fxml file.
+     **********************************************************/
+    public void heartWindow() throws IOException {
 
+        loader = new FXMLLoader(getClass().getResource("pong/Heart.fxml"));
+        Parent heartRoot = loader.load();
+        stage = new Stage();
+
+        stage.setTitle(" ../.. 12/12 20/01");
+        stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("pong/Heart.PNG"))));
+        stage.setScene(new Scene(heartRoot));
+        stage.isAlwaysOnTop();
+        stage.show();
+
+    }
+    /**********************************************************
+     * Opens window for special person.
+     * @throws IOException if we can't read the fxml file.
+     **********************************************************/
+    public void biggerHeartWindow() throws IOException {
+
+        loader = new FXMLLoader(getClass().getResource("pong/OpenHeart.fxml"));
+        Parent opHeartRoot = loader.load();
+        stage = new Stage();
+
+        stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("pong/Heart.PNG"))));
+        stage.setScene(new Scene(opHeartRoot));
+        stage.isAlwaysOnTop();
+        stage.show();
+    }
 }
