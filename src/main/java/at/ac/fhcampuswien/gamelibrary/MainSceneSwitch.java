@@ -70,6 +70,7 @@ public class MainSceneSwitch {
         stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 
         stage.setResizable(false);
+        stage.isAlwaysOnTop();
         stage.centerOnScreen();
         stage.setScene(scene);
         stage.show();
@@ -92,8 +93,6 @@ public class MainSceneSwitch {
         controller.setTwoPlayerMode(twoPlayerMode);
         controller.setWinCon(winCon);
 
-        stage.setResizable(false);
-        stage.centerOnScreen();
         stage.setScene(scene);
         stage.show();
     }
@@ -165,13 +164,13 @@ public class MainSceneSwitch {
 
         loader = new FXMLLoader(getClass().getResource("pong/Heart.fxml"));
         Parent heartRoot = loader.load();
-        stage = new Stage();
+        Stage stage2 = new Stage();
 
-        stage.setTitle(" ../.. 12/12 20/01");
-        stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("pong/Heart.PNG"))));
-        stage.setScene(new Scene(heartRoot));
-        stage.isAlwaysOnTop();
-        stage.show();
+        stage2.setTitle(" ../.. 12/12 20/01");
+        stage2.setResizable(false);
+        stage2.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("pong/Heart.PNG"))));
+        stage2.setScene(new Scene(heartRoot));
+        stage2.show();
 
     }
     /**********************************************************
@@ -186,7 +185,8 @@ public class MainSceneSwitch {
 
         stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("pong/Heart.PNG"))));
         stage.setScene(new Scene(opHeartRoot));
-        stage.isAlwaysOnTop();
+        stage.isFocused();
+        stage.setResizable(false);
         stage.show();
     }
 }
