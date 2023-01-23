@@ -35,16 +35,17 @@ import java.util.TimerTask;
 
 public class TetrisGame {
     // The variables
-    public static final int MOVE = 25;
-    public static final int SIZE = 25;
-    public static int XMAX = SIZE * 10;
-    public static int YMAX = SIZE * 21;
+    public static final int MOVE = 25; // 1 Move 25px
+    public static final int SIZE = 25; // 1 box 25px
+    public static int XMAX = SIZE * 10; // X Axis 300px
+    public static int YMAX = SIZE * 21; // Y Axis 600px
     public static int[][] MESH = new int[XMAX / SIZE][YMAX / SIZE];
     @FXML
     Pane group;
-    private static TetrisForm object;
+    private static TetrisForm object; // Form class Object
 
-    public static int score = 0;
+    public static int score = 0; // score
+    //  Used on top timer
     private static int top = 0;
     private static boolean game = true;
     private static TetrisForm nextObj = TetrisController.makeRect();
@@ -57,42 +58,48 @@ public class TetrisGame {
         }
 
 
-
+// StartX StartY EndX EndY
         Line line = new Line(XMAX, 0, XMAX, YMAX);
         Text scoretext = new Text("Score: ");
         scoretext.setStyle("-fx-font: 20 arial;");
         scoretext.setY(50);
-        scoretext.setX(XMAX + 5);
+        scoretext.setX(XMAX + 5); // setting position w.r.t to X  (5px from line in X dir)
         scoretext.setFill(Color.WHITE);
         Text level = new Text("Lines: ");
         level.setStyle("-fx-font: 20 arial;");
         level.setY(100);
         level.setX(XMAX + 5);
         level.setFill(Color.GREEN);
+        //		 Adding score line and  level  into pane
         group.getChildren().addAll(scoretext, line, level);
         group.setFocusTraversable(true);
         // background color change
         BackgroundFill bkg = new BackgroundFill(Paint.valueOf("#ff00ff"), new CornerRadii(0), new Insets(0));
         Background bg = new Background(bkg);
         group.setBackground(bg);
-        TetrisForm a = nextObj;
-        group.getChildren().addAll(a.a, a.b, a.c, a.d);
+        TetrisForm a = nextObj; // assigning random rectangles to variable a
+        group.getChildren().addAll(a.a, a.b, a.c, a.d);  //adding Rectangles in pane
         moveOnKeyPress(a);
+        //		 assigning to Form object
         object = a;
+//        Then adding new rectangles to nextObj
         nextObj = TetrisController.makeRect();
 
 
         Timer fall = new Timer();
         TimerTask task = new TimerTask() {
+//  Just like thread run method must implementation
             public void run() {
                 Platform.runLater(new Runnable() {
                     public void run() {
+//						 checking if rectangle is on top
                         if (object.a.getY() == 0 || object.b.getY() == 0 || object.c.getY() == 0
                                 || object.d.getY() == 0)
                             top++;
                         else
                             top = 0;
 
+//						 because in start top will become 1
                         if (top == 2) {
                             // GAME OVER
                             Text over = new Text("GAME OVER");
@@ -105,6 +112,7 @@ public class TetrisGame {
                         }
 
                         if (game) {
+//							 To add again triangle
                             MoveDown(object);
                             scoretext.setText("Score: " + Integer.toString(score));
                             level.setText("Lines: " + Integer.toString(linesNo));
@@ -113,10 +121,13 @@ public class TetrisGame {
                 });
             }
         };
+//		 Adding task after .3s
+//		    To fall rectangle
         fall.schedule(task, 0, 300);
     }
 
     private void moveOnKeyPress(TetrisForm tetrisForm) {
+//		  Key Event
         group.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
@@ -139,11 +150,13 @@ public class TetrisGame {
     }
 
     private void MoveTurn(TetrisForm tetrisForm) {
+        // variable form in Form class assigning to f
         int f = tetrisForm.form;
         Rectangle a = tetrisForm.a;
         Rectangle b = tetrisForm.b;
         Rectangle c = tetrisForm.c;
         Rectangle d = tetrisForm.d;
+//		 will return the string name which is used to change color i-e j
         switch (tetrisForm.getName()) {
             case "j":
                 if (f == 1 && cB(a, 1, -1) && cB(c, -1, -1) && cB(d, -2, -2)) {
@@ -155,6 +168,7 @@ public class TetrisGame {
                     MoveDown(tetrisForm.d);
                     MoveLeft(tetrisForm.d);
                     MoveLeft(tetrisForm.d);
+//				        Check for value of form
                     tetrisForm.changeForm();
                     break;
                 }
@@ -433,6 +447,7 @@ public class TetrisGame {
         int full = 0;
         for (int i = 0; i < MESH[0].length; i++) {
             for (int j = 0; j < MESH.length; j++) {
+//				 Checking whole row
                 if (MESH[j][i] == 1)
                     full++;
             }
@@ -444,20 +459,26 @@ public class TetrisGame {
         if (lines.size() > 0)
             do {
                 for (Node node : pane.getChildren()) {
+//					 If Rectangle then
                     if (node instanceof Rectangle)
+//						 In Arraylist we are adding rectangle as node will be rectangle according to condition
                         rects.add(node);
                 }
                 score += 50;
                 linesNo++;
 
+//				 From array list for each loop
                 for (Node node : rects) {
                     Rectangle a = (Rectangle) node;
+//					 accessing value at index 0
                     if (a.getY() == lines.get(0) * SIZE) {
                         MESH[(int) a.getX() / SIZE][(int) a.getY() / SIZE] = 0;
+//						 Removing from pane
                         pane.getChildren().remove(node);
                     } else
                         newrects.add(node);
                 }
+//    Adding in new Rects Arraylist
 
                 for (Node node : newrects) {
                     Rectangle a = (Rectangle) node;
@@ -466,7 +487,9 @@ public class TetrisGame {
                         a.setY(a.getY() + SIZE);
                     }
                 }
+//				 Removing index 0
                 lines.remove(0);
+//				  Now clearing both array lists
                 rects.clear();
                 newrects.clear();
                 for (Node node : pane.getChildren()) {
