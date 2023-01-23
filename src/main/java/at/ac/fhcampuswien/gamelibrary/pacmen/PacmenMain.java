@@ -1,7 +1,5 @@
 package at.ac.fhcampuswien.gamelibrary.pacmen;
 
-public class PacmenMain {
-
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -16,10 +14,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-
+import java.awt.EventQueue;
+import javax.swing.JFrame;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+
+public class PacmenMain {
 
     public class Board extends JPanel implements ActionListener {
 
@@ -627,144 +628,124 @@ import javax.swing.Timer;
             repaint();
         }
     }
-    The Pacman is controlled with the cursor keys. The Esc key finishes the game, the Pause key pauses it.
+
 
     private int pacman_x, pacman_y, pacmand_x, pacmand_y;
-    The first two variables store the x and y coordinates of the Pacman sprite. The last two variables are the delta changes in horizontal and vertical directions.
+
 
     private final short levelData[] = {
-            19, 26, 26, 26, 18, 18, 18, 18, ...
-};
-These numbers make up the maze. They provide information out of which we create the corners and the points. Number 1 is a left corner. Numbers 2, 4 and 8 represent top, right, and bottom corners respectively. Number 16 is a point. These numbers can be added, for example number 19 in the upper left corner means that the square will have top and left borders and a point (16 + 2 + 1).
+            19, 26, 26, 26, 18, 18, 18, 18
+    };
 
-private void doAnim() {
+
+    private void doAnim() {
 
         pacAnimCount--;
 
         if (pacAnimCount <= 0) {
-        pacAnimCount = PAC_ANIM_DELAY;
-        pacmanAnimPos = pacmanAnimPos + pacAnimDir;
+            pacAnimCount = PAC_ANIM_DELAY;
+            pacmanAnimPos = pacmanAnimPos + pacAnimDir;
 
-        if (pacmanAnimPos == (PACMAN_ANIM_COUNT - 1) || pacmanAnimPos == 0) {
-        pacAnimDir = -pacAnimDir;
+            if (pacmanAnimPos == (PACMAN_ANIM_COUNT - 1) || pacmanAnimPos == 0) {
+                pacAnimDir = -pacAnimDir;
+            }
         }
-        }
-        }
-        The doAnim() counts the pacmanAnimPos variable which determines what pacman image is drawn. There are four pacman images. There is also a PAC_ANIM_DELAY constant which makes the animation a bit slower. Otherwise the pacman would open his mouth too fast.
+    }
 
-        boolean finished = true;
+    boolean finished = true;
 
-        while (i < N_BLOCKS * N_BLOCKS && finished) {
+        while(i<N_BLOCKS *N_BLOCKS &&finished)
+
+    {
 
         if ((screenData[i] & 48) != 0) {
-        finished = false;
+            finished = false;
         }
 
         i++;
-        }
-        This code is part of the checkMaze() method. It checks if there are any points left for the Pacman to eat. Number 16 stands for a point. If all points are consumed, we move to the next level. (In our case, we just restart the game.)
+    }
 
-        Next we will examine the moveGhosts() method. The ghosts move one square and then decide if they change the direction.
+            if(ghost_x[i]%BLOCK_SIZE ==0&&ghost_y[i]%BLOCK_SIZE ==0)
 
-        if (ghost_x[i] % BLOCK_SIZE == 0 && ghost_y[i] % BLOCK_SIZE == 0) {
-        We continue only if we have finished moving one square.
+    {
+
 
         pos = pacman_x / BLOCK_SIZE + N_BLOCKS * (int) (pacman_y / BLOCK_SIZE);
-        This line determines where the ghost is located; in which position/square. There are 225 theoretical positions. (A ghost cannot move over walls.)
+        This line determines where the ghost is located;
+        in which position / square.There are 225 theoretical positions.(A ghost cannot move over walls.)
 
         if ((screenData[pos] & 1) == 0 && ghost_dx[i] != 1) {
-        dx[count] = -1;
-        dy[count] = 0;
-        count++;
+            dx[count] = -1;
+            dy[count] = 0;
+            count++;
         }
-        If there is no obstacle on the left and the ghost is not already moving to the right, the ghost will move to the left. What does this code really mean? If the ghost enters a tunnel, he will continue in the same direction until he is out of the tunnel. Moving of ghosts is partly random. We do not apply this randomness inside long tunnels because the ghost might get stuck there.
+
 
         if (pacman_x > (ghost_x[i] - 12) && pacman_x < (ghost_x[i] + 12)
-        && pacman_y > (ghost_y[i] - 12) && pacman_y < (ghost_y[i] + 12)
-        && inGame) {
+                && pacman_y > (ghost_y[i] - 12) && pacman_y < (ghost_y[i] + 12)
+                && inGame) {
 
-        dying = true;
+            dying = true;
         }
         If there is a collision between ghosts and Pacman, Pacman dies.
 
-        Next we are going to examine the movePacman() method. The req_dx and req_dy variables are determined in the TAdapter inner class. These variables are controlled with cursor keys.
 
         if ((ch & 16) != 0) {
-        screenData[pos] = (short) (ch & 15);
-        score++;
+            screenData[pos] = (short) (ch & 15);
+            score++;
         }
-        If the pacman moves to a position with a point, we remove it from the maze and increase the score value.
+
 
         if ((pacmand_x == -1 && pacmand_y == 0 && (ch & 1) != 0)
-        || (pacmand_x == 1 && pacmand_y == 0 && (ch & 4) != 0)
-        || (pacmand_x == 0 && pacmand_y == -1 && (ch & 2) != 0)
-        || (pacmand_x == 0 && pacmand_y == 1 && (ch & 8) != 0)) {
-        pacmand_x = 0;
-        pacmand_y = 0;
+                || (pacmand_x == 1 && pacmand_y == 0 && (ch & 4) != 0)
+                || (pacmand_x == 0 && pacmand_y == -1 && (ch & 2) != 0)
+                || (pacmand_x == 0 && pacmand_y == 1 && (ch & 8) != 0)) {
+            pacmand_x = 0;
+            pacmand_y = 0;
         }
-        The Pacman stops if he cannot move further it his current direction.
 
-        private void drawPacman(Graphics2D g2d) {
+        private void drawPacman (Graphics2D g2d){
 
         if (view_dx == -1) {
-        drawPacnanLeft(g2d);
+            drawPacnanLeft(g2d);
         } else if (view_dx == 1) {
-        drawPacmanRight(g2d);
+            drawPacmanRight(g2d);
         } else if (view_dy == -1) {
-        drawPacmanUp(g2d);
+            drawPacmanUp(g2d);
         } else {
-        drawPacmanDown(g2d);
+            drawPacmanDown(g2d);
         }
-        }
-        There are four possible directions for a Pacman. There are four images for all directions. The images are used to animate Pacman opening and closing his mouth.
-
-        The drawMaze() method draws the maze out of the numbers in the screenData array. Number 1 is a left border, 2 is a top border, 4 is a right border, 8 is a bottom border and 16 is a point. We simply go through all 225 squares in the maze. For example we have 9 in the screenData array. We have the first bit (1) and the fourth bit (8) set. So we draw a bottom and a left border on this particular square.
+    }
 
         if ((screenData[i] & 1) != 0) {
-        g2d.drawLine(x, y, x, y + BLOCK_SIZE - 1);
+            g2d.drawLine(x, y, x, y + BLOCK_SIZE - 1);
         }
-        We draw a left border if the first bit of a number is set.
-
-        com/zetcode/Pacman.java
-        package com.zetcode;
-
-        import java.awt.EventQueue;
-        import javax.swing.JFrame;
 
         public class Pacman extends JFrame {
 
-        public Pacman() {
+            public Pacman() {
 
-        initUI();
+                initUI();
+            }
+
+            private void initUI() {
+
+                add(new Board());
+
+                setTitle("Pacman");
+                setDefaultCloseOperation(EXIT_ON_CLOSE);
+                setSize(380, 420);
+                setLocationRelativeTo(null);
+            }
+
+            public static void main(String[] args) {
+
+                EventQueue.invokeLater(() -> {
+
+                    var ex = new Pacman();
+                    ex.setVisible(true);
+                });
+            }
         }
-
-        private void initUI() {
-
-        add(new Board());
-
-        setTitle("Pacman");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(380, 420);
-        setLocationRelativeTo(null);
-        }
-
-        public static void main(String[] args) {
-
-        EventQueue.invokeLater(() -> {
-
-        var ex = new Pacman();
-        ex.setVisible(true);
-        });
-        }
-        }
-        This is a Pacman file with a main method.
-
-        Pacman
-        Figure: Pacman
-        This was the Pacman game.
-
-        Contents Previous Next
-        Home Facebook Twitter Github Subscribe Privacy
-
-
-        }
+    }
+}
