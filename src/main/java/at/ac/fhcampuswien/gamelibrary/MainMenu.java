@@ -20,6 +20,7 @@ import java.util.Objects;
  * Class used as an EntryPoint for the Game Library Application.
  * @author Kevin D. Kerbl
  ****************************************************************/
+
 public class MainMenu extends Application {
     /*************************************************************
      * EntryPoint for the Game Library Application
