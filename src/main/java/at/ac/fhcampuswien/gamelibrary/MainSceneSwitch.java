@@ -42,6 +42,7 @@ public class MainSceneSwitch {
             stage.show();
 
     }
+
     /**********************************************************
      * Switches scene to the main menu
      * @param e for ActionEvent to switch between scenes.
