@@ -67,7 +67,7 @@ public class PongGame {
      * @return winCon, is the winning condition.
      *****************************************************************/
     public int getWinCon() {
-        if (rdb7.isSelected()) setWinCon(2);
+        if (rdb7.isSelected()) setWinCon(7);
         else if (rdb13.isSelected()) setWinCon(13);
         else if (rdb21.isSelected()) setWinCon(21);
         return winCon;

@@ -63,7 +63,7 @@ public class PongBall extends Rectangle {
      * @param gc used to draw on canvas using a buffer
      ****************************************************+*****/
     public void draw(GraphicsContext gc) {
-        gc.setFill(Color.PINK);
+        gc.setFill(Color.ORANGE);
         gc.fillOval(getX(), getY(), getWidth(), getHeight());
 
     }
