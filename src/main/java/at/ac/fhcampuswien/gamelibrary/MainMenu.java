@@ -1,29 +1,23 @@
 package at.ac.fhcampuswien.gamelibrary;
 
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
-import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.Objects;
 
 /*****************************************************************
- * Class used as an EntryPoint for the Game Library Application.
+ * Class used as an entrypoint for the Game Library application.
  * @author Kevin D. Kerbl
  ****************************************************************/
 
 public class MainMenu extends Application {
     /*************************************************************
-     * EntryPoint for the Game Library Application
+     * entrypoint for the Game Library application
      * @param stage the primary stage for this application.
      * @throws IOException when we can't read the fxml file.
      ************************************************************/
