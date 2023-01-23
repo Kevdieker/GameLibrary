@@ -11,14 +11,14 @@ import java.io.IOException;
 import java.util.Objects;
 
 /*****************************************************************************
- * Class used as an EntryPoint for the Pong Application.
+ * Class used as an entryPoint for the Pong application.
  * Its sole purpose is to only Start the game without going through the menu.
  * @author Kevin D. Kerbl
  *****************************************************************************/
 public class PongMain extends Application {
 
     /*******************************************************************************************************************
-     * EntryPoint for the Pong Application
+     * EntryPoint for the Pong application
      * @param stage the primary stage for this application, onto which the pong scene can be set.
      * @throws IOException if we can't read the fxml file.
      ******************************************************************************************************************/

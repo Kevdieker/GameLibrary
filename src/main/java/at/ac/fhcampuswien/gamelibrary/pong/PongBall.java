@@ -13,7 +13,6 @@ import static at.ac.fhcampuswien.gamelibrary.pong.PongConstants.*;
  * @author Kevin D. Kerbl
  *****************************************************************************/
 public class PongBall extends Rectangle {
-    Random random = new Random();
     public double xVelocity;
     public double yVelocity;
 
@@ -37,6 +36,7 @@ public class PongBall extends Rectangle {
     PongBall(double x, double y, double w, double h) {
         super(x, y, w, h);
 
+        Random random = new Random();
         int XDirection = random.nextInt(2);
         int YDirection = random.nextInt(2);
 
@@ -54,6 +54,7 @@ public class PongBall extends Rectangle {
      * moves ball from old in x y position to new x y position
      ****************************************************+*****/
     public void move() {
+
         setX(getX() + xVelocity);
         setY(getY() + yVelocity);
     }
@@ -63,8 +64,8 @@ public class PongBall extends Rectangle {
      * @param gc used to draw on canvas using a buffer
      ****************************************************+*****/
     public void draw(GraphicsContext gc) {
+
         gc.setFill(Color.ORANGE);
         gc.fillOval(getX(), getY(), getWidth(), getHeight());
-
     }
 }

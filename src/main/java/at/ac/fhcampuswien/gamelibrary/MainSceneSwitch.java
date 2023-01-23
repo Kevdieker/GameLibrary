@@ -15,6 +15,7 @@ import javafx.stage.WindowEvent;
 
 import java.io.IOException;
 import java.util.Objects;
+
 /*****************************************************************************
  * Class used for switching between scenes and to open new windows.
  * @author Kevin D. Kerbl
@@ -25,21 +26,21 @@ public class MainSceneSwitch {
     private Parent mainRoot;
     private Stage stage;
 
-/**********************************************************
- * Opens the credits window.
- * @throws IOException if we can't read the fxml file.
- **********************************************************/
+    /**********************************************************
+     * Opens the credits window.
+     * @throws IOException if we can't read the fxml file.
+     **********************************************************/
     public void creditsWindow() throws IOException {
 
-            loader = new FXMLLoader(getClass().getResource("Credits.fxml"));
-            Parent creditsRoot = loader.load();
-            stage = new Stage();
+        loader = new FXMLLoader(getClass().getResource("Credits.fxml"));
+        Parent creditsRoot = loader.load();
+        stage = new Stage();
 
-            stage.setTitle("G A M E L I B R A R Y   Credits");
-            stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("Redflag.jpeg"))));
-            stage.setScene(new Scene(creditsRoot));
-            stage.isAlwaysOnTop();
-            stage.show();
+        stage.setTitle("G A M E L I B R A R Y   Credits");
+        stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("Redflag.jpeg"))));
+        stage.setScene(new Scene(creditsRoot));
+        stage.isAlwaysOnTop();
+        stage.show();
 
     }
 
@@ -59,6 +60,7 @@ public class MainSceneSwitch {
         stage.setScene(scene);
         stage.show();
     }
+
     /**********************************************************
      * Switches scene to pong-menu
      * @param e for ActionEvent to switch between scenes.
@@ -84,7 +86,7 @@ public class MainSceneSwitch {
      * @param winCon for modifying winning condition.
      * @throws IOException if we can't read the fxml file.
      **********************************************************/
-    public void switchToPongGame(ActionEvent e,Boolean twoPlayerMode,int winCon) throws IOException {
+    public void switchToPongGame(ActionEvent e, Boolean twoPlayerMode, int winCon) throws IOException {
         loader = new FXMLLoader(getClass().getResource("pong/PongView.fxml"));
         mainRoot = loader.load();
         scene = new Scene(mainRoot);
@@ -114,6 +116,7 @@ public class MainSceneSwitch {
         stage.setScene(scene);
         stage.show();
     }
+
     /**********************************************************
      * Switches scene to memory
      * @param e for ActionEvent to switch between scenes.
@@ -130,6 +133,7 @@ public class MainSceneSwitch {
         stage.setScene(scene);
         stage.show();
     }
+
     /**********************************************************
      * Switches scene to tetris
      * @param e for ActionEvent to switch between scenes.
@@ -157,6 +161,7 @@ public class MainSceneSwitch {
             }
         });
     }
+
     /**********************************************************
      * Opens window for special person.
      * @throws IOException if we can't read the fxml file.
@@ -165,15 +170,16 @@ public class MainSceneSwitch {
 
         loader = new FXMLLoader(getClass().getResource("pong/Heart.fxml"));
         Parent heartRoot = loader.load();
-        Stage stage2 = new Stage();
+        stage = new Stage();
 
-        stage2.setTitle(" ../.. 12/12 20/01");
-        stage2.setResizable(false);
-        stage2.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("pong/Heart.PNG"))));
-        stage2.setScene(new Scene(heartRoot));
-        stage2.show();
+        stage.setTitle(" ../.. 12/12 20/01");
+        stage.setResizable(false);
+        stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("pong/Heart.PNG"))));
+        stage.setScene(new Scene(heartRoot));
+        stage.show();
 
     }
+
     /**********************************************************
      * Opens window for special person.
      * @throws IOException if we can't read the fxml file.
