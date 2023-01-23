@@ -21,7 +21,6 @@ Player 1 : W,S
 Player 2 : Arrow_UP, Arrow_DOWN
 
 Known bugs:
-+ if heart opens -> game controls freezes
 + after game -> paddle still movable
 
 _______________________________________________________________
