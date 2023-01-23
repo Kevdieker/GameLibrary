@@ -16,10 +16,10 @@ import javafx.stage.WindowEvent;
 import java.io.IOException;
 import java.util.Objects;
 
-/*****************************************************************************
+/****************************************************************************
  * Class used for switching between scenes and to open new windows.
  * @author Kevin D. Kerbl
- *****************************************************************************/
+ ****************************************************************************/
 public class MainSceneSwitch {
     private Scene scene;
     private FXMLLoader loader;
